@@ -75,6 +75,8 @@
         feedbackForm.reset();
         var starInputs = feedbackForm.querySelectorAll('input[name="rating"]');
         starInputs.forEach(function (radio) { radio.checked = false; });
+        var checkboxes = feedbackForm.querySelectorAll('input[type="checkbox"]');
+        checkboxes.forEach(function (chk) { chk.checked = false; });
       });
     }
   });
