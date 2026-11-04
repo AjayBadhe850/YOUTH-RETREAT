@@ -172,7 +172,24 @@ The website is integrated with [Umami Cloud](https://cloud.umami.is/) for aggreg
 
 ---
 
-## 10. Contact & Church Details
+## 10. Anonymous Feedback Integration (Google Sheets via Apps Script)
+
+The retreat feedback form is connected to Google Sheets via Google Apps Script Web App.
+
+- **Endpoint:** `https://script.google.com/macros/s/AKfycbwtlf_64x9DkSoiq5BZU8KMzrinM6r6XDGnabwmZPx4gAWVNGL7A2oIRdDwnLycTzxMbg/exec`
+- **Submission Method:** Asynchronous `POST` with `URLSearchParams`.
+- **Recorded Columns:**
+  1. `Timestamp`
+  2. `Overall Feedback` (Required)
+  3. `Selected Feelings` (Multi-select)
+  4. `Feeling Details` (Optional)
+  5. `Testimony` (Required)
+  6. `Improvement Suggestions` (Required)
+- **Privacy:** 100% anonymous &mdash; no user names, email addresses, or phone numbers collected.
+
+---
+
+## 11. Contact & Church Details
 
 - **Church:** Wesley Church Palliwada
 - **Village:** Palliwada
