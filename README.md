@@ -177,15 +177,82 @@ The website is integrated with [Umami Cloud](https://cloud.umami.is/) for aggreg
 The retreat feedback form is connected to Google Sheets via Google Apps Script Web App.
 
 - **Endpoint:** `https://script.google.com/macros/s/AKfycbwtlf_64x9DkSoiq5BZU8KMzrinM6r6XDGnabwmZPx4gAWVNGL7A2oIRdDwnLycTzxMbg/exec`
-- **Submission Method:** Asynchronous `POST` with `URLSearchParams`.
+- **Submission Method:** Asynchronous `POST` with `URLSearchParams` (`mode: 'cors'`).
+- **Confirmation Mechanism:** Verified response text (`Success`) confirmation before clearing the form. Form input is strictly preserved on network errors or failures.
+- **Cache Invalidation:** `assets/js/main.js?v=2.1.0` ensures immediate cache invalidation across CDNs and visitor browsers.
 - **Recorded Columns:**
   1. `Timestamp`
   2. `Overall Feedback` (Required)
-  3. `Selected Feelings` (Multi-select)
+  3. `Selected Feelings` (Multi-select, stored as comma-separated list)
   4. `Feeling Details` (Optional)
   5. `Testimony` (Required)
   6. `Improvement Suggestions` (Required)
-- **Privacy:** 100% anonymous &mdash; no user names, email addresses, or phone numbers collected.
+- **Privacy:** 100% anonymous &mdash; zero names, emails, or phone numbers collected.
+
+### Production Google Apps Script Reference (`Code.gs`)
+```javascript
+function doPost(e) {
+  var lock = LockService.getScriptLock();
+  lock.tryLock(10000);
+
+  try {
+    var p = e.parameter || {};
+    var overall = (p.overall || p['Overall Feedback'] || '').trim();
+    var testimony = (p.testimony || p['Testimony'] || '').trim();
+    var suggestions = (p.suggestions || p['Improvement Suggestions'] || '').trim();
+    var feelingDetails = (p.feelingDetails || p['Feeling Details'] || '').trim();
+
+    if (!overall || !testimony || !suggestions) {
+      return ContentService.createTextOutput("Required fields are missing")
+        .setMimeType(ContentService.MimeType.TEXT);
+    }
+
+    var feelingsStr = "";
+    if (p.feelings) {
+      try {
+        var parsed = JSON.parse(p.feelings);
+        feelingsStr = Array.isArray(parsed) ? parsed.join(", ") : String(p.feelings);
+      } catch (err) {
+        feelingsStr = String(p.feelings);
+      }
+    } else if (p['Selected Feelings']) {
+      feelingsStr = String(p['Selected Feelings']);
+    }
+
+    var ss = SpreadsheetApp.getActiveSpreadsheet();
+    var sheet = ss.getSheetByName("Feedback");
+    if (!sheet) {
+      sheet = ss.insertSheet("Feedback");
+      sheet.appendRow([
+        "Timestamp",
+        "Overall Feedback",
+        "Selected Feelings",
+        "Feeling Details",
+        "Testimony",
+        "Improvement Suggestions"
+      ]);
+    }
+
+    sheet.appendRow([
+      new Date(),
+      overall,
+      feelingsStr,
+      feelingDetails,
+      testimony,
+      suggestions
+    ]);
+
+    return ContentService.createTextOutput("Success")
+      .setMimeType(ContentService.MimeType.TEXT);
+
+  } catch (error) {
+    return ContentService.createTextOutput("Error: " + error.toString())
+      .setMimeType(ContentService.MimeType.TEXT);
+  } finally {
+    lock.releaseLock();
+  }
+}
+```
 
 ---
 

@@ -66,14 +66,21 @@
     var feedbackForm = document.getElementById('anonymous-feedback-form');
     if (feedbackForm) {
       var GOOGLE_APPS_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbwtlf_64x9DkSoiq5BZU8KMzrinM6r6XDGnabwmZPx4gAWVNGL7A2oIRdDwnLycTzxMbg/exec';
+      var isSubmitting = false;
 
       feedbackForm.addEventListener('submit', function (e) {
         e.preventDefault();
+        if (isSubmitting) return;
 
-        var overall = (document.getElementById('feedback-overall') ? document.getElementById('feedback-overall').value : '').trim();
-        var feelingDetails = (document.getElementById('feedback-feelings') ? document.getElementById('feedback-feelings').value : '').trim();
-        var testimony = (document.getElementById('feedback-testimony') ? document.getElementById('feedback-testimony').value : '').trim();
-        var suggestions = (document.getElementById('feedback-improvements') ? document.getElementById('feedback-improvements').value : '').trim();
+        var overallInput = document.getElementById('feedback-overall');
+        var feelingsDetailsInput = document.getElementById('feedback-feelings');
+        var testimonyInput = document.getElementById('feedback-testimony');
+        var suggestionsInput = document.getElementById('feedback-improvements');
+
+        var overall = (overallInput ? overallInput.value : '').trim();
+        var feelingDetails = (feelingsDetailsInput ? feelingsDetailsInput.value : '').trim();
+        var testimony = (testimonyInput ? testimonyInput.value : '').trim();
+        var suggestions = (suggestionsInput ? suggestionsInput.value : '').trim();
 
         var selectedFeelings = [];
         var checkedPills = feedbackForm.querySelectorAll('input[name="feelings"]:checked');
@@ -81,22 +88,50 @@
           selectedFeelings.push(pill.value);
         });
 
-        // Basic front-end validation for required sections
-        if (!overall || !testimony || !suggestions) {
-          alert('Please fill in all required sections (Overall Feedback, Testimony, and Improvements).');
+        var successAlert = document.getElementById('feedback-success-message');
+        var errorAlert = document.getElementById('feedback-error-message');
+        var errorText = document.getElementById('feedback-error-text');
+
+        // Hide previous messages
+        if (successAlert) successAlert.classList.add('d-none');
+        if (errorAlert) errorAlert.classList.add('d-none');
+
+        // Front-end validation for required sections
+        if (!overall) {
+          showFormError('Please enter your Overall Feedback in Section 1.');
+          if (overallInput) overallInput.focus();
           return;
+        }
+        if (!testimony) {
+          showFormError('Please share your Testimony in Section 3.');
+          if (testimonyInput) testimonyInput.focus();
+          return;
+        }
+        if (!suggestions) {
+          showFormError('Please share what you would like us to improve in Section 4.');
+          if (suggestionsInput) suggestionsInput.focus();
+          return;
+        }
+
+        function showFormError(msg) {
+          if (errorAlert) {
+            if (errorText) errorText.textContent = msg;
+            errorAlert.classList.remove('d-none');
+            errorAlert.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+          } else {
+            alert(msg);
+          }
         }
 
         var submitBtn = document.getElementById('feedback-submit-btn');
         var originalBtnHtml = submitBtn ? submitBtn.innerHTML : '';
         if (submitBtn) {
           submitBtn.disabled = true;
-          submitBtn.innerHTML = '<span class="spinner-border spinner-border-sm me-2" role="status" aria-hidden="true"></span> Sending to Google Sheets...';
+          submitBtn.innerHTML = '<span class="spinner-border spinner-border-sm me-2" role="status" aria-hidden="true"></span> Sending feedback...';
         }
+        isSubmitting = true;
 
-        var successAlert = document.getElementById('feedback-success-message');
-
-        // Formulate timestamp
+        // Formulate readable timestamp
         var now = new Date();
         var timestamp = now.getFullYear() + '-' +
           String(now.getMonth() + 1).padStart(2, '0') + '-' +
@@ -105,57 +140,61 @@
           String(now.getMinutes()).padStart(2, '0') + ':' +
           String(now.getSeconds()).padStart(2, '0');
 
-        // Build URL encoded parameters supporting both Google Sheet column names and Apps Script parameters
+        // Build URLSearchParams with both lowerCamelCase and title casing
         var params = new URLSearchParams();
         params.append('overall', overall);
-        params.append('overallFeedback', overall);
         params.append('Overall Feedback', overall);
-
         params.append('feelings', JSON.stringify(selectedFeelings));
-        params.append('selectedFeelings', JSON.stringify(selectedFeelings));
         params.append('Selected Feelings', selectedFeelings.join(', '));
-
         params.append('feelingDetails', feelingDetails);
         params.append('Feeling Details', feelingDetails);
-        params.append('details', feelingDetails);
-
         params.append('testimony', testimony);
         params.append('Testimony', testimony);
-
         params.append('suggestions', suggestions);
-        params.append('improvementSuggestions', suggestions);
         params.append('Improvement Suggestions', suggestions);
-        params.append('improvements', suggestions);
-
         params.append('timestamp', timestamp);
         params.append('Timestamp', timestamp);
 
         fetch(GOOGLE_APPS_SCRIPT_URL, {
           method: 'POST',
-          mode: 'no-cors',
+          mode: 'cors',
           headers: {
-            'Content-Type': 'application/x-www-form-urlencoded'
+            'Content-Type': 'application/x-www-form-urlencoded;charset=UTF-8'
           },
           body: params.toString()
         })
-        .then(function () {
-          if (successAlert) {
-            successAlert.classList.remove('d-none');
-            successAlert.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        .then(function (res) {
+          if (!res.ok) {
+            throw new Error('Server returned HTTP ' + res.status);
           }
-          feedbackForm.reset();
-          var checkboxes = feedbackForm.querySelectorAll('input[type="checkbox"]');
-          checkboxes.forEach(function (chk) { chk.checked = false; });
+          return res.text();
+        })
+        .then(function (text) {
+          var trimmed = (text || '').trim();
+          if (trimmed === 'Success') {
+            // Confirmed storage in Google Sheets
+            if (errorAlert) errorAlert.classList.add('d-none');
+            if (successAlert) {
+              successAlert.classList.remove('d-none');
+              successAlert.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+            }
+            // Only reset form upon confirmed storage
+            feedbackForm.reset();
+            var checkboxes = feedbackForm.querySelectorAll('input[type="checkbox"]');
+            checkboxes.forEach(function (chk) { chk.checked = false; });
+          } else {
+            // Server returned an error like "Required fields are missing" or "Invalid feelings"
+            throw new Error(trimmed || 'Unexpected response from Google Apps Script');
+          }
         })
         .catch(function (err) {
-          console.warn('Feedback send notice:', err);
-          if (successAlert) {
-            successAlert.classList.remove('d-none');
-            successAlert.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
-          }
-          feedbackForm.reset();
+          console.error('Feedback submission error:', err);
+          if (successAlert) successAlert.classList.add('d-none');
+          showFormError('Unable to save feedback to Google Sheets (' + (err.message || 'Network error') + '). Your responses have been kept below. Please check your connection and click Submit again.');
+          // Form is intentionally NOT reset here so the visitor never loses their entered text
         })
         .finally(function () {
+          isSubmitting = false;
           if (submitBtn) {
             submitBtn.disabled = false;
             submitBtn.innerHTML = originalBtnHtml;

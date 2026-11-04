@@ -314,6 +314,19 @@
             </div>
           </div>
 
+          <!-- Submission Error Alert -->
+          <div id="feedback-error-message" class="alert alert-danger d-none p-4 rounded-3 shadow-sm mb-4 border-2 border-danger" role="alert">
+            <div class="d-flex align-items-center gap-3">
+              <div class="fs-1 text-danger"><i class="bi bi-exclamation-triangle-fill"></i></div>
+              <div>
+                <h5 class="fw-bold mb-1 text-danger">Submission Failed</h5>
+                <p class="mb-0 text-dark small" id="feedback-error-text">
+                  Unable to save feedback to Google Sheets. Please check your internet connection and try again. Your feedback has been kept below.
+                </p>
+              </div>
+            </div>
+          </div>
+
           <!-- Anonymous Feedback Form -->
           <div class="wcp-card bg-white p-4 p-md-5 shadow-sm border-2 border-gold">
             <form id="anonymous-feedback-form">
@@ -539,7 +552,7 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 
   <!-- Application Static JavaScript Modules -->
-  <script src="assets/js/main.js"></script>
+  <script src="assets/js/main.js?v=2.1.0"></script>
   <script src="assets/js/content.js"></script>
   <script src="assets/js/schedule.js"></script>
   <script src="assets/js/songs.js"></script>
