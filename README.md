@@ -165,10 +165,10 @@ Render provides free hosting for static sites with global CDN distribution and S
 
 The website is integrated with [Umami Cloud](https://cloud.umami.is/) for aggregate visitor analytics (zero cookies, zero personal data tracking, GDPR-compliant).
 
-1. **Sign in to Umami Cloud:** [https://cloud.umami.is/](https://cloud.umami.is/)
-2. **Add Website:** Click **Websites** > **Add Website**, name it `Wesley Church Palliwada`, and set domain.
-3. **Copy Website ID:** Under **Settings** > **Websites** > **Edit**, copy the `Website ID` (UUID format, e.g., `xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx`).
-4. **Insert into HTML:** Replace `YOUR_UMAMI_WEBSITE_ID` in `<head>` across `index.html` and `pages/*.html`.
+- **Umami Website ID:** `1838acf3-38ab-4e9b-bc64-3d992962f2ef`
+- **Script URL:** `https://cloud.umami.is/script.js`
+- **Tracking:** Standard aggregate page views, device types, top pages, referrers, and visitor trends.
+- **Privacy:** 100% cookie-free, no personal information collected.
 
 ---
 
