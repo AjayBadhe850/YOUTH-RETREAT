@@ -319,18 +319,11 @@
             <form id="anonymous-feedback-form">
               <!-- 1. OVERALL FEEDBACK -->
               <div class="mb-4 pb-3 border-bottom">
-                <label class="form-label fw-bold text-forest fs-5 mb-1 d-block">
+                <label for="feedback-overall" class="form-label fw-bold text-forest fs-5 mb-1 d-block">
                   <span class="badge bg-gold-subtle text-dark border me-1">1</span> Overall Feedback
                 </label>
-                <p class="small text-muted mb-2">How would you rate your overall retreat experience today?</p>
-                <div class="star-rating my-2" aria-label="Star Rating">
-                  <input type="radio" id="star5" name="rating" value="5"><label for="star5" title="5 stars - Blessed & Inspiring"><i class="bi bi-star-fill"></i></label>
-                  <input type="radio" id="star4" name="rating" value="4"><label for="star4" title="4 stars - Very Good"><i class="bi bi-star-fill"></i></label>
-                  <input type="radio" id="star3" name="rating" value="3"><label for="star3" title="3 stars - Good"><i class="bi bi-star-fill"></i></label>
-                  <input type="radio" id="star2" name="rating" value="2"><label for="star2" title="2 stars - Fair"><i class="bi bi-star-fill"></i></label>
-                  <input type="radio" id="star1" name="rating" value="1"><label for="star1" title="1 star - Needs Improvement"><i class="bi bi-star-fill"></i></label>
-                </div>
-                <div class="text-center small text-muted">Click a star to give your rating</div>
+                <p class="small text-muted mb-2">Please share your overall thoughts and experience about the retreat:</p>
+                <textarea id="feedback-overall" class="form-control" rows="3" placeholder="Write your overall feedback here..."></textarea>
               </div>
 
               <!-- 2. HOW DO YOU FEEL ABOUT TODAY'S YOUTH RETREAT? -->
