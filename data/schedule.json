@@ -1,0 +1,65 @@
+[
+  {
+    "id": 1,
+    "title": "Welcome, Fellowship & Morning Tea",
+    "start_time": "9:00 AM",
+    "end_time": "9:45 AM",
+    "speaker_activity": "Reception & Hospitality Team",
+    "description": "Attendee arrival, warm welcome greetings, distribution of song guides, and light morning tea.",
+    "display_order": 1
+  },
+  {
+    "id": 2,
+    "title": "Opening Prayer & Praise & Worship",
+    "start_time": "9:45 AM",
+    "end_time": "10:45 AM",
+    "speaker_activity": "Wesley Church Youth Worship Team",
+    "description": "United congregational adoration and worship singing in Telugu and English.",
+    "display_order": 2
+  },
+  {
+    "id": 3,
+    "title": "Keynote Message: 'Arise & Shine'",
+    "start_time": "10:45 AM",
+    "end_time": "12:15 PM",
+    "speaker_activity": "Guest Speaker (To Be Announced by Organisers)",
+    "description": "A heart-stirring message on living boldly for Christ and standing firm in faith based on 1 Timothy 4:12.",
+    "display_order": 3
+  },
+  {
+    "id": 4,
+    "title": "Youth Fellowship Games & Action Songs",
+    "start_time": "12:15 PM",
+    "end_time": "1:15 PM",
+    "speaker_activity": "Youth Coordinators",
+    "description": "Joyful group activities, energetic action choruses, and inter-congregation fellowship.",
+    "display_order": 4
+  },
+  {
+    "id": 5,
+    "title": "Fellowship Lunch & Community Time",
+    "start_time": "1:15 PM",
+    "end_time": "2:15 PM",
+    "speaker_activity": "Church Hospitality Committee",
+    "description": "Delicious fellowship lunch served to all attendees on church campus.",
+    "display_order": 5
+  },
+  {
+    "id": 6,
+    "title": "Youth Panel & Practical Christian Living",
+    "start_time": "2:15 PM",
+    "end_time": "3:30 PM",
+    "speaker_activity": "Pastor & Youth Mentors",
+    "description": "Addressing real-life youth questions regarding prayer, career, purity, social media, and ministry.",
+    "display_order": 6
+  },
+  {
+    "id": 7,
+    "title": "Dedication Prayer & Closing Benediction",
+    "start_time": "3:30 PM",
+    "end_time": "5:00 PM",
+    "speaker_activity": "Church Presbyter / Pastor",
+    "description": "Altar prayer of personal dedication, blessings for youth, and closing benediction.",
+    "display_order": 7
+  }
+]

@@ -1,0 +1,109 @@
+/* ==========================================================================
+   WESLEY CHURCH PALLIWADA — RESPONSIVE STYLESHEET
+   Mobile-First Layout Rules (Smartphones, Tablets, Laptops, Desktops)
+   ========================================================================== */
+
+/* Mobile Phones (under 768px) */
+@media (max-width: 767.98px) {
+  .hero-section {
+    padding: 45px 0 55px 0;
+  }
+
+  .hero-title {
+    font-size: 2.1rem;
+  }
+
+  .section-title {
+    font-size: 1.75rem;
+  }
+
+  .schedule-timeline {
+    padding-left: 20px;
+  }
+
+  .schedule-timeline::before {
+    left: 6px;
+  }
+
+  .timeline-dot {
+    left: -20px;
+    width: 15px;
+    height: 15px;
+    top: 8px;
+  }
+
+  .timeline-card {
+    padding: 16px;
+  }
+
+  .song-card {
+    padding: 18px;
+  }
+
+  .song-lyrics-container {
+    font-size: 0.98rem;
+    line-height: 1.75;
+    padding: 14px;
+  }
+
+  .wcp-brand-title {
+    font-size: 1rem;
+  }
+
+  .wcp-brand-sub {
+    font-size: 0.7rem;
+  }
+
+  .wcp-navbar {
+    padding: 8px 0;
+  }
+}
+
+/* Tablets (768px to 991.98px) */
+@media (min-width: 768px) and (max-width: 991.98px) {
+  .hero-section {
+    padding: 60px 0 70px 0;
+  }
+
+  .hero-title {
+    font-size: 2.8rem;
+  }
+
+  .timeline-card {
+    padding: 20px;
+  }
+}
+
+/* Desktops (992px and up) */
+@media (min-width: 992px) {
+  .hero-section {
+    padding: 80px 0 95px 0;
+  }
+
+  .timeline-card {
+    padding: 24px 28px;
+  }
+}
+
+/* Accessibility: Print View */
+@media print {
+  #opening-screen,
+  .wcp-navbar,
+  .btn,
+  .no-print {
+    display: none !important;
+  }
+
+  body {
+    background: #FFFFFF !important;
+    color: #000000 !important;
+  }
+
+  .wcp-card,
+  .timeline-card,
+  .song-card {
+    border: 1px solid #000000 !important;
+    box-shadow: none !important;
+    page-break-inside: avoid;
+  }
+}

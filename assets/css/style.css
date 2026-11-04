@@ -1,0 +1,540 @@
+/* ==========================================================================
+   WESLEY CHURCH PALLIWADA — YOUTH RETREAT STATIC WEBSITE
+   Identity: Praise The Lord
+   Color System:
+   - Forest Green: #173B2B
+   - Muted Gold: #C7A45A
+   - Warm Ivory: #F8F5ED
+   - Soft White: #FFFFFF
+   - Light Sage: #E8EEE8
+   - Dark Charcoal: #222222
+   ========================================================================== */
+
+:root {
+  --wcp-forest-green: #173B2B;
+  --wcp-forest-dark: #0F261C;
+  --wcp-forest-light: #22563F;
+  --wcp-muted-gold: #C7A45A;
+  --wcp-gold-light: #DFCA97;
+  --wcp-gold-hover: #B59345;
+  --wcp-warm-ivory: #F8F5ED;
+  --wcp-soft-white: #FFFFFF;
+  --wcp-light-sage: #E8EEE8;
+  --wcp-sage-border: #D1DED1;
+  --wcp-dark-charcoal: #222222;
+  --wcp-text-muted: #55625B;
+  --wcp-font-heading: 'Cinzel', 'Playfair Display', Georgia, serif;
+  --wcp-font-body: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --wcp-radius-sm: 8px;
+  --wcp-radius-md: 14px;
+  --wcp-radius-lg: 20px;
+  --wcp-radius-pill: 50px;
+  --wcp-shadow-sm: 0 2px 8px rgba(23, 59, 43, 0.06);
+  --wcp-shadow-md: 0 6px 20px rgba(23, 59, 43, 0.09);
+  --wcp-shadow-lg: 0 12px 32px rgba(23, 59, 43, 0.14);
+}
+
+/* Base Styles */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  font-family: var(--wcp-font-body);
+  background-color: var(--wcp-warm-ivory);
+  color: var(--wcp-dark-charcoal);
+  font-size: 16px;
+  line-height: 1.65;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, h4, .church-heading {
+  font-family: var(--wcp-font-heading);
+  color: var(--wcp-forest-green);
+  font-weight: 700;
+  letter-spacing: 0.5px;
+}
+
+a {
+  color: var(--wcp-forest-green);
+  text-decoration: none;
+  transition: all 0.25s ease;
+}
+
+a:hover {
+  color: var(--wcp-muted-gold);
+}
+
+/* --------------------------------------------------------------------------
+   Opening Screen (Splash Screen) — Exactly 2 Seconds
+   -------------------------------------------------------------------------- */
+#opening-screen {
+  position: fixed;
+  inset: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: var(--wcp-forest-green);
+  background-image: radial-gradient(circle at 50% 40%, rgba(199, 164, 90, 0.18) 0%, rgba(15, 38, 28, 0.98) 75%);
+  z-index: 999999;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 24px;
+  opacity: 1;
+  transition: opacity 0.45s ease-out, visibility 0.45s ease-out;
+}
+
+#opening-screen.fade-out {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+.opening-cross-icon {
+  width: 64px;
+  height: 64px;
+  margin-bottom: 24px;
+  color: var(--wcp-muted-gold);
+  filter: drop-shadow(0 4px 14px rgba(199, 164, 90, 0.45));
+  animation: splashPulse 1.8s ease-in-out infinite;
+}
+
+.opening-praise-text {
+  font-family: var(--wcp-font-heading);
+  font-size: clamp(2rem, 5.5vw, 3.4rem);
+  font-weight: 800;
+  letter-spacing: 4px;
+  color: #FFFFFF;
+  text-transform: uppercase;
+  margin: 0 0 14px 0;
+  text-shadow: 0 4px 16px rgba(0, 0, 0, 0.4);
+}
+
+.opening-church-text {
+  font-family: var(--wcp-font-body);
+  font-size: clamp(0.95rem, 2.5vw, 1.35rem);
+  font-weight: 600;
+  letter-spacing: 3px;
+  color: var(--wcp-gold-light);
+  text-transform: uppercase;
+  margin: 0;
+  border-top: 1px solid rgba(199, 164, 90, 0.35);
+  padding-top: 14px;
+}
+
+@keyframes splashPulse {
+  0%, 100% { transform: scale(1); opacity: 0.95; }
+  50% { transform: scale(1.08); opacity: 1; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .opening-cross-icon {
+    animation: none;
+  }
+  #opening-screen {
+    transition: opacity 0.1s linear;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   Navigation Bar
+   -------------------------------------------------------------------------- */
+.wcp-navbar {
+  background-color: var(--wcp-forest-green);
+  border-bottom: 3px solid var(--wcp-muted-gold);
+  padding: 12px 0;
+  box-shadow: var(--wcp-shadow-md);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.wcp-brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: #FFFFFF !important;
+  text-decoration: none;
+}
+
+.wcp-brand-icon {
+  width: 42px;
+  height: 42px;
+  background: rgba(199, 164, 90, 0.2);
+  border: 1px solid var(--wcp-muted-gold);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--wcp-muted-gold);
+  font-size: 1.25rem;
+}
+
+.wcp-brand-title {
+  font-family: var(--wcp-font-heading);
+  font-weight: 700;
+  font-size: 1.15rem;
+  letter-spacing: 0.5px;
+  line-height: 1.2;
+}
+
+.wcp-brand-sub {
+  font-size: 0.75rem;
+  color: var(--wcp-gold-light);
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  display: block;
+}
+
+.nav-link.wcp-nav-link {
+  color: rgba(255, 255, 255, 0.88) !important;
+  font-weight: 500;
+  font-size: 0.95rem;
+  padding: 8px 14px !important;
+  border-radius: var(--wcp-radius-sm);
+  transition: all 0.2s ease;
+}
+
+.nav-link.wcp-nav-link:hover, .nav-link.wcp-nav-link.active {
+  color: #FFFFFF !important;
+  background-color: rgba(199, 164, 90, 0.24);
+}
+
+.btn-nav-action {
+  background-color: var(--wcp-muted-gold);
+  color: #FFFFFF !important;
+  font-weight: 600;
+  padding: 8px 20px !important;
+  border-radius: var(--wcp-radius-pill);
+  box-shadow: 0 4px 10px rgba(199, 164, 90, 0.3);
+  border: 1px solid var(--wcp-gold-light);
+}
+
+.btn-nav-action:hover {
+  background-color: var(--wcp-gold-hover);
+  color: #FFFFFF !important;
+  transform: translateY(-1px);
+}
+
+/* --------------------------------------------------------------------------
+   Hero Section
+   -------------------------------------------------------------------------- */
+.hero-section {
+  background: linear-gradient(135deg, var(--wcp-forest-green) 0%, #1c4835 55%, var(--wcp-forest-dark) 100%);
+  color: #FFFFFF;
+  position: relative;
+  overflow: hidden;
+  padding: 70px 0 80px 0;
+  border-bottom: 4px solid var(--wcp-muted-gold);
+}
+
+.hero-pill-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background-color: rgba(199, 164, 90, 0.2);
+  border: 1px solid var(--wcp-muted-gold);
+  color: var(--wcp-gold-light);
+  padding: 6px 16px;
+  border-radius: var(--wcp-radius-pill);
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+}
+
+.hero-title {
+  font-family: var(--wcp-font-heading);
+  font-size: clamp(2.2rem, 5.5vw, 3.8rem);
+  font-weight: 800;
+  line-height: 1.15;
+  color: #FFFFFF;
+  margin-bottom: 18px;
+}
+
+.hero-theme {
+  font-size: clamp(1.1rem, 2.5vw, 1.45rem);
+  color: var(--wcp-gold-light);
+  font-weight: 500;
+  margin-bottom: 24px;
+}
+
+.hero-meta-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(8px);
+  padding: 8px 16px;
+  border-radius: var(--wcp-radius-sm);
+  font-size: 0.95rem;
+  margin-right: 10px;
+  margin-bottom: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+/* --------------------------------------------------------------------------
+   Buttons
+   -------------------------------------------------------------------------- */
+.btn-wcp-primary {
+  background-color: var(--wcp-muted-gold);
+  color: #FFFFFF;
+  font-weight: 700;
+  padding: 12px 28px;
+  border-radius: var(--wcp-radius-pill);
+  border: none;
+  box-shadow: 0 4px 14px rgba(199, 164, 90, 0.35);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  transition: all 0.25s ease;
+}
+
+.btn-wcp-primary:hover {
+  background-color: var(--wcp-gold-hover);
+  color: #FFFFFF;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(199, 164, 90, 0.45);
+}
+
+.btn-wcp-outline {
+  background-color: transparent;
+  color: #FFFFFF;
+  border: 2px solid rgba(255, 255, 255, 0.85);
+  font-weight: 600;
+  padding: 11px 24px;
+  border-radius: var(--wcp-radius-pill);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  transition: all 0.25s ease;
+}
+
+.btn-wcp-outline:hover {
+  background-color: #FFFFFF;
+  color: var(--wcp-forest-green);
+  border-color: #FFFFFF;
+  transform: translateY(-2px);
+}
+
+.btn-wcp-forest {
+  background-color: var(--wcp-forest-green);
+  color: #FFFFFF;
+  font-weight: 600;
+  padding: 10px 22px;
+  border-radius: var(--wcp-radius-pill);
+  border: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  transition: all 0.25s ease;
+}
+
+.btn-wcp-forest:hover {
+  background-color: var(--wcp-forest-light);
+  color: #FFFFFF;
+  transform: translateY(-2px);
+}
+
+/* --------------------------------------------------------------------------
+   Cards & Layout Components
+   -------------------------------------------------------------------------- */
+.wcp-card {
+  background-color: var(--wcp-soft-white);
+  border: 1px solid var(--wcp-sage-border);
+  border-radius: var(--wcp-radius-md);
+  box-shadow: var(--wcp-shadow-sm);
+  padding: 24px;
+  transition: all 0.25s ease;
+}
+
+.wcp-card:hover {
+  box-shadow: var(--wcp-shadow-md);
+  border-color: var(--wcp-muted-gold);
+}
+
+.section-tag {
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--wcp-muted-gold);
+  margin-bottom: 8px;
+  display: block;
+}
+
+.section-title {
+  font-size: clamp(1.8rem, 3.5vw, 2.4rem);
+  margin-bottom: 14px;
+}
+
+.section-desc {
+  font-size: 1.05rem;
+  color: var(--wcp-text-muted);
+  max-width: 650px;
+  margin: 0 auto 36px auto;
+}
+
+/* --------------------------------------------------------------------------
+   Schedule Timeline
+   -------------------------------------------------------------------------- */
+.schedule-timeline {
+  position: relative;
+  padding-left: 28px;
+}
+
+.schedule-timeline::before {
+  content: "";
+  position: absolute;
+  top: 12px;
+  bottom: 12px;
+  left: 8px;
+  width: 3px;
+  background-color: var(--wcp-sage-border);
+}
+
+.timeline-item {
+  position: relative;
+  margin-bottom: 28px;
+}
+
+.timeline-dot {
+  position: absolute;
+  left: -28px;
+  top: 6px;
+  width: 19px;
+  height: 19px;
+  border-radius: 50%;
+  background-color: var(--wcp-muted-gold);
+  border: 3px solid #FFFFFF;
+  box-shadow: 0 0 0 2px var(--wcp-muted-gold);
+}
+
+.timeline-card {
+  background-color: var(--wcp-soft-white);
+  border: 1px solid var(--wcp-sage-border);
+  border-radius: var(--wcp-radius-md);
+  padding: 20px 24px;
+  box-shadow: var(--wcp-shadow-sm);
+  transition: transform 0.2s ease;
+}
+
+.timeline-card:hover {
+  transform: translateX(4px);
+  border-color: var(--wcp-muted-gold);
+}
+
+.timeline-time {
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: var(--wcp-forest-green);
+  background-color: var(--wcp-light-sage);
+  padding: 4px 10px;
+  border-radius: var(--wcp-radius-sm);
+  display: inline-block;
+  margin-bottom: 10px;
+}
+
+/* --------------------------------------------------------------------------
+   Song Lyrics Reader & Cards
+   -------------------------------------------------------------------------- */
+.song-card {
+  background-color: var(--wcp-soft-white);
+  border-radius: var(--wcp-radius-md);
+  border: 1px solid var(--wcp-sage-border);
+  padding: 22px;
+  box-shadow: var(--wcp-shadow-sm);
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  transition: all 0.25s ease;
+}
+
+.song-card:hover {
+  border-color: var(--wcp-muted-gold);
+  box-shadow: var(--wcp-shadow-md);
+}
+
+.song-lyrics-container {
+  background-color: #FAFAF7;
+  border: 1px solid #EBECE8;
+  border-radius: var(--wcp-radius-sm);
+  padding: 18px 20px;
+  white-space: pre-line;
+  font-size: 1.05rem;
+  line-height: 1.85;
+  color: #2b302c;
+  overflow: hidden;
+  transition: max-height 0.3s ease;
+}
+
+.song-lyrics-container.collapsed {
+  max-height: 160px;
+  position: relative;
+}
+
+.song-lyrics-container.collapsed::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 60px;
+  background: linear-gradient(to bottom, rgba(250, 250, 247, 0) 0%, rgba(250, 250, 247, 0.95) 100%);
+  pointer-events: none;
+}
+
+.song-lyrics-container.expanded {
+  max-height: 2000px;
+}
+
+.btn-copy-lyrics {
+  color: #555555;
+  border: 1px solid #D5DBD7;
+  background: #FFFFFF;
+  padding: 4px 10px;
+  font-size: 0.82rem;
+  border-radius: var(--wcp-radius-sm);
+  transition: all 0.2s ease;
+}
+
+.btn-copy-lyrics:hover {
+  background-color: var(--wcp-light-sage);
+  color: var(--wcp-forest-green);
+  border-color: var(--wcp-muted-gold);
+}
+
+/* --------------------------------------------------------------------------
+   Footer
+   -------------------------------------------------------------------------- */
+.wcp-footer {
+  background-color: var(--wcp-forest-dark);
+  color: rgba(255, 255, 255, 0.85);
+  border-top: 4px solid var(--wcp-muted-gold);
+  padding: 55px 0 25px 0;
+  font-size: 0.95rem;
+}
+
+.footer-heading {
+  color: #FFFFFF;
+  font-family: var(--wcp-font-heading);
+  font-size: 1.25rem;
+  margin-bottom: 18px;
+}
+
+.footer-praise {
+  color: var(--wcp-gold-light);
+  font-family: var(--wcp-font-heading);
+  font-size: 1.3rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+}
