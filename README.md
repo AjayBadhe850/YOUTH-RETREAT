@@ -165,7 +165,7 @@ Render provides free hosting for static sites with global CDN distribution and S
 
 The website is integrated with [Umami Cloud](https://cloud.umami.is/) for aggregate visitor analytics (zero cookies, zero personal data tracking, GDPR-compliant).
 
-- **Umami Website ID:** `1838acf3-38ab-4e9b-bc64-3d992962f2ef`
+- **Umami Website ID:** `bcd11a4f-b857-4849-9e9f-181934b8754f`
 - **Script URL:** `https://cloud.umami.is/script.js`
 - **Tracking:** Standard aggregate page views, device types, top pages, referrers, and visitor trends.
 - **Privacy:** 100% cookie-free, no personal information collected.
