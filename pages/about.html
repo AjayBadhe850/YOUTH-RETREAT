@@ -59,6 +59,14 @@
             <a class="nav-link wcp-nav-link" href="songs.html"><i class="bi bi-music-note-beamed me-1"></i> Songs &amp; Lyrics</a>
           </li>
         </ul>
+        <div class="d-none d-lg-flex align-items-center gap-2 ms-lg-3">
+          <a href="about.html" class="btn btn-wcp-outline btn-sm active">
+            <i class="bi bi-church me-1"></i> About Church
+          </a>
+          <button type="button" class="btn btn-nav-action btn-sm" data-bs-toggle="modal" data-bs-target="#registrationModal">
+            <i class="bi bi-pencil-square me-1"></i> Register Free
+          </button>
+        </div>
       </div>
     </div>
   </nav>
@@ -205,6 +213,60 @@
   </main>
 
   <!-- ======================================================================
+       REGISTRATION MODAL
+       ====================================================================== -->
+  <div class="modal fade" id="registrationModal" tabindex="-1" aria-labelledby="registrationModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content border-2 border-gold rounded-3">
+        <div class="modal-header text-white" style="background-color: var(--wcp-forest-green);">
+          <div>
+            <h5 class="modal-title fw-bold" id="registrationModalLabel">
+              <i class="bi bi-pencil-square text-gold me-2"></i>Retreat Registration
+            </h5>
+            <span class="small opacity-75">Wesley Church Palliwada &bull; Youth Retreat</span>
+          </div>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body p-4">
+          <div class="text-center mb-3">
+            <span class="badge bg-success-subtle text-success border border-success px-3 py-2 rounded-pill fw-semibold">
+              <i class="bi bi-gift-fill me-1"></i> 100% Free Admission For All Youth
+            </span>
+          </div>
+
+          <h6 class="fw-bold text-forest mb-2">How to Participate:</h6>
+          <p class="small text-secondary mb-3">
+            Registration for the One-Day Youth Retreat is completely free! All youth from surrounding congregations, students, and young working professionals are warmly invited.
+          </p>
+
+          <div class="p-3 rounded-3 mb-3" style="background-color: var(--wcp-light-sage);">
+            <ul class="list-unstyled small mb-0 d-flex flex-column gap-2 text-dark">
+              <li><i class="bi bi-check-circle-fill text-success me-2"></i><strong>Spot Registration:</strong> Available at the entrance desk from 9:00 AM on retreat day.</li>
+              <li><i class="bi bi-check-circle-fill text-success me-2"></i><strong>Venue:</strong> Wesley Church Sanctuary, Palliwada Village, Ramannapeta Mandal (PIN 508113).</li>
+              <li><i class="bi bi-check-circle-fill text-success me-2"></i><strong>Complimentary:</strong> Retreat booklet, morning tea, fellowship lunch, and snacks provided on campus.</li>
+            </ul>
+          </div>
+
+          <div class="p-3 rounded-3 border text-center" style="background-color: var(--wcp-warm-ivory);">
+            <div class="small fw-bold text-forest mb-1"><i class="bi bi-telephone-fill me-1 text-gold"></i> Need Help or Travel Directions?</div>
+            <p class="small text-muted mb-0" data-church="helpline">
+              Please contact church organizers or youth leaders for travel guidance to Palliwada.
+            </p>
+          </div>
+        </div>
+        <div class="modal-footer justify-content-between">
+          <a href="about.html" class="btn btn-outline-secondary btn-sm rounded-pill px-3">
+            <i class="bi bi-church me-1"></i> About Church
+          </a>
+          <button type="button" class="btn btn-wcp-primary btn-sm rounded-pill px-4" data-bs-dismiss="modal">
+            <i class="bi bi-check2 me-1"></i> Praise The Lord &bull; Got It
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ======================================================================
        FOOTER
        ====================================================================== -->
   <footer class="wcp-footer">
@@ -260,3 +322,4 @@
   <script src="../assets/js/content.js"></script>
 </body>
 </html>
+

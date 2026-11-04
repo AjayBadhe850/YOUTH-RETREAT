@@ -150,3 +150,4 @@
     return words.slice(0, wordCount).join(' ') + '...';
   }
 })();
+

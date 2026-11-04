@@ -21,10 +21,10 @@
   <link rel="stylesheet" href="assets/css/style.css">
   <link rel="stylesheet" href="assets/css/responsive.css">
 </head>
-<body>
+<body id="top">
 
   <!-- ======================================================================
-       1. OPENING SCREEN (SPLASH SCREEN) — Exactly 2 Seconds
+       OPENING SCREEN (SPLASH SCREEN) — Exactly 2 Seconds
        Displays on initial visit, auto-fades out and respects session storage
        ====================================================================== -->
   <div id="opening-screen" role="dialog" aria-label="Welcome Screen">
@@ -38,9 +38,9 @@
   </div>
 
   <!-- ======================================================================
-       2. TOP BAR & NAVIGATION
+       5. AT TOP BUTTONS FOR ABOUT CHURCH , REGISTRATION BUTTON + TOP NAVBAR
        ====================================================================== -->
-  <nav class="navbar navbar-expand-lg wcp-navbar" aria-label="Main Navigation">
+  <nav class="navbar navbar-expand-lg wcp-navbar sticky-top" aria-label="Main Navigation">
     <div class="container">
       <a class="navbar-brand wcp-brand" href="index.html">
         <div class="wcp-brand-icon" aria-hidden="true">
@@ -52,38 +52,58 @@
         </div>
       </a>
 
+      <!-- Quick Action Buttons on Mobile View -->
+      <div class="d-flex d-lg-none gap-2 align-items-center ms-auto me-2">
+        <a href="pages/about.html" class="btn btn-outline-light btn-sm rounded-pill px-2 py-1" style="font-size: 0.78rem;">
+          <i class="bi bi-church"></i> About
+        </a>
+        <button type="button" class="btn btn-nav-action btn-sm px-2 py-1" data-bs-toggle="modal" data-bs-target="#registrationModal" style="font-size: 0.78rem;">
+          <i class="bi bi-pencil-square"></i> Register
+        </button>
+      </div>
+
       <button class="navbar-toggler border-0 text-white" type="button" data-bs-toggle="collapse" data-bs-target="#wcpNav" aria-controls="wcpNav" aria-expanded="false" aria-label="Toggle navigation">
         <i class="bi bi-list fs-2 text-gold"></i>
       </button>
 
       <div class="collapse navbar-collapse" id="wcpNav">
-        <ul class="navbar-nav ms-auto mb-2 mb-lg-0 align-items-lg-center gap-lg-1">
+        <ul class="navbar-nav mx-auto mb-2 mb-lg-0 align-items-lg-center gap-lg-1">
           <li class="nav-item">
-            <a class="nav-link wcp-nav-link" href="index.html"><i class="bi bi-house-door me-1"></i> Home</a>
+            <a class="nav-link wcp-nav-link" href="#top"><i class="bi bi-house-door me-1"></i> Home</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link wcp-nav-link" href="pages/about.html"><i class="bi bi-church me-1"></i> About Church</a>
+            <a class="nav-link wcp-nav-link" href="#schedule"><i class="bi bi-calendar-check me-1"></i> Schedule</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link wcp-nav-link" href="pages/retreat.html"><i class="bi bi-info-circle me-1"></i> Retreat Info</a>
+            <a class="nav-link wcp-nav-link" href="#songs"><i class="bi bi-music-note-beamed me-1"></i> Songs &amp; Lyrics</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link wcp-nav-link" href="pages/schedule.html"><i class="bi bi-calendar-check me-1"></i> Schedule</a>
+            <a class="nav-link wcp-nav-link" href="#feedback"><i class="bi bi-chat-heart me-1"></i> Feedback</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link wcp-nav-link" href="pages/songs.html"><i class="bi bi-music-note-beamed me-1"></i> Songs & Lyrics</a>
+            <a class="nav-link wcp-nav-link" href="pages/retreat.html"><i class="bi bi-info-circle me-1"></i> Guidelines</a>
           </li>
         </ul>
+
+        <!-- TOP PROMINENT BUTTONS (ABOUT CHURCH + REGISTRATION BUTTON) -->
+        <div class="d-none d-lg-flex align-items-center gap-2">
+          <a href="pages/about.html" class="btn btn-wcp-outline btn-sm">
+            <i class="bi bi-church me-1"></i> About Church
+          </a>
+          <button type="button" class="btn btn-nav-action btn-sm" data-bs-toggle="modal" data-bs-target="#registrationModal">
+            <i class="bi bi-pencil-square me-1"></i> Register Free
+          </button>
+        </div>
       </div>
     </div>
   </nav>
 
   <!-- ======================================================================
-       3. HERO SECTION
+       1. MAIN HEADING (COMPACT HERO SECTION — REDUCED VERTICAL SIZE)
        ====================================================================== -->
   <header class="hero-section text-center text-lg-start">
     <div class="container">
-      <div class="row align-items-center g-5">
+      <div class="row align-items-center g-3 g-lg-4">
         <div class="col-lg-8">
           <div class="hero-pill-badge">
             <i class="bi bi-stars"></i> One-Day Spiritual Gathering
@@ -91,50 +111,56 @@
           <h1 class="hero-title" data-retreat="title">One-Day Youth Retreat</h1>
           <p class="hero-theme" data-retreat="theme">Arise and Shine — 1 Timothy 4:12</p>
 
-          <div class="p-3 mb-4 rounded-3" style="background: rgba(255, 255, 255, 0.08); border-left: 4px solid var(--wcp-muted-gold);">
-            <p class="fst-italic mb-0 text-light" style="font-size: 1.05rem;" data-retreat="verse">
+          <div class="hero-verse-box">
+            <p class="fst-italic mb-0 text-light small" data-retreat="verse">
               "Let no one despise your youth, but be an example to the believers in word, in conduct, in love, in spirit, in faith, in purity." — 1 Timothy 4:12
             </p>
           </div>
 
-          <div class="d-flex flex-wrap gap-2 mb-4">
+          <div class="d-flex flex-wrap gap-1 mb-3">
             <span class="hero-meta-badge">
               <i class="bi bi-geo-alt-fill text-gold"></i> Palliwada, Ramannapeta (PIN 508113)
             </span>
             <span class="hero-meta-badge">
-              <i class="bi bi-calendar-event text-gold"></i> <span data-retreat="date">Date: To Be Announced</span>
+              <i class="bi bi-calendar-event text-gold"></i> <span data-retreat="date">Date: To Be Announced by Organisers</span>
             </span>
             <span class="hero-meta-badge">
               <i class="bi bi-clock-history text-gold"></i> <span data-retreat="timings">9:00 AM – 6:00 PM IST</span>
             </span>
           </div>
 
-          <div class="d-flex flex-wrap gap-3">
-            <a href="pages/schedule.html" class="btn btn-wcp-primary">
-              <i class="bi bi-calendar-range"></i> View Programme Schedule
+          <div class="d-flex flex-wrap gap-2">
+            <a href="#schedule" class="btn btn-wcp-primary btn-sm">
+              <i class="bi bi-calendar-range"></i> View Schedule
             </a>
-            <a href="pages/songs.html" class="btn btn-wcp-outline">
-              <i class="bi bi-music-note-list"></i> Worship Songs & Lyrics
+            <a href="#songs" class="btn btn-wcp-outline btn-sm">
+              <i class="bi bi-music-note-list"></i> Worship Songs
             </a>
+            <a href="#feedback" class="btn btn-wcp-outline btn-sm">
+              <i class="bi bi-chat-heart"></i> Feedback
+            </a>
+            <button type="button" class="btn btn-wcp-primary btn-sm d-lg-none" data-bs-toggle="modal" data-bs-target="#registrationModal">
+              <i class="bi bi-pencil-square"></i> Register Free
+            </button>
           </div>
         </div>
 
         <div class="col-lg-4 text-center">
-          <div class="wcp-card bg-white p-4 text-dark shadow-lg border-2 border-gold mx-auto" style="max-width: 380px;">
-            <div class="mb-3">
-              <div class="rounded-circle d-inline-flex align-items-center justify-content-center" style="width: 72px; height: 72px; background: var(--wcp-light-sage); color: var(--wcp-forest-green);">
-                <i class="bi bi-bell-fill fs-2"></i>
+          <div class="wcp-card bg-white p-3 text-dark shadow-sm border-2 border-gold mx-auto" style="max-width: 320px;">
+            <div class="mb-2">
+              <div class="rounded-circle d-inline-flex align-items-center justify-content-center" style="width: 48px; height: 48px; background: var(--wcp-light-sage); color: var(--wcp-forest-green);">
+                <i class="bi bi-bell-fill fs-4"></i>
               </div>
             </div>
-            <h5 class="fw-bold text-forest mb-1">PRAISE THE LORD</h5>
-            <p class="small text-muted mb-3" data-church="tagline">WESLEY CHURCH PALLIWADA</p>
-            <p class="small text-secondary mb-3" data-church="welcome_message">
+            <h6 class="fw-bold text-forest mb-0">PRAISE THE LORD</h6>
+            <p class="small text-muted mb-2" data-church="tagline">WESLEY CHURCH PALLIWADA</p>
+            <p class="small text-secondary mb-2" style="font-size: 0.84rem;" data-church="welcome_message">
               Come together for a meaningful day of worship, fellowship, learning and spiritual growth.
             </p>
-            <hr class="my-3 opacity-25">
-            <div class="small text-forest fw-semibold">
-              <i class="bi bi-shield-check text-success me-1"></i> Open &amp; Free to All Youth
-            </div>
+            <hr class="my-2 opacity-25">
+            <button type="button" class="btn btn-sm btn-wcp-forest w-100 py-1" data-bs-toggle="modal" data-bs-target="#registrationModal">
+              <i class="bi bi-shield-check text-warning me-1"></i> Open &amp; Free &bull; Register Info
+            </button>
           </div>
         </div>
       </div>
@@ -142,169 +168,213 @@
   </header>
 
   <!-- ======================================================================
-       4. WELCOME & RETREAT INTRODUCTION
+       2. SCHEDULE (PROGRAMME SCHEDULE TIMELINE)
        ====================================================================== -->
-  <section class="py-5 bg-white">
-    <div class="container py-lg-4">
-      <div class="text-center mb-5">
-        <span class="section-tag">Welcome to Wesley Church</span>
-        <h2 class="section-title text-forest" data-church="welcome_heading">WELCOME TO WESLEY CHURCH PALLIWADA</h2>
-        <div class="mx-auto" style="width: 80px; height: 3px; background-color: var(--wcp-muted-gold); margin-bottom: 18px;"></div>
-        <p class="section-desc" data-church="introduction">
-          Wesley Church Palliwada warmly welcomes all youth, students, and believers in the precious name of our Lord and Saviour Jesus Christ. Nestled in Palliwada village in the Yadadri Bhuvanagiri district of Telangana, our church stands as a sanctuary of prayer, spiritual renewal, and active community fellowship for young people.
-        </p>
-      </div>
-
-      <!-- Highlights Grid -->
-      <div class="row g-4 justify-content-center">
-        <div class="col-md-6 col-lg-3">
-          <div class="wcp-card h-100 text-center">
-            <div class="rounded-circle d-inline-flex align-items-center justify-content-center mb-3" style="width: 60px; height: 60px; background: var(--wcp-light-sage); color: var(--wcp-forest-green);">
-              <i class="bi bi-soundwave fs-3"></i>
-            </div>
-            <h5 class="fw-bold text-forest mb-2">Vibrant Worship</h5>
-            <p class="small text-secondary mb-0">Soulful Telugu, English, and Hindi congregational praise exalting our Lord and Savior.</p>
-          </div>
+  <section id="schedule" class="py-5" style="background-color: var(--wcp-warm-ivory);">
+    <div class="container py-lg-3">
+      <div class="d-flex flex-wrap justify-content-between align-items-end mb-4 gap-3">
+        <div>
+          <span class="section-tag mb-1">Retreat Itinerary</span>
+          <h2 class="section-title text-forest mb-0">Programme Schedule</h2>
+          <p class="text-secondary small mb-0 mt-1">Complete day-long order of services, worship sessions, preaching, and fellowship.</p>
         </div>
-        <div class="col-md-6 col-lg-3">
-          <div class="wcp-card h-100 text-center">
-            <div class="rounded-circle d-inline-flex align-items-center justify-content-center mb-3" style="width: 60px; height: 60px; background: var(--wcp-light-sage); color: var(--wcp-forest-green);">
-              <i class="bi bi-book-half fs-3"></i>
-            </div>
-            <h5 class="fw-bold text-forest mb-2">Biblical Teaching</h5>
-            <p class="small text-secondary mb-0">Practical Bible sessions guiding Christian youth through modern challenges with purity and conviction.</p>
-          </div>
-        </div>
-        <div class="col-md-6 col-lg-3">
-          <div class="wcp-card h-100 text-center">
-            <div class="rounded-circle d-inline-flex align-items-center justify-content-center mb-3" style="width: 60px; height: 60px; background: var(--wcp-light-sage); color: var(--wcp-forest-green);">
-              <i class="bi bi-people-fill fs-3"></i>
-            </div>
-            <h5 class="fw-bold text-forest mb-2">Youth Fellowship</h5>
-            <p class="small text-secondary mb-0">Fun action songs, interactive discussions, and genuine bonding with youth from surrounding villages.</p>
-          </div>
-        </div>
-        <div class="col-md-6 col-lg-3">
-          <div class="wcp-card h-100 text-center">
-            <div class="rounded-circle d-inline-flex align-items-center justify-content-center mb-3" style="width: 60px; height: 60px; background: var(--wcp-light-sage); color: var(--wcp-forest-green);">
-              <i class="bi bi-cup-hot-fill fs-3"></i>
-            </div>
-            <h5 class="fw-bold text-forest mb-2">Fellowship Meals</h5>
-            <p class="small text-secondary mb-0">Morning tea, shared lunch, and afternoon refreshments provided with love on the church grounds.</p>
-          </div>
+        <div class="d-flex gap-2">
+          <button onclick="window.print()" class="btn btn-outline-secondary btn-sm rounded-pill px-3 no-print">
+            <i class="bi bi-printer me-1"></i> Print Schedule
+          </button>
+          <a href="#songs" class="btn btn-wcp-forest btn-sm rounded-pill px-3">
+            <i class="bi bi-music-note-beamed me-1"></i> Next: Worship Songs
+          </a>
         </div>
       </div>
-    </div>
-  </section>
 
-  <!-- ======================================================================
-       5. PROGRAMME SCHEDULE PREVIEW
-       ====================================================================== -->
-  <section class="py-5" style="background-color: var(--wcp-warm-ivory);">
-    <div class="container py-lg-4">
-      <div class="text-center mb-4">
-        <span class="section-tag">Retreat Timeline</span>
-        <h2 class="section-title text-forest">Programme Schedule</h2>
-        <div class="mx-auto" style="width: 80px; height: 3px; background-color: var(--wcp-muted-gold); margin-bottom: 14px;"></div>
-        <p class="section-desc">Here is a quick overview of what to expect during this blessed day of fellowship.</p>
+      <!-- Schedule Notice Card -->
+      <div class="wcp-card bg-white p-3 mb-4 border-start border-4 border-forest">
+        <div class="d-flex align-items-center gap-3">
+          <i class="bi bi-info-circle-fill text-forest fs-4"></i>
+          <p class="small text-secondary mb-0">
+            Please arrive by <strong>9:00 AM</strong> to join the morning fellowship and prayer. All sessions include vibrant worship, biblical messages, and shared fellowship meals on campus.
+          </p>
+        </div>
       </div>
 
-      <!-- Container dynamically populated by assets/js/schedule.js -->
-      <div id="preview-schedule-container" class="mb-5">
+      <!-- Container dynamically populated with full timeline by assets/js/schedule.js -->
+      <div id="full-schedule-container" class="mb-4">
         <div class="text-center py-4">
           <div class="spinner-border text-forest" role="status">
-            <span class="visually-hidden">Loading schedule...</span>
+            <span class="visually-hidden">Loading schedule items...</span>
           </div>
+          <p class="text-secondary small mt-2">Loading programme timeline...</p>
         </div>
       </div>
 
-      <div class="text-center">
-        <a href="pages/schedule.html" class="btn btn-wcp-primary">
-          <i class="bi bi-calendar-event me-2"></i> View Full Detailed Programme Schedule
+      <div class="text-center mt-3">
+        <a href="#songs" class="btn btn-wcp-primary btn-sm rounded-pill px-4">
+          <i class="bi bi-chevron-down me-1"></i> Continue to Worship Songs &amp; Lyrics
         </a>
       </div>
     </div>
   </section>
 
   <!-- ======================================================================
-       6. FEATURED WORSHIP SONGS PREVIEW
+       3. SONGS (WORSHIP SONGS & LYRICS — TELUGU & HINDI ONLY)
        ====================================================================== -->
-  <section class="py-5 bg-white">
-    <div class="container py-lg-4">
+  <section id="songs" class="py-5 bg-white">
+    <div class="container py-lg-3">
       <div class="text-center mb-4">
         <span class="section-tag">Sing Unto The Lord</span>
-        <h2 class="section-title text-forest">Featured Worship Songs</h2>
-        <div class="mx-auto" style="width: 80px; height: 3px; background-color: var(--wcp-muted-gold); margin-bottom: 14px;"></div>
-        <p class="section-desc">Join your voices in praise! Read lyrics beforehand in Telugu, English, and Hindi.</p>
+        <h2 class="section-title text-forest mb-1">Worship Songs &amp; Lyrics</h2>
+        <div class="mx-auto" style="width: 70px; height: 3px; background-color: var(--wcp-muted-gold); margin-bottom: 12px;"></div>
+        <p class="section-desc mb-3">Sing along in spirit and in truth. Complete stanzas and choruses with 1-click lyrics copy.</p>
       </div>
 
-      <!-- Container dynamically populated by assets/js/songs.js -->
-      <div id="preview-songs-container" class="mb-5">
-        <div class="text-center py-4">
+      <!-- Search & Language Filter Controls -->
+      <div class="wcp-card bg-white p-3 mb-4 shadow-sm border-2 border-gold">
+        <div class="row g-3 align-items-center">
+          <!-- Live Search Input -->
+          <div class="col-md-6">
+            <label for="song-search-input" class="form-label small fw-bold text-forest mb-1">
+              <i class="bi bi-search me-1"></i> Search Songs &amp; Lyrics:
+            </label>
+            <div class="input-group">
+              <span class="input-group-text bg-light border-end-0 text-muted">
+                <i class="bi bi-search"></i>
+              </span>
+              <input type="text" id="song-search-input" class="form-control border-start-0 ps-0" placeholder="Type song title or lyrics in Telugu/English script..." aria-label="Search song title or lyrics">
+            </div>
+          </div>
+
+          <!-- Language Filters (Only Telugu and Hindi, No English) -->
+          <div class="col-md-6">
+            <label class="form-label small fw-bold text-forest mb-1 d-block">
+              <i class="bi bi-funnel me-1"></i> Filter By Language:
+            </label>
+            <div class="d-flex flex-wrap gap-2" role="group" aria-label="Language Filters">
+              <button type="button" class="btn btn-sm btn-wcp-primary active px-3 rounded-pill" data-lang-filter="All">
+                All Songs
+              </button>
+              <button type="button" class="btn btn-sm btn-outline-secondary px-3 rounded-pill" data-lang-filter="Telugu">
+                Telugu (తెలుగు)
+              </button>
+              <button type="button" class="btn btn-sm btn-outline-secondary px-3 rounded-pill" data-lang-filter="Hindi">
+                Hindi (हिंदी)
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Container dynamically populated with all songs by assets/js/songs.js -->
+      <div id="songs-list-container" class="row g-3 mb-4">
+        <div class="col-12 text-center py-4">
           <div class="spinner-border text-forest" role="status">
             <span class="visually-hidden">Loading songs...</span>
           </div>
+          <p class="text-secondary small mt-2">Loading worship songs and lyrics...</p>
         </div>
       </div>
 
-      <div class="text-center">
-        <a href="pages/songs.html" class="btn btn-wcp-primary">
-          <i class="bi bi-music-note-beamed me-2"></i> Browse Complete Songbook &amp; Lyrics
+      <div class="text-center mt-3">
+        <a href="#feedback" class="btn btn-wcp-forest btn-sm rounded-pill px-4">
+          <i class="bi bi-chevron-down me-1"></i> Next: Share Retreat Feedback
         </a>
       </div>
     </div>
   </section>
 
   <!-- ======================================================================
-       7. VENUE & LOCATION INFORMATION
+       4. FEED BACK (ANONYMOUS FEEDBACK & PRAYER REQUESTS)
        ====================================================================== -->
-  <section class="py-5" style="background-color: var(--wcp-light-sage);">
-    <div class="container py-lg-4">
-      <div class="row g-4 align-items-center">
-        <div class="col-lg-6">
-          <span class="section-tag">Church Location</span>
-          <h2 class="section-title text-forest mb-3">Wesley Church Palliwada</h2>
-          <p class="text-secondary mb-4" data-church="address">
-            Wesley Church, Palliwada Village, Ramannapeta Mandal, Yadadri Bhuvanagiri District, Telangana, India – 508113
-          </p>
+  <section id="feedback" class="py-5" style="background-color: var(--wcp-warm-ivory);">
+    <div class="container py-lg-3">
+      <div class="text-center mb-4">
+        <span class="section-tag">Your Thoughts &amp; Prayers</span>
+        <h2 class="section-title text-forest mb-1">Anonymous Retreat Feedback</h2>
+        <div class="mx-auto" style="width: 70px; height: 3px; background-color: var(--wcp-muted-gold); margin-bottom: 12px;"></div>
+        <p class="section-desc mb-3">
+          We welcome your anonymous thoughts, impressions, testimonies, and prayer requests. No name, email, or phone number is collected.
+        </p>
+      </div>
 
-          <div class="wcp-card bg-white mb-3">
-            <div class="d-flex align-items-start gap-3">
-              <i class="bi bi-pin-map-fill fs-3 text-forest"></i>
+      <div class="row justify-content-center">
+        <div class="col-lg-8">
+          <!-- Submission Confirmation Alert -->
+          <div id="feedback-success-message" class="alert alert-success d-none p-4 rounded-3 shadow-sm mb-4 border-2 border-success" role="alert">
+            <div class="d-flex align-items-center gap-3">
+              <div class="fs-1 text-success"><i class="bi bi-check-circle-fill"></i></div>
               <div>
-                <h6 class="fw-bold text-forest mb-1">Postal Address &amp; Region</h6>
-                <p class="small text-muted mb-0">
-                  Village: Palliwada &bull; Mandal: Ramannapeta<br>
-                  District: Yadadri Bhuvanagiri &bull; State: Telangana &bull; PIN: <strong>508113</strong>
+                <h5 class="fw-bold mb-1 text-success">PRAISE THE LORD!</h5>
+                <p class="mb-0 text-dark small">
+                  Thank you for your valuable anonymous feedback, testimony, and prayer request. May the Lord bless you abundantly and strengthen your walk in Christ!
                 </p>
               </div>
             </div>
           </div>
 
-          <div class="wcp-card bg-white">
-            <div class="d-flex align-items-start gap-3">
-              <i class="bi bi-info-circle-fill fs-3 text-forest"></i>
-              <div>
-                <h6 class="fw-bold text-forest mb-1">Attendee Guidance</h6>
-                <p class="small text-muted mb-0" data-church="helpline">
-                  Please contact church organizers or youth leaders for travel directions and arrival information.
-                </p>
+          <!-- Anonymous Feedback Form -->
+          <div class="wcp-card bg-white p-4 p-md-5 shadow-sm border-2 border-gold">
+            <form id="anonymous-feedback-form">
+              <!-- Overall Experience Star Rating -->
+              <div class="text-center mb-4">
+                <label class="form-label fw-bold text-forest d-block mb-1">
+                  Overall Retreat Experience:
+                </label>
+                <div class="star-rating my-2" aria-label="Star Rating">
+                  <input type="radio" id="star5" name="rating" value="5"><label for="star5" title="5 stars - Blessed & Inspiring"><i class="bi bi-star-fill"></i></label>
+                  <input type="radio" id="star4" name="rating" value="4"><label for="star4" title="4 stars - Very Good"><i class="bi bi-star-fill"></i></label>
+                  <input type="radio" id="star3" name="rating" value="3"><label for="star3" title="3 stars - Good"><i class="bi bi-star-fill"></i></label>
+                  <input type="radio" id="star2" name="rating" value="2"><label for="star2" title="2 stars - Fair"><i class="bi bi-star-fill"></i></label>
+                  <input type="radio" id="star1" name="rating" value="1"><label for="star1" title="1 star - Needs Improvement"><i class="bi bi-star-fill"></i></label>
+                </div>
+                <span class="small text-muted d-block">Click stars above to rate (Optional)</span>
               </div>
-            </div>
-          </div>
-        </div>
 
-        <div class="col-lg-6">
-          <div class="wcp-card bg-white p-4 p-md-5 border-2 border-gold shadow-sm text-center">
-            <i class="bi bi-geo-alt fs-1 text-forest mb-3 d-block"></i>
-            <h4 class="fw-bold text-forest mb-2">How to Reach Palliwada</h4>
-            <p class="text-secondary small mb-4">
-              Palliwada is conveniently located in Ramannapeta Mandal, Yadadri Bhuvanagiri District. Connected by road through Ramannapeta and nearby state highway connections.
-            </p>
-            <div class="p-3 rounded-3" style="background-color: var(--wcp-warm-ivory); border: 1px dashed var(--wcp-muted-gold);">
-              <span class="fw-bold text-forest d-block mb-1"><i class="bi bi-compass me-1"></i> Landmark</span>
-              <span class="small text-muted">Wesley Church Sanctuary, Palliwada Village (PIN 508113)</span>
-            </div>
+              <!-- Quick Highlights Checklist -->
+              <div class="mb-4">
+                <label class="form-label fw-bold text-forest small mb-2 d-block">
+                  What blessed you the most today? (Select all that apply)
+                </label>
+                <div class="d-flex flex-wrap gap-2">
+                  <div class="feedback-pill-chk">
+                    <input type="checkbox" id="chk-worship" name="highlights" value="Worship">
+                    <label for="chk-worship"><i class="bi bi-music-note me-1"></i> Praise &amp; Worship</label>
+                  </div>
+                  <div class="feedback-pill-chk">
+                    <input type="checkbox" id="chk-teaching" name="highlights" value="Teaching">
+                    <label for="chk-teaching"><i class="bi bi-book me-1"></i> Biblical Teaching</label>
+                  </div>
+                  <div class="feedback-pill-chk">
+                    <input type="checkbox" id="chk-fellowship" name="highlights" value="Fellowship">
+                    <label for="chk-fellowship"><i class="bi bi-people me-1"></i> Youth Fellowship &amp; Games</label>
+                  </div>
+                  <div class="feedback-pill-chk">
+                    <input type="checkbox" id="chk-food" name="highlights" value="Meals">
+                    <label for="chk-food"><i class="bi bi-cup-hot me-1"></i> Hospitality &amp; Food</label>
+                  </div>
+                  <div class="feedback-pill-chk">
+                    <input type="checkbox" id="chk-prayer" name="highlights" value="Prayer">
+                    <label for="chk-prayer"><i class="bi bi-heart me-1"></i> Prayer &amp; Benediction</label>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Anonymous Comments / Testimony / Prayer Request -->
+              <div class="mb-4">
+                <label for="feedback-comments" class="form-label fw-bold text-forest small mb-1">
+                  Your Anonymous Message, Testimony, or Prayer Request:
+                </label>
+                <textarea id="feedback-comments" class="form-control" rows="4" placeholder="Write any encouraging words, prayer requests, or suggestions for future church retreats..." required></textarea>
+                <div class="form-text small text-muted">
+                  <i class="bi bi-shield-check text-success me-1"></i> 100% Anonymous: No personal details or device trackers are collected or stored.
+                </div>
+              </div>
+
+              <div class="text-center">
+                <button type="submit" class="btn btn-wcp-primary px-5 py-2">
+                  <i class="bi bi-send-fill me-2"></i> Submit Anonymous Feedback
+                </button>
+              </div>
+            </form>
           </div>
         </div>
       </div>
@@ -312,7 +382,89 @@
   </section>
 
   <!-- ======================================================================
-       8. FOOTER
+       REGISTRATION MODAL (POPUP TRIGGERED BY TOP REGISTRATION BUTTON)
+       ====================================================================== -->
+  <div class="modal fade" id="registrationModal" tabindex="-1" aria-labelledby="registrationModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content border-2 border-gold rounded-3">
+        <div class="modal-header text-white" style="background-color: var(--wcp-forest-green);">
+          <div>
+            <h5 class="modal-title fw-bold" id="registrationModalLabel">
+              <i class="bi bi-pencil-square text-gold me-2"></i>Retreat Registration
+            </h5>
+            <span class="small opacity-75">Wesley Church Palliwada &bull; Youth Retreat</span>
+          </div>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body p-4">
+          <div class="text-center mb-3">
+            <span class="badge bg-success-subtle text-success border border-success px-3 py-2 rounded-pill fw-semibold">
+              <i class="bi bi-gift-fill me-1"></i> 100% Free Admission For All Youth
+            </span>
+          </div>
+
+          <h6 class="fw-bold text-forest mb-2">How to Participate:</h6>
+          <p class="small text-secondary mb-3">
+            Registration for the One-Day Youth Retreat is completely free! All youth from surrounding congregations, students, and young working professionals are warmly invited.
+          </p>
+
+          <div class="p-3 rounded-3 mb-3" style="background-color: var(--wcp-light-sage);">
+            <ul class="list-unstyled small mb-0 d-flex flex-column gap-2 text-dark">
+              <li><i class="bi bi-check-circle-fill text-success me-2"></i><strong>Spot Registration:</strong> Available at the entrance desk from 9:00 AM on the day of the retreat.</li>
+              <li><i class="bi bi-check-circle-fill text-success me-2"></i><strong>Venue:</strong> Wesley Church Sanctuary, Palliwada Village, Ramannapeta Mandal (PIN 508113).</li>
+              <li><i class="bi bi-check-circle-fill text-success me-2"></i><strong>Complimentary:</strong> Retreat booklet, morning tea, fellowship lunch, and snacks provided on campus.</li>
+            </ul>
+          </div>
+
+          <div class="p-3 rounded-3 border text-center" style="background-color: var(--wcp-warm-ivory);">
+            <div class="small fw-bold text-forest mb-1"><i class="bi bi-telephone-fill me-1 text-gold"></i> Need Help or Travel Directions?</div>
+            <p class="small text-muted mb-0" data-church="helpline">
+              Please contact church organizers or youth leaders for travel guidance to Palliwada.
+            </p>
+          </div>
+        </div>
+        <div class="modal-footer justify-content-between">
+          <a href="pages/about.html" class="btn btn-outline-secondary btn-sm rounded-pill px-3">
+            <i class="bi bi-church me-1"></i> About Church
+          </a>
+          <button type="button" class="btn btn-wcp-primary btn-sm rounded-pill px-4" data-bs-dismiss="modal">
+            <i class="bi bi-check2 me-1"></i> Praise The Lord &bull; Got It
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ======================================================================
+       CHURCH LOCATION & ADDRESS SECTION
+       ====================================================================== -->
+  <section class="py-4" style="background-color: var(--wcp-light-sage);">
+    <div class="container">
+      <div class="row align-items-center g-3">
+        <div class="col-md-8">
+          <div class="d-flex align-items-center gap-3">
+            <div class="rounded-circle d-inline-flex align-items-center justify-content-center bg-white text-forest shadow-sm flex-shrink-0" style="width: 46px; height: 46px;">
+              <i class="bi bi-geo-alt-fill fs-4"></i>
+            </div>
+            <div>
+              <h6 class="fw-bold text-forest mb-0">Wesley Church Palliwada</h6>
+              <p class="small text-secondary mb-0" data-church="address">
+                Wesley Church, Palliwada Village, Ramannapeta Mandal, Yadadri Bhuvanagiri District, Telangana, India – 508113
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4 text-md-end">
+          <a href="pages/about.html" class="btn btn-wcp-forest btn-sm rounded-pill px-3">
+            <i class="bi bi-compass me-1"></i> Directions &amp; Details
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================================================================
+       FOOTER
        ====================================================================== -->
   <footer class="wcp-footer">
     <div class="container">
@@ -331,11 +483,12 @@
         <div class="col-sm-6 col-lg-3">
           <h6 class="fw-bold text-gold text-uppercase mb-3" style="letter-spacing: 1px;">Quick Links</h6>
           <ul class="list-unstyled small mb-0 d-flex flex-column gap-2">
-            <li><a href="index.html" class="text-light opacity-75 hover-gold"><i class="bi bi-chevron-right me-1"></i> Home</a></li>
+            <li><a href="#top" class="text-light opacity-75 hover-gold"><i class="bi bi-chevron-right me-1"></i> Home</a></li>
+            <li><a href="#schedule" class="text-light opacity-75 hover-gold"><i class="bi bi-chevron-right me-1"></i> Programme Schedule</a></li>
+            <li><a href="#songs" class="text-light opacity-75 hover-gold"><i class="bi bi-chevron-right me-1"></i> Worship Songs &amp; Lyrics</a></li>
+            <li><a href="#feedback" class="text-light opacity-75 hover-gold"><i class="bi bi-chevron-right me-1"></i> Anonymous Feedback</a></li>
             <li><a href="pages/about.html" class="text-light opacity-75 hover-gold"><i class="bi bi-chevron-right me-1"></i> About Church</a></li>
-            <li><a href="pages/retreat.html" class="text-light opacity-75 hover-gold"><i class="bi bi-chevron-right me-1"></i> Retreat Information</a></li>
-            <li><a href="pages/schedule.html" class="text-light opacity-75 hover-gold"><i class="bi bi-chevron-right me-1"></i> Programme Schedule</a></li>
-            <li><a href="pages/songs.html" class="text-light opacity-75 hover-gold"><i class="bi bi-chevron-right me-1"></i> Worship Songs &amp; Lyrics</a></li>
+            <li><a href="pages/retreat.html" class="text-light opacity-75 hover-gold"><i class="bi bi-chevron-right me-1"></i> Retreat Guidelines</a></li>
           </ul>
         </div>
 

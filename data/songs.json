@@ -15,34 +15,34 @@
     "category": "Praise",
     "display_order": 2,
     "is_published": true,
-    "lyrics": "పల్లవి:\nమహోన్నతుడా నీ కృపలోనే - నేను నివసించెదను\nసర్వశక్తుడా నీ నీడలోనే - ఆశ్రయము పొందెదను || మహోన్నతుడా ||\n\nచరణం 1:\nవేలకొలది స్తుతులు నీకే - వేకువనే చెల్లించెదను\nనా ప్రాణమున్నంత వరకు - నీ నామము కొనియాడెదను || మహోన్నతుడా ||\n\nచరణం 2:\nనా బలహీన సమయములలో - నీ శక్తియే నను మోసెను\nకృప వెంబడి కృపనిచ్చి - నను నడిపిన దేవుడవు || మహోన్నతుడా ||"
+    "lyrics": "పల్లవి:\nమహోన్నతుడా నీ కృపలోనే - నేను నివసించెదను\nసర్వశక్తుడా నీ నీడలోనే - ఆశ్రయము పొందెదను || మహోన్నతుడా ||\n\nచరణం 1:\nవేలకొలది స్తుతులు నీకే - వేకువనే చెల్లించెదను\nనా ప్రాణమున్నంత వరకు - నీ నామము కొనియాడెదను || మహోన్నతుడా ||\n\nచరణం 2:\nనా బలహీన సమయములలో - నీ शक्तिయే నను మోసెను\nకృప వెంబడి కృపనిచ్చి - నను నడిపిన దేవుడవు || మహోన్నతుడా ||"
   },
   {
     "id": 3,
-    "title": "Amazing Grace (How Sweet the Sound)",
-    "language": "English",
-    "category": "Worship",
-    "display_order": 3,
-    "is_published": true,
-    "lyrics": "Verse 1:\nAmazing grace! How sweet the sound\nThat saved a wretch like me!\nI once was lost, but now am found;\nWas blind, but now I see.\n\nVerse 2:\n'Twas grace that taught my heart to fear,\nAnd grace my fears relieved;\nHow precious did that grace appear\nThe hour I first believed!\n\nVerse 3:\nThrough many dangers, toils and snares,\nI have already come;\n'Tis grace hath brought me safe thus far,\nAnd grace will lead me home.\n\nVerse 4:\nWhen we've been there ten thousand years,\nBright shining as the sun,\nWe've no less days to sing God's praise\nThan when we'd first begun."
-  },
-  {
-    "id": 4,
-    "title": "What a Friend We Have in Jesus",
-    "language": "English",
-    "category": "Worship",
-    "display_order": 4,
-    "is_published": true,
-    "lyrics": "Verse 1:\nWhat a Friend we have in Jesus,\nAll our sins and griefs to bear!\nWhat a privilege to carry\nEverything to God in prayer!\nO what peace we often forfeit,\nO what needless pain we bear,\nAll because we do not carry\nEverything to God in prayer!\n\nVerse 2:\nHave we trials and temptations?\nIs there trouble anywhere?\nWe should never be discouraged,\nTake it to the Lord in prayer.\nCan we find a friend so faithful\nWho will all our sorrows share?\nJesus knows our every weakness,\nTake it to the Lord in prayer."
-  },
-  {
-    "id": 5,
     "title": "Ninne Ninne Kori Vachiti",
     "language": "Telugu",
     "category": "Action",
-    "display_order": 5,
+    "display_order": 3,
     "is_published": true,
     "lyrics": "పల్లవి:\nనిన్నే నిన్నే కోరి వచ్చితి - యేసయ్యా నీ పాదములే పట్టితి\nనా హృదయమంతా నీకే ఇచ్చితి - నను వాడుకొనుము దేవా || నిన్నే ||\n\nచరణం:\nయౌవన కాలములో నిన్ను స్మరించుచు\nనీ సేవలో నేను సాగిపోదును\nజ్యోతివలె వెలిగి లోకానికి చాటుదును\nయేసుడే రక్షకుడని ప్రకటింతును || నిన్నే ||"
+  },
+  {
+    "id": 4,
+    "title": "Yehova Naa Kaapari",
+    "language": "Telugu",
+    "category": "Worship",
+    "display_order": 4,
+    "is_published": true,
+    "lyrics": "పల్లవి:\nయెహోవా నా కాపరి - నాకు లేమి కలుగదు\nపచ్చిక గల చోట్ల నను పరుండజేయుచున్నాడు || యెహోవా ||\n\nచరణం 1:\nశాంతికరమైన జలముల యొద్దకు నను నడిపించును\nనా ప్రాణమునకు ఆయన సేదదీర్చుచున్నాడు\nతన నామమును బట్టి నీతి మార్గములలో\nనను నడిపించుచున్నాడు దేవుడు || యెహోవా ||\n\nచరణం 2:\nగాఢాంధకారపు లోయలో నేను నడచినను\nఏ అపాయమునకు భయపడను\nనీవు నాకు తోడై యుందువు ప్రభువా\nనీ దుడ్డుకఱ్ఱయు నీ దండమును నన్ను ఆదరించును || యెహోవా ||"
+  },
+  {
+    "id": 5,
+    "title": "Krupamaya Prema Maya",
+    "language": "Telugu",
+    "category": "Worship",
+    "display_order": 5,
+    "is_published": true,
+    "lyrics": "పల్లవి:\nకృపామయా ప్రేమమయా - నా ప్రాణప్రియుడా యేసయ్యా\nఎన్నటికీ వీడని నీ ప్రేమ - ఎన్నటికీ మరువని నీ కృప || కృపామయా ||\n\nచరణం 1:\nశోధనల యందు నా తోడై నిలచి\nబాధల యందు నా కన్నీరు తుడిచి\nఆదరించినావు నన్ను చేరదీసినావు\nనీకే నా ఆరాధన || కృపామయా ||\n\nచరణం 2:\nజీవితాంతము నీ సన్నిధిలో\nస్తుతి గానములు నే పాడెదను\nహల్లెలూయా యేసు రాజా హల్లెలూయా దేవా\nనిత్యం కొనియాడెదను || కృపామయా ||"
   },
   {
     "id": 6,
@@ -51,6 +51,6 @@
     "category": "Praise",
     "display_order": 6,
     "is_published": true,
-    "lyrics": "मुखड़ा:\nयीशु तेरा नाम सबसे ऊँचा है\nआसमाँ और ज़मीं में सबसे प्यारा है || यीशु ||\n\nअंतरा 1:\nतू ही हमारा मुक्तिदाता, तू ही हमारा शान्तिदाता\nतेरे चरणों में हम झुकते हैं, दिल से तुझे सराहते हैं || यीशु ||\n\nअंतरा 2:\nतेरी महिमा गाते रहें, तेरे नाम को हम फैलाते रहें\nहर एक दिन हर एक पल, तेरी स्तुति हम गाते रहें || यीशु ||"
+    "lyrics": "मुखड़ा:\nयीशु तेरा नाम सबसे ऊँचा है\nआसमाँ और ज़मीं में सबसे प्यारा है || यीशु ||\n\nअंतरा 1:\nतू ही हमारा मुक्तिदाता, तू ही हमारा शान्తిदाता\nतेरे चरणों में हम झुकते हैं, दिल से तुझे सराहते हैं || यीशु ||\n\nअंतरा 2:\nतेरी महिमा गाते रहें, तेरे नाम को हम फैलाते रहें\nहर एक दिन हर एक पल, तेरी स्तुति हम गाते रहें || यीशु ||"
   }
 ]

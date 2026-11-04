@@ -61,5 +61,22 @@
         link.classList.add('active');
       }
     });
+
+    // 4. Anonymous Feedback Form Handler
+    var feedbackForm = document.getElementById('anonymous-feedback-form');
+    if (feedbackForm) {
+      feedbackForm.addEventListener('submit', function (e) {
+        e.preventDefault();
+        var successAlert = document.getElementById('feedback-success-message');
+        if (successAlert) {
+          successAlert.classList.remove('d-none');
+          successAlert.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        }
+        feedbackForm.reset();
+        var starInputs = feedbackForm.querySelectorAll('input[name="rating"]');
+        starInputs.forEach(function (radio) { radio.checked = false; });
+      });
+    }
   });
 })();
+

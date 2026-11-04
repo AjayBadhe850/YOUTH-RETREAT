@@ -255,3 +255,4 @@
     return lines.slice(0, count).join('\n') + '...';
   }
 })();
+
