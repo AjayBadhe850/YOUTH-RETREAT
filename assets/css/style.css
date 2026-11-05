@@ -1,31 +1,82 @@
 /* ==========================================================================
    WESLEY CHURCH PALLIWADA — YOUTH RETREAT STATIC WEBSITE
    Identity: Praise The Lord
-   Color System — Elegant White & Gold Format:
-   - Primary Background: #FFFFFF (Crisp White)
-   - Secondary Neutral: #F8F9FA (Soft Off-White)
-   - Brand Dark / Headings: #1A1A1A (Rich Charcoal)
-   - Accent Gold: #B8860B (Royal Gold)
-   - Light Gold: #996515 (Readable Gold on White)
-   - Border Neutral: #E5E7EB (Clean Subtle Border)
-   - Text Muted: #64748B (Readable Slate Gray)
+   Theme: Master White & Premium Gold Redesign
+   
+   Colour Palette:
+   - Primary Background:   #FFFFFF
+   - Secondary Background: #FAFAFA
+   - Primary Gold:         #C5A253
+   - Dark Gold:            #A88332
+   - Primary Text:         #222222
+   - Secondary Text:       #555555
+   - Borders:              #E8E2D5
    ========================================================================== */
 
+/* --------------------------------------------------------------------------
+   Local & Custom Font Loading
+   -------------------------------------------------------------------------- */
+@font-face {
+  font-family: 'CS Aither Stitched';
+  src: local('CS Aither Stitched'),
+       local('CSAitherStitched'),
+       local('CS Aither'),
+       local('CSAither'),
+       url('../fonts/CS-Aither-Stitched.otf') format('opentype'),
+       url('../fonts/CS-Aither-Stitched.ttf') format('truetype'),
+       url('../fonts/CS-Aither.otf') format('opentype'),
+       url('../fonts/CS-Aither.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Trajan Pro';
+  src: local('Trajan Pro Bold'),
+       local('TrajanPro-Bold'),
+       local('Trajan Pro'),
+       local('TrajanPro-Regular');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
 :root {
-  --wcp-forest-green: #1A1A1A;
+  /* Master Colour Tokens */
+  --wcp-bg-primary: #FFFFFF;
+  --wcp-bg-secondary: #FAFAFA;
+  --wcp-primary-gold: #C5A253;
+  --wcp-dark-gold: #A88332;
+  --wcp-light-gold: #DFCA97;
+  --wcp-gold-gradient: linear-gradient(135deg, #8B6508 0%, #C5A253 45%, #E6C875 60%, #C5A253 75%, #A88332 100%);
+  --wcp-text-primary: #222222;
+  --wcp-text-secondary: #555555;
+  --wcp-border: #E8E2D5;
+  --wcp-border-light: #F4EFE6;
+
+  /* Legacy mappings */
+  --wcp-forest-green: #222222;
   --wcp-forest-dark: #FFFFFF;
-  --wcp-forest-light: #2D3748;
-  --wcp-muted-gold: #B8860B;
-  --wcp-gold-light: #996515;
-  --wcp-gold-hover: #7E520D;
+  --wcp-forest-light: #333333;
+  --wcp-muted-gold: #C5A253;
+  --wcp-gold-light: #A88332;
+  --wcp-gold-hover: #8B6508;
   --wcp-warm-ivory: #FFFFFF;
   --wcp-soft-white: #FFFFFF;
-  --wcp-light-sage: #F8F9FA;
-  --wcp-sage-border: #E5E7EB;
-  --wcp-dark-charcoal: #1A1A1A;
-  --wcp-text-muted: #64748B;
-  --wcp-font-heading: 'Cinzel', 'Playfair Display', Georgia, serif;
+  --wcp-light-sage: #FAFAFA;
+  --wcp-sage-border: #E8E2D5;
+  --wcp-dark-charcoal: #222222;
+  --wcp-text-muted: #555555;
+
+  /* Typography Stacks */
+  --wcp-font-cinzel: 'Cinzel', 'Trajan Pro', Georgia, serif;
+  --wcp-font-trajan: 'Trajan Pro', 'Cinzel', Georgia, serif;
+  --wcp-font-heading: 'Cinzel', 'Trajan Pro', Georgia, serif;
   --wcp-font-body: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --wcp-font-aither: 'CS Aither Stitched', 'CS Aither', 'Cinzel', 'Trajan Pro', serif;
+
+  /* Elevation & Radii */
   --wcp-radius-sm: 8px;
   --wcp-radius-md: 14px;
   --wcp-radius-lg: 20px;
@@ -35,7 +86,9 @@
   --wcp-shadow-lg: 0 12px 32px rgba(0, 0, 0, 0.10);
 }
 
-/* Base Styles */
+/* --------------------------------------------------------------------------
+   Base Styles
+   -------------------------------------------------------------------------- */
 *, *::before, *::after {
   box-sizing: border-box;
 }
@@ -43,72 +96,144 @@
 html, body {
   margin: 0;
   padding: 0;
+  background-color: var(--wcp-bg-primary);
+  color: var(--wcp-text-primary);
   font-family: var(--wcp-font-body);
-  background-color: #FFFFFF;
-  color: #1A1A1A;
   font-size: 16px;
   line-height: 1.65;
   overflow-x: hidden;
   -webkit-font-smoothing: antialiased;
 }
 
-h1, h2, h3, h4, .church-heading {
-  font-family: var(--wcp-font-heading);
-  color: #1A1A1A;
-  font-weight: 700;
-  letter-spacing: 0.5px;
-}
-
 a {
-  color: #1A1A1A;
+  color: var(--wcp-text-primary);
   text-decoration: none;
   transition: all 0.25s ease;
 }
 
 a:hover {
-  color: var(--wcp-muted-gold);
+  color: var(--wcp-primary-gold);
 }
 
-/* White Theme Utility Classes */
+/* --------------------------------------------------------------------------
+   Typography Scope: Beginning of Website to Immediately Before Feedback
+   Applies Cinzel Bold (primary) and Trajan Pro (secondary)
+   -------------------------------------------------------------------------- */
+#opening-screen,
+.wcp-navbar,
+.hero-section,
+#schedule,
+#songs,
+.wcp-page-header {
+  font-family: var(--wcp-font-cinzel);
+}
+
+#opening-screen p,
+.hero-section p,
+#schedule p,
+#songs p {
+  font-family: var(--wcp-font-trajan);
+  font-weight: 500;
+}
+
+/* Headings in the specified range */
+.wcp-brand-title,
+.section-title,
+.hero-theme,
+.timeline-item h4,
+.song-card h4,
+.song-card h5,
+.church-heading {
+  font-family: var(--wcp-font-cinzel);
+  font-weight: 700;
+  color: var(--wcp-text-primary);
+  letter-spacing: 0.5px;
+}
+
+/* Supporting text & badges in the specified range */
+.section-tag,
+.hero-pill-badge,
+.hero-meta-badge,
+.timeline-time,
+.nav-link.wcp-nav-link,
+.btn-nav-action,
+.btn-wcp-primary,
+.btn-wcp-outline,
+.btn-wcp-forest,
+.wcp-countdown-lbl,
+.wcp-brand-sub {
+  font-family: var(--wcp-font-trajan);
+}
+
+/* --------------------------------------------------------------------------
+   Main Heading Typography: "One Day Youth Retreat 2026"
+   Font: CS Aither Stitched (with Cinzel Bold & Trajan Pro fallback)
+   Colour: Premium Golden
+   -------------------------------------------------------------------------- */
+.hero-title,
+[data-retreat="title"] {
+  font-family: var(--wcp-font-aither) !important;
+  font-size: clamp(2rem, 4.4vw, 3.2rem);
+  font-weight: 800;
+  line-height: 1.18;
+  color: var(--wcp-primary-gold);
+  letter-spacing: 0.8px;
+  margin-bottom: 8px;
+  display: inline-block;
+}
+
+@supports (-webkit-background-clip: text) {
+  .hero-title,
+  [data-retreat="title"] {
+    background: var(--wcp-gold-gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: 0 2px 14px rgba(197, 162, 83, 0.2);
+  }
+}
+
+/* --------------------------------------------------------------------------
+   Utility Classes & Status Indicators
+   -------------------------------------------------------------------------- */
 .text-forest {
-  color: #1A1A1A !important;
+  color: var(--wcp-text-primary) !important;
 }
 
 .border-forest {
-  border-color: var(--wcp-muted-gold) !important;
+  border-color: var(--wcp-primary-gold) !important;
 }
 
 .bg-forest {
-  background-color: #1A1A1A !important;
+  background-color: var(--wcp-text-primary) !important;
   color: #FFFFFF !important;
 }
 
 .text-gold {
-  color: var(--wcp-muted-gold) !important;
+  color: var(--wcp-primary-gold) !important;
 }
 
 .border-gold {
-  border-color: var(--wcp-muted-gold) !important;
+  border-color: var(--wcp-border) !important;
 }
 
 .bg-gold-subtle {
-  background-color: rgba(184, 134, 11, 0.08) !important;
+  background-color: rgba(197, 162, 83, 0.1) !important;
 }
 
 .hover-gold:hover {
-  color: var(--wcp-muted-gold) !important;
+  color: var(--wcp-primary-gold) !important;
 }
 
 /* --------------------------------------------------------------------------
-   Opening Screen (Splash Screen) — Exactly 2 Seconds (White Format)
+   Opening Screen (Splash Screen) — Exactly 2 Seconds
    -------------------------------------------------------------------------- */
 #opening-screen {
   position: fixed;
   inset: 0;
   width: 100vw;
   height: 100vh;
-  background-color: #FFFFFF;
-  background-image: radial-gradient(circle at 50% 40%, rgba(184, 134, 11, 0.12) 0%, #FFFFFF 75%);
+  background-color: var(--wcp-bg-primary);
+  background-image: radial-gradient(circle at 50% 40%, rgba(197, 162, 83, 0.14) 0%, #FFFFFF 75%);
   z-index: 999999;
   display: flex;
   flex-direction: column;
@@ -130,31 +255,31 @@ a:hover {
   width: 64px;
   height: 64px;
   margin-bottom: 24px;
-  color: var(--wcp-muted-gold);
-  filter: drop-shadow(0 4px 14px rgba(184, 134, 11, 0.35));
+  color: var(--wcp-primary-gold);
+  filter: drop-shadow(0 4px 14px rgba(197, 162, 83, 0.35));
   animation: splashPulse 1.8s ease-in-out infinite;
 }
 
 .opening-praise-text {
-  font-family: var(--wcp-font-heading);
+  font-family: var(--wcp-font-cinzel);
   font-size: clamp(2rem, 5.5vw, 3.4rem);
   font-weight: 800;
   letter-spacing: 4px;
-  color: #1A1A1A;
+  color: var(--wcp-text-primary);
   text-transform: uppercase;
   margin: 0 0 14px 0;
   text-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
 }
 
 .opening-church-text {
-  font-family: var(--wcp-font-body);
+  font-family: var(--wcp-font-trajan);
   font-size: clamp(0.95rem, 2.5vw, 1.35rem);
   font-weight: 600;
   letter-spacing: 3px;
-  color: var(--wcp-muted-gold);
+  color: var(--wcp-primary-gold);
   text-transform: uppercase;
   margin: 0;
-  border-top: 1px solid rgba(184, 134, 11, 0.35);
+  border-top: 1px solid var(--wcp-border);
   padding-top: 14px;
 }
 
@@ -173,13 +298,13 @@ a:hover {
 }
 
 /* --------------------------------------------------------------------------
-   Navigation Bar (White Format)
+   Navigation Bar
    -------------------------------------------------------------------------- */
 .wcp-navbar {
-  background-color: #FFFFFF !important;
-  border-bottom: 2px solid var(--wcp-muted-gold);
+  background-color: var(--wcp-bg-primary) !important;
+  border-bottom: 2px solid var(--wcp-primary-gold);
   padding: 12px 0;
-  box-shadow: 0 2px 14px rgba(0, 0, 0, 0.06);
+  box-shadow: 0 2px 14px rgba(0, 0, 0, 0.04);
   position: sticky;
   top: 0;
   z-index: 1000;
@@ -189,80 +314,83 @@ a:hover {
   display: flex;
   align-items: center;
   gap: 12px;
-  color: #1A1A1A !important;
+  color: var(--wcp-text-primary) !important;
   text-decoration: none;
 }
 
 .wcp-brand-icon {
   width: 42px;
   height: 42px;
-  background: rgba(184, 134, 11, 0.1);
-  border: 1.5px solid var(--wcp-muted-gold);
+  background: rgba(197, 162, 83, 0.1);
+  border: 1.5px solid var(--wcp-primary-gold);
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
-  color: var(--wcp-muted-gold);
+  color: var(--wcp-primary-gold);
   font-size: 1.25rem;
 }
 
 .wcp-brand-title {
-  font-family: var(--wcp-font-heading);
+  font-family: var(--wcp-font-cinzel);
   font-weight: 700;
-  font-size: 1.15rem;
+  font-size: 1.12rem;
   letter-spacing: 0.5px;
   line-height: 1.2;
-  color: #1A1A1A;
+  color: var(--wcp-text-primary);
 }
 
 .wcp-brand-sub {
-  font-size: 0.75rem;
-  color: var(--wcp-muted-gold);
+  font-family: var(--wcp-font-trajan);
+  font-size: 0.72rem;
+  color: var(--wcp-dark-gold);
   letter-spacing: 1px;
   text-transform: uppercase;
   display: block;
 }
 
 .nav-link.wcp-nav-link {
-  color: #2D3748 !important;
+  font-family: var(--wcp-font-trajan);
+  color: var(--wcp-text-secondary) !important;
   font-weight: 600;
-  font-size: 0.95rem;
+  font-size: 0.92rem;
   padding: 8px 14px !important;
   border-radius: var(--wcp-radius-sm);
   transition: all 0.2s ease;
 }
 
 .nav-link.wcp-nav-link:hover, .nav-link.wcp-nav-link.active {
-  color: var(--wcp-muted-gold) !important;
-  background-color: rgba(184, 134, 11, 0.08);
+  color: var(--wcp-dark-gold) !important;
+  background-color: rgba(197, 162, 83, 0.08);
 }
 
 .btn-nav-action {
-  background-color: var(--wcp-muted-gold);
+  background-color: var(--wcp-primary-gold);
   color: #FFFFFF !important;
-  font-weight: 600;
+  font-family: var(--wcp-font-cinzel);
+  font-weight: 700;
   padding: 8px 20px !important;
   border-radius: var(--wcp-radius-pill);
-  box-shadow: 0 4px 10px rgba(184, 134, 11, 0.25);
-  border: 1px solid var(--wcp-muted-gold);
+  box-shadow: 0 4px 10px rgba(197, 162, 83, 0.25);
+  border: 1px solid var(--wcp-primary-gold);
 }
 
 .btn-nav-action:hover {
-  background-color: var(--wcp-gold-hover);
+  background-color: var(--wcp-dark-gold);
   color: #FFFFFF !important;
   transform: translateY(-1px);
 }
 
 /* --------------------------------------------------------------------------
-   Hero Section (White Format)
+   Hero Section
    -------------------------------------------------------------------------- */
 .hero-section {
   background: linear-gradient(180deg, #FFFFFF 0%, #FAFAFA 50%, #F5F7FA 100%);
-  color: #1A1A1A;
+  color: var(--wcp-text-primary);
   position: relative;
   overflow: hidden;
-  padding: 30px 0 34px 0;
-  border-bottom: 2px solid var(--wcp-muted-gold);
+  padding: 32px 0 36px 0;
+  border-bottom: 2px solid var(--wcp-border);
 }
 
 .hero-pill-badge {
@@ -270,47 +398,44 @@ a:hover {
   align-items: center;
   gap: 6px;
   background-color: #FFFFFF;
-  border: 1px solid var(--wcp-muted-gold);
-  color: var(--wcp-muted-gold);
-  padding: 4px 12px;
+  border: 1px solid var(--wcp-primary-gold);
+  color: var(--wcp-dark-gold);
+  padding: 4px 14px;
   border-radius: var(--wcp-radius-pill);
   font-size: 0.78rem;
   font-weight: 700;
-  letter-spacing: 1.2px;
+  letter-spacing: 1px;
   text-transform: uppercase;
-  margin-bottom: 10px;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.04);
-}
-
-.hero-title {
-  font-family: var(--wcp-font-heading);
-  font-size: clamp(1.6rem, 3.4vw, 2.5rem);
-  font-weight: 800;
-  line-height: 1.2;
-  color: #1A1A1A;
-  margin-bottom: 6px;
+  margin-bottom: 12px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.03);
 }
 
 .hero-theme {
-  font-size: clamp(0.95rem, 1.8vw, 1.2rem);
-  color: var(--wcp-muted-gold);
-  font-weight: 600;
-  margin-bottom: 12px;
+  font-family: var(--wcp-font-cinzel);
+  font-size: clamp(0.95rem, 1.8vw, 1.25rem);
+  color: var(--wcp-dark-gold);
+  font-weight: 700;
+  margin-bottom: 14px;
+  letter-spacing: 0.5px;
 }
 
 .hero-verse-box {
   background: #FFFFFF;
-  border: 1px solid #E5E7EB;
-  border-left: 3px solid var(--wcp-muted-gold);
+  border: 1px solid var(--wcp-border);
+  border-left: 3px solid var(--wcp-primary-gold);
   padding: 10px 16px;
   border-radius: 6px;
-  margin-bottom: 14px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+  margin-bottom: 16px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03);
 }
 
 .hero-verse-box p,
-.hero-verse-box .text-light {
-  color: #374151 !important;
+.hero-verse-box .text-light,
+.hero-verse-box .text-dark {
+  font-family: var(--wcp-font-trajan);
+  color: var(--wcp-text-secondary) !important;
+  font-size: 0.95rem;
+  line-height: 1.6;
 }
 
 .hero-meta-badge {
@@ -318,52 +443,58 @@ a:hover {
   align-items: center;
   gap: 6px;
   background: #FFFFFF;
-  color: #374151;
+  color: var(--wcp-text-primary);
   padding: 5px 12px;
   border-radius: var(--wcp-radius-sm);
   font-size: 0.82rem;
-  font-weight: 500;
+  font-weight: 600;
   margin-right: 6px;
   margin-bottom: 8px;
-  border: 1px solid #E5E7EB;
-  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.04);
+  border: 1px solid var(--wcp-border);
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.03);
 }
 
 /* --------------------------------------------------------------------------
    Page Header Banner (Subpages: About, Guidelines, Schedule, Songs)
    -------------------------------------------------------------------------- */
 .wcp-page-header {
-  background: linear-gradient(180deg, #FFFFFF 0%, #F8F9FA 100%) !important;
-  color: #1A1A1A !important;
-  border-bottom: 2px solid var(--wcp-muted-gold) !important;
+  background: linear-gradient(180deg, #FFFFFF 0%, #FAFAFA 100%) !important;
+  color: var(--wcp-text-primary) !important;
+  border-bottom: 2px solid var(--wcp-border) !important;
 }
 
 .wcp-page-header h1,
 .wcp-page-header .font-heading {
-  color: #1A1A1A !important;
+  font-family: var(--wcp-font-cinzel) !important;
+  color: var(--wcp-text-primary) !important;
+  font-weight: 700;
 }
 
 .wcp-page-header .lead {
-  color: var(--wcp-muted-gold) !important;
+  font-family: var(--wcp-font-trajan) !important;
+  color: var(--wcp-dark-gold) !important;
+  font-weight: 600;
 }
 
 .wcp-page-header .badge {
   background-color: #FFFFFF !important;
-  color: var(--wcp-muted-gold) !important;
-  border: 1px solid var(--wcp-muted-gold) !important;
+  color: var(--wcp-dark-gold) !important;
+  border: 1px solid var(--wcp-primary-gold) !important;
+  font-family: var(--wcp-font-trajan);
 }
 
 /* --------------------------------------------------------------------------
-   Buttons (White Format)
+   Buttons
    -------------------------------------------------------------------------- */
 .btn-wcp-primary {
-  background-color: var(--wcp-muted-gold);
+  background-color: var(--wcp-primary-gold);
   color: #FFFFFF !important;
+  font-family: var(--wcp-font-cinzel);
   font-weight: 700;
   padding: 12px 28px;
   border-radius: var(--wcp-radius-pill);
   border: none;
-  box-shadow: 0 4px 14px rgba(184, 134, 11, 0.25);
+  box-shadow: 0 4px 14px rgba(197, 162, 83, 0.25);
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -372,38 +503,40 @@ a:hover {
 }
 
 .btn-wcp-primary:hover {
-  background-color: var(--wcp-gold-hover);
+  background-color: var(--wcp-dark-gold);
   color: #FFFFFF !important;
   transform: translateY(-2px);
-  box-shadow: 0 6px 18px rgba(184, 134, 11, 0.35);
+  box-shadow: 0 6px 18px rgba(168, 131, 50, 0.35);
 }
 
 .btn-wcp-outline {
   background-color: #FFFFFF;
-  color: #1A1A1A !important;
-  border: 1.5px solid #D1D5DB;
-  font-weight: 600;
+  color: var(--wcp-text-primary) !important;
+  font-family: var(--wcp-font-cinzel);
+  border: 1.5px solid var(--wcp-border);
+  font-weight: 700;
   padding: 11px 24px;
   border-radius: var(--wcp-radius-pill);
   display: inline-flex;
   align-items: center;
   justify-content: center;
   gap: 8px;
-  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.04);
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.03);
   transition: all 0.25s ease;
 }
 
 .btn-wcp-outline:hover {
-  background-color: #1A1A1A;
+  background-color: var(--wcp-text-primary);
   color: #FFFFFF !important;
-  border-color: #1A1A1A;
+  border-color: var(--wcp-text-primary);
   transform: translateY(-2px);
 }
 
 .btn-wcp-forest {
-  background-color: #1A1A1A;
+  background-color: var(--wcp-text-primary);
   color: #FFFFFF !important;
-  font-weight: 600;
+  font-family: var(--wcp-font-cinzel);
+  font-weight: 700;
   padding: 10px 22px;
   border-radius: var(--wcp-radius-pill);
   border: none;
@@ -411,12 +544,12 @@ a:hover {
   align-items: center;
   justify-content: center;
   gap: 8px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
   transition: all 0.25s ease;
 }
 
 .btn-wcp-forest:hover {
-  background-color: #333333;
+  background-color: #3A3A3A;
   color: #FFFFFF !important;
   transform: translateY(-2px);
 }
@@ -425,38 +558,38 @@ a:hover {
    Cards & Layout Components
    -------------------------------------------------------------------------- */
 .wcp-card {
-  background-color: #FFFFFF;
-  border: 1px solid var(--wcp-sage-border);
+  background-color: var(--wcp-bg-primary);
+  border: 1px solid var(--wcp-border);
   border-radius: var(--wcp-radius-md);
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.04);
+  box-shadow: var(--wcp-shadow-sm);
   padding: 24px;
   transition: all 0.25s ease;
 }
 
 .wcp-card:hover {
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
-  border-color: var(--wcp-muted-gold);
+  box-shadow: var(--wcp-shadow-md);
+  border-color: var(--wcp-primary-gold);
 }
 
 .section-tag {
-  font-size: 0.85rem;
+  font-size: 0.82rem;
   font-weight: 700;
-  letter-spacing: 2px;
+  letter-spacing: 1.5px;
   text-transform: uppercase;
-  color: var(--wcp-muted-gold);
+  color: var(--wcp-dark-gold);
   margin-bottom: 8px;
   display: block;
 }
 
 .section-title {
   font-size: clamp(1.8rem, 3.5vw, 2.4rem);
-  color: #1A1A1A;
+  color: var(--wcp-text-primary);
   margin-bottom: 14px;
 }
 
 .section-desc {
-  font-size: 1.05rem;
-  color: var(--wcp-text-muted);
+  font-size: 1rem;
+  color: var(--wcp-text-secondary);
   max-width: 650px;
   margin: 0 auto 36px auto;
 }
@@ -476,7 +609,7 @@ a:hover {
   bottom: 12px;
   left: 8px;
   width: 3px;
-  background-color: var(--wcp-sage-border);
+  background-color: var(--wcp-border);
 }
 
 .timeline-item {
@@ -491,30 +624,31 @@ a:hover {
   width: 19px;
   height: 19px;
   border-radius: 50%;
-  background-color: var(--wcp-muted-gold);
+  background-color: var(--wcp-primary-gold);
   border: 3px solid #FFFFFF;
-  box-shadow: 0 0 0 2px var(--wcp-muted-gold);
+  box-shadow: 0 0 0 2px var(--wcp-primary-gold);
 }
 
 .timeline-card {
-  background-color: #FFFFFF;
-  border: 1px solid var(--wcp-sage-border);
+  background-color: var(--wcp-bg-primary);
+  border: 1px solid var(--wcp-border);
   border-radius: var(--wcp-radius-md);
   padding: 20px 24px;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.04);
+  box-shadow: var(--wcp-shadow-sm);
   transition: transform 0.2s ease, border-color 0.2s ease;
 }
 
 .timeline-card:hover {
   transform: translateX(4px);
-  border-color: var(--wcp-muted-gold);
+  border-color: var(--wcp-primary-gold);
 }
 
 .timeline-time {
   font-size: 0.88rem;
   font-weight: 700;
-  color: #1A1A1A;
-  background-color: #F3F4F6;
+  color: var(--wcp-text-primary);
+  background-color: var(--wcp-bg-secondary);
+  border: 1px solid var(--wcp-border);
   padding: 4px 10px;
   border-radius: var(--wcp-radius-sm);
   display: inline-block;
@@ -525,11 +659,11 @@ a:hover {
    Song Lyrics Reader & Cards
    -------------------------------------------------------------------------- */
 .song-card {
-  background-color: #FFFFFF;
+  background-color: var(--wcp-bg-primary);
   border-radius: var(--wcp-radius-md);
-  border: 1px solid var(--wcp-sage-border);
+  border: 1px solid var(--wcp-border);
   padding: 22px;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.04);
+  box-shadow: var(--wcp-shadow-sm);
   height: 100%;
   display: flex;
   flex-direction: column;
@@ -537,19 +671,20 @@ a:hover {
 }
 
 .song-card:hover {
-  border-color: var(--wcp-muted-gold);
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+  border-color: var(--wcp-primary-gold);
+  box-shadow: var(--wcp-shadow-md);
 }
 
 .song-lyrics-container {
-  background-color: #FAFAFA;
-  border: 1px solid #E5E7EB;
+  background-color: var(--wcp-bg-secondary);
+  border: 1px solid var(--wcp-border);
   border-radius: var(--wcp-radius-sm);
   padding: 18px 20px;
   white-space: pre-line;
   font-size: 1.05rem;
   line-height: 1.85;
-  color: #1F2937;
+  color: var(--wcp-text-primary);
+  font-family: var(--wcp-font-body) !important;
   overflow: hidden;
   transition: max-height 0.3s ease;
 }
@@ -575,107 +710,24 @@ a:hover {
 }
 
 .btn-copy-lyrics {
-  color: #4B5563;
-  border: 1px solid #D1D5DB;
+  color: var(--wcp-text-secondary);
+  border: 1px solid var(--wcp-border);
   background: #FFFFFF;
   padding: 4px 10px;
   font-size: 0.82rem;
+  font-family: var(--wcp-font-trajan);
   border-radius: var(--wcp-radius-sm);
   transition: all 0.2s ease;
 }
 
 .btn-copy-lyrics:hover {
-  background-color: #F3F4F6;
-  color: #1A1A1A;
-  border-color: var(--wcp-muted-gold);
+  background-color: var(--wcp-bg-secondary);
+  color: var(--wcp-text-primary);
+  border-color: var(--wcp-primary-gold);
 }
 
 /* --------------------------------------------------------------------------
-   Footer (White Format)
-   -------------------------------------------------------------------------- */
-.wcp-footer {
-  background-color: #FFFFFF;
-  color: #4B5563;
-  border-top: 2px solid var(--wcp-muted-gold);
-  padding: 55px 0 25px 0;
-  font-size: 0.95rem;
-  box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.02);
-}
-
-.footer-heading {
-  color: #1A1A1A;
-  font-family: var(--wcp-font-heading);
-  font-size: 1.25rem;
-  margin-bottom: 18px;
-}
-
-.footer-praise {
-  color: var(--wcp-muted-gold);
-  font-family: var(--wcp-font-heading);
-  font-size: 1.3rem;
-  font-weight: 700;
-  letter-spacing: 2px;
-}
-
-.wcp-footer a {
-  color: #4B5563 !important;
-}
-
-.wcp-footer a:hover {
-  color: var(--wcp-muted-gold) !important;
-}
-
-.wcp-footer .text-light {
-  color: #4B5563 !important;
-}
-
-.wcp-footer .border-secondary {
-  border-color: #E5E7EB !important;
-}
-
-.wcp-footer .rounded-2 {
-  background: #F8F9FA !important;
-  border: 1px solid #E5E7EB !important;
-  border-left: 3px solid var(--wcp-muted-gold) !important;
-}
-
-.wcp-footer .rounded-2 p {
-  color: #1A1A1A !important;
-}
-
-/* --------------------------------------------------------------------------
-   Anonymous Feedback
-   -------------------------------------------------------------------------- */
-.feedback-pill-chk input[type="checkbox"] {
-  display: none;
-}
-
-.feedback-pill-chk label {
-  display: inline-block;
-  padding: 6px 16px;
-  background-color: #FFFFFF;
-  border: 1px solid #D1D5DB;
-  border-radius: var(--wcp-radius-pill);
-  font-size: 0.85rem;
-  font-weight: 500;
-  color: #1A1A1A;
-  cursor: pointer;
-  transition: all 0.2s ease;
-}
-
-.feedback-pill-chk label:hover {
-  border-color: var(--wcp-muted-gold);
-  color: var(--wcp-muted-gold);
-}
-
-.feedback-pill-chk input[type="checkbox"]:checked + label {
-  background-color: #1A1A1A;
-  color: #FFFFFF;
-  border-color: #1A1A1A;
-}
-
-/* --------------------------------------------------------------------------
-   Countdown Timer Component (White Format)
+   Countdown Timer Component
    -------------------------------------------------------------------------- */
 .wcp-countdown-wrap {
   display: flex;
@@ -687,52 +739,146 @@ a:hover {
 
 .wcp-countdown-box {
   background: #FFFFFF;
-  color: #1A1A1A;
+  color: var(--wcp-text-primary);
   border-radius: var(--wcp-radius-sm);
   padding: 6px 8px;
   min-width: 54px;
   text-align: center;
-  border: 1.5px solid var(--wcp-muted-gold);
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+  border: 1.5px solid var(--wcp-primary-gold);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.04);
 }
 
 .wcp-countdown-val {
-  font-family: var(--wcp-font-heading);
+  font-family: var(--wcp-font-cinzel);
   font-size: 1.25rem;
   font-weight: 800;
-  color: #1A1A1A;
+  color: var(--wcp-text-primary);
   line-height: 1.1;
   display: block;
 }
 
 .wcp-countdown-lbl {
+  font-family: var(--wcp-font-trajan);
   font-size: 0.62rem;
   text-transform: uppercase;
   letter-spacing: 0.6px;
-  color: var(--wcp-muted-gold);
+  color: var(--wcp-dark-gold);
   font-weight: 700;
   margin-top: 2px;
   display: block;
 }
 
 /* --------------------------------------------------------------------------
-   Modal Window (White Format)
+   STRICT REQUIREMENT: FEEDBACK SECTION & SUBSEQUENT SECTIONS
+   Do NOT apply Cinzel / Trajan Pro to Feedback or sections after Feedback.
+   Preserve existing sans-serif font (Plus Jakarta Sans) and functionality.
    -------------------------------------------------------------------------- */
+#feedback,
+#feedback *,
+.modal,
+.modal *,
+.wcp-footer,
+.wcp-footer * {
+  font-family: var(--wcp-font-body) !important;
+}
+
+#feedback {
+  background-color: var(--wcp-bg-secondary) !important;
+}
+
+.feedback-pill-chk input[type="checkbox"] {
+  display: none;
+}
+
+.feedback-pill-chk label {
+  display: inline-block;
+  padding: 6px 16px;
+  background-color: #FFFFFF;
+  border: 1px solid var(--wcp-border);
+  border-radius: var(--wcp-radius-pill);
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: var(--wcp-text-primary);
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.feedback-pill-chk label:hover {
+  border-color: var(--wcp-primary-gold);
+  color: var(--wcp-dark-gold);
+}
+
+.feedback-pill-chk input[type="checkbox"]:checked + label {
+  background-color: var(--wcp-text-primary);
+  color: #FFFFFF;
+  border-color: var(--wcp-text-primary);
+}
+
+/* Modal Window */
 .modal-content {
   background-color: #FFFFFF;
-  border: 2px solid var(--wcp-muted-gold);
+  border: 2px solid var(--wcp-border);
 }
 
 .modal-header {
   background-color: #FFFFFF !important;
-  color: #1A1A1A !important;
-  border-bottom: 1px solid #E5E7EB;
+  color: var(--wcp-text-primary) !important;
+  border-bottom: 1px solid var(--wcp-border);
 }
 
 .modal-header .modal-title {
-  color: #1A1A1A !important;
+  color: var(--wcp-text-primary) !important;
 }
 
 .modal-header .btn-close {
   filter: none !important;
+}
+
+/* Footer (White Format with Preserved Body Font) */
+.wcp-footer {
+  background-color: #FFFFFF;
+  color: var(--wcp-text-secondary);
+  border-top: 2px solid var(--wcp-border);
+  padding: 55px 0 25px 0;
+  font-size: 0.95rem;
+}
+
+.footer-heading {
+  color: var(--wcp-text-primary);
+  font-size: 1.15rem;
+  font-weight: 700;
+  margin-bottom: 18px;
+}
+
+.footer-praise {
+  color: var(--wcp-dark-gold);
+  font-size: 1.25rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+}
+
+.wcp-footer a {
+  color: var(--wcp-text-secondary) !important;
+}
+
+.wcp-footer a:hover {
+  color: var(--wcp-primary-gold) !important;
+}
+
+.wcp-footer .text-light {
+  color: var(--wcp-text-secondary) !important;
+}
+
+.wcp-footer .border-secondary {
+  border-color: var(--wcp-border) !important;
+}
+
+.wcp-footer .rounded-2 {
+  background: var(--wcp-bg-secondary) !important;
+  border: 1px solid var(--wcp-border) !important;
+  border-left: 3px solid var(--wcp-primary-gold) !important;
+}
+
+.wcp-footer .rounded-2 p {
+  color: var(--wcp-text-primary) !important;
 }
