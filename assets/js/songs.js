@@ -124,7 +124,7 @@
       card.innerHTML =
         '<div class="d-flex justify-content-between align-items-center mb-2">' +
           '<div>' + langBadge + ' ' + catBadge + '</div>' +
-          '<button class="btn btn-sm btn-copy-lyrics" data-copy-id="' + lyricsId + '" title="Copy lyrics to clipboard">' +
+          '<button class="btn btn-sm btn-copy-lyrics" data-copy-id="' + lyricsId + '" title="Copy to clipboard">' +
             '<i class="bi bi-clipboard me-1"></i> Copy' +
           '</button>' +
         '</div>' +
@@ -134,7 +134,7 @@
         '</div>' +
         '<div class="mt-3 text-end">' +
           '<button class="btn btn-sm btn-outline-success btn-toggle-lyrics" data-target-id="' + lyricsId + '">' +
-            '<i class="bi bi-chevron-down me-1"></i> Read Full Lyrics' +
+            '<i class="bi bi-chevron-down me-1"></i> Read Full Song' +
           '</button>' +
         '</div>';
 
@@ -166,7 +166,7 @@
           '</div>' +
           '<div class="mt-3">' +
             '<a href="pages/songs.html" class="btn btn-sm btn-wcp-forest w-100">' +
-              '<i class="bi bi-file-text me-1"></i> Read Lyrics' +
+              '<i class="bi bi-music-note-beamed me-1"></i> Read Song' +
             '</a>' +
           '</div>' +
         '</div>';
@@ -178,7 +178,7 @@
   }
 
   function attachDynamicHandlers(container) {
-    // Expand / Collapse Lyrics
+    // Expand / Collapse
     container.querySelectorAll('.btn-toggle-lyrics').forEach(function (btn) {
       btn.addEventListener('click', function () {
         var targetId = this.getAttribute('data-target-id');
@@ -192,7 +192,7 @@
         } else {
           lyricsEl.classList.remove('expanded');
           lyricsEl.classList.add('collapsed');
-          this.innerHTML = '<i class="bi bi-chevron-down me-1"></i> Read Full Lyrics';
+          this.innerHTML = '<i class="bi bi-chevron-down me-1"></i> Read Full Song';
         }
       });
     });
