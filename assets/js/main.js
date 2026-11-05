@@ -202,6 +202,60 @@
         });
       });
     }
+
+    // 5. Event Countdown Timer (Target: 9 November 2026, 8:30 AM Asia/Kolkata)
+    function initCountdown() {
+      var countdownExists = document.getElementById('countdown-days') || document.querySelector('[data-countdown="days"]');
+      if (!countdownExists) return;
+
+      // 9 November 2026, 8:30 AM IST (Asia/Kolkata, UTC+05:30)
+      var targetDate = new Date('2026-11-09T08:30:00+05:30').getTime();
+
+      function updateCountdown() {
+        var now = new Date().getTime();
+        var diff = targetDate - now;
+
+        if (diff <= 0) {
+          setAllCountdown('00', '00', '00', '00');
+          var statusEls = document.querySelectorAll('.countdown-status-text');
+          statusEls.forEach(function (el) { el.textContent = 'Retreat is Live Today!'; });
+          return;
+        }
+
+        var days = Math.floor(diff / (1000 * 60 * 60 * 24));
+        var hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        var minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+        var seconds = Math.floor((diff % (1000 * 60)) / 1000);
+
+        setAllCountdown(
+          String(days).padStart(2, '0'),
+          String(hours).padStart(2, '0'),
+          String(minutes).padStart(2, '0'),
+          String(seconds).padStart(2, '0')
+        );
+      }
+
+      function setAllCountdown(d, h, m, s) {
+        setVal('days', d);
+        setVal('hours', h);
+        setVal('minutes', m);
+        setVal('seconds', s);
+      }
+
+      function setVal(type, val) {
+        var idEl = document.getElementById('countdown-' + type);
+        if (idEl) idEl.textContent = val;
+        var dataEls = document.querySelectorAll('[data-countdown="' + type + '"]');
+        dataEls.forEach(function (el) {
+          el.textContent = val;
+        });
+      }
+
+      updateCountdown();
+      setInterval(updateCountdown, 1000);
+    }
+
+    initCountdown();
   });
 })();
 

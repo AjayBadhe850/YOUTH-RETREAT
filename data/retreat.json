@@ -1,39 +1,66 @@
 {
-  "title": "One-Day Youth Retreat",
-  "theme": "Arise and Shine — 1 Timothy 4:12",
-  "scripture_verse": "\"Let no one despise your youth, but be an example to the believers in word, in conduct, in love, in spirit, in faith, in purity.\" — 1 Timothy 4:12",
-  "date": "Date: To Be Announced by Organisers",
-  "timings": "9:00 AM – 6:00 PM IST",
-  "venue": "Wesley Church Sanctuary & Campus, Palliwada",
-  "introduction": "The One-Day Youth Retreat is a special spiritual gathering bringing together youth from across congregations for a day dedicated to God. Set apart from daily routines, this retreat offers heartfelt praise and adoration, empowering biblical preaching, group fellowship, and prayer for our personal walks, families, and education.",
-  "programme_overview": "A full-day structured itinerary starting with morning praise, inspiring keynote sessions, fellowship activities, action songs, and a dedicated closing benediction.",
+  "title": "One Day Youth Retreat 2026",
+  "theme": "\"WHY SHOULD WE NOT ABIDE IN CHRIST?\"",
+  "motto": "CALLED. CHOSEN. LOVED. SENT.",
+  "bible_verse": "John 15:4",
+  "scripture_verse": "\"Abide in Me, and I in you. As the branch cannot bear fruit of itself, unless it abides in the vine, neither can you, unless you abide in Me.\" — John 15:4",
+  "date": "9 November 2026 (Monday)",
+  "timings": "8:30 AM – 4:30 PM",
+  "lunch": "Lunch Follows",
+  "venue": "C.S.I. Wesley Church, Palliwada",
+  "organisation": "Church of South India (CSI)",
+  "diocese": "Diocese of Karimnagar",
+  "group": "Aler Group Church Council",
+  "pastorate": "Mothkur Pastorate",
+  "church": "CSI Wesley Church, Palliwada",
+  "chief_guest": {
+    "name": "Rev. P. Amrutha Rao",
+    "designation": "Group Chairman"
+  },
+  "guest_speaker": {
+    "name": "Dn. Y. Shyam",
+    "designation": "Guest Speaker"
+  },
+  "invited_by": [
+    {
+      "name": "Rev. Ch. Rajarathnam",
+      "designation": "Pastorate Chairman"
+    },
+    {
+      "name": "G. Manirathnam",
+      "designation": "Evangelist"
+    }
+  ],
+  "organisers": "Palliwada Committee Members and Congregation.",
+  "countdown_target": "2026-11-09T08:30:00+05:30",
+  "introduction": "The One Day Youth Retreat 2026 is a sacred spiritual gathering organised under the Church of South India (CSI), Diocese of Karimnagar, Aler Group Church Council, Mothkur Pastorate at C.S.I. Wesley Church, Palliwada. Grounded in the divine motto 'CALLED. CHOSEN. LOVED. SENT.' and the theme 'WHY SHOULD WE NOT ABIDE IN CHRIST?' (John 15:4), this retreat empowers young believers through vibrant worship, biblical exposition, and fellowship.",
+  "programme_overview": "A full-day itinerary from 8:30 AM to 4:30 PM starting with morning reception and opening prayer, uplifting congregational worship, keynote messages from anointed servants of God, youth fellowship, and personal prayer dedication. Lunch follows.",
   "highlights": [
     {
       "icon": "bi-soundwave",
       "title": "Vibrant Praise & Worship",
-      "description": "Telugu, English, and Hindi congregational worship songs exalting our God."
+      "description": "Telugu and Hindi congregational worship songs exalting our Lord and Saviour Jesus Christ."
     },
     {
       "icon": "bi-book-half",
       "title": "Empowering Biblical Messages",
-      "description": "Practical Bible teaching on purity, discipleship, and Christian leadership."
+      "description": "Practical Bible teaching on abiding in Christ (John 15:4) by our Chief Guest and Guest Speaker."
     },
     {
       "icon": "bi-people-fill",
       "title": "Youth Fellowship & Action Songs",
-      "description": "Interactive group games, joy-filled action choruses, and community building."
+      "description": "Interactive group sessions, joy-filled action choruses, and community building in Christ."
     },
     {
       "icon": "bi-cup-hot-fill",
-      "title": "Fellowship Meals",
-      "description": "Complimentary morning tea, lunch, and evening refreshments provided on campus."
+      "title": "Fellowship Lunch",
+      "description": "Complimentary morning tea, refreshments, and fellowship lunch provided on campus."
     }
   ],
   "guidelines": [
     "Bring your printed Bible (Telugu or English), a notebook, and a pen.",
-    "Arrive promptly before 9:00 AM to participate in the opening prayer and worship session.",
+    "Arrive promptly before 8:30 AM to participate in the opening prayer and worship session.",
     "Maintain decorum, modesty, and reverence inside the church sanctuary.",
-    "Come with an open, expectant heart to receive God's blessings and direction."
+    "Come with an open, expectant heart to receive God's blessings and abide in Christ."
   ]
 }
-

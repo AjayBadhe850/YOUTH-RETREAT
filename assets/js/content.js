@@ -46,6 +46,12 @@
         applyContent('[data-church="welcome_message"]', church.welcome_message);
         applyContent('[data-church="introduction"]', church.church_introduction);
         applyContent('[data-church="helpline"]', church.helpline_placeholder);
+        applyContent('[data-church="motto"]', church.motto);
+        applyContent('[data-church="organisation"]', church.organisation);
+        applyContent('[data-church="diocese"]', church.diocese);
+        applyContent('[data-church="group"]', church.group);
+        applyContent('[data-church="pastorate"]', church.pastorate);
+        applyContent('[data-church="venue"]', church.venue);
       }
     });
 
@@ -58,6 +64,9 @@
         applyContent('[data-retreat="date"]', retreat.date);
         applyContent('[data-retreat="timings"]', retreat.timings);
         applyContent('[data-retreat="venue"]', retreat.venue);
+        applyContent('[data-retreat="lunch"]', retreat.lunch);
+        applyContent('[data-retreat="motto"]', retreat.motto);
+        applyContent('[data-retreat="organisers"]', retreat.organisers);
         applyContent('[data-retreat="introduction"]', retreat.introduction);
         applyContent('[data-retreat="overview"]', retreat.programme_overview);
       }

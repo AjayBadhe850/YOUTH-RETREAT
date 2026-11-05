@@ -598,4 +598,46 @@ a:hover {
   border-color: var(--wcp-forest-green);
 }
 
+/* --------------------------------------------------------------------------
+   Countdown Timer Component
+   -------------------------------------------------------------------------- */
+.wcp-countdown-wrap {
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+  align-items: center;
+  margin: 10px 0;
+}
+
+.wcp-countdown-box {
+  background: var(--wcp-forest-green);
+  color: #FFFFFF;
+  border-radius: var(--wcp-radius-sm);
+  padding: 6px 8px;
+  min-width: 54px;
+  text-align: center;
+  border: 1px solid var(--wcp-muted-gold);
+  box-shadow: 0 2px 6px rgba(23, 59, 43, 0.15);
+}
+
+.wcp-countdown-val {
+  font-family: var(--wcp-font-heading);
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: var(--wcp-gold-light);
+  line-height: 1.1;
+  display: block;
+}
+
+.wcp-countdown-lbl {
+  font-size: 0.62rem;
+  text-transform: uppercase;
+  letter-spacing: 0.6px;
+  color: rgba(255, 255, 255, 0.85);
+  font-weight: 600;
+  margin-top: 2px;
+  display: block;
+}
+
+
 
