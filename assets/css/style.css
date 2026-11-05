@@ -251,12 +251,15 @@ a:hover {
   pointer-events: none;
 }
 
-.opening-cross-icon {
-  width: 64px;
-  height: 64px;
-  margin-bottom: 24px;
-  color: var(--wcp-primary-gold);
-  filter: drop-shadow(0 4px 14px rgba(197, 162, 83, 0.35));
+.opening-cross-icon,
+.opening-logo-img {
+  width: 95px;
+  height: 95px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 22px;
+  border: 2px solid var(--wcp-primary-gold);
+  filter: drop-shadow(0 6px 20px rgba(197, 162, 83, 0.4));
   animation: splashPulse 1.8s ease-in-out infinite;
 }
 
@@ -319,8 +322,8 @@ a:hover {
 }
 
 .wcp-brand-icon {
-  width: 42px;
-  height: 42px;
+  width: 44px;
+  height: 44px;
   background: rgba(197, 162, 83, 0.1);
   border: 1.5px solid var(--wcp-primary-gold);
   border-radius: 50%;
@@ -329,6 +332,31 @@ a:hover {
   justify-content: center;
   color: var(--wcp-primary-gold);
   font-size: 1.25rem;
+}
+
+.wcp-brand-logo {
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 1.5px solid var(--wcp-primary-gold);
+  box-shadow: 0 2px 8px rgba(197, 162, 83, 0.25);
+  flex-shrink: 0;
+  transition: transform 0.25s ease;
+}
+
+.wcp-brand:hover .wcp-brand-logo {
+  transform: scale(1.08);
+}
+
+.wcp-footer-logo {
+  width: 54px;
+  height: 54px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid var(--wcp-primary-gold);
+  box-shadow: 0 2px 8px rgba(197, 162, 83, 0.2);
+  flex-shrink: 0;
 }
 
 .wcp-brand-title {

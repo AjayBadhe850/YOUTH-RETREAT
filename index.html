@@ -21,6 +21,10 @@
   <link rel="stylesheet" href="assets/css/style.css">
   <link rel="stylesheet" href="assets/css/responsive.css">
 
+  <!-- Favicon -->
+  <link rel="icon" type="image/jpeg" href="assets/images/church-logo.jpg">
+  <link rel="apple-touch-icon" href="assets/images/church-logo.jpg">
+
   <!-- Privacy-Friendly Website Analytics by Umami (No Cookies, No Personal Data) -->
   <script defer src="https://cloud.umami.is/script.js" data-website-id="bcd11a4f-b857-4849-9e9f-181934b8754f"></script>
 </head>
@@ -31,11 +35,7 @@
        Displays on initial visit, auto-fades out and respects session storage
        ====================================================================== -->
   <div id="opening-screen" role="dialog" aria-label="Welcome Screen">
-    <div class="opening-cross-icon" aria-hidden="true">
-      <svg viewBox="0 0 24 24" fill="currentColor" width="100%" height="100%">
-        <path d="M10 2h4v6h6v4h-6v10h-4V12H4V8h6V2z"/>
-      </svg>
-    </div>
+    <img src="assets/images/church-logo.jpg" alt="CSI Wesley Church Palliwada Official Logo" class="opening-logo-img">
     <h1 class="opening-praise-text">PRAISE THE LORD</h1>
     <p class="opening-church-text">WESLEY CHURCH PALLIWADA</p>
   </div>
@@ -46,9 +46,7 @@
   <nav class="navbar navbar-expand-lg wcp-navbar sticky-top" aria-label="Main Navigation">
     <div class="container">
       <a class="navbar-brand wcp-brand" href="index.html">
-        <div class="wcp-brand-icon" aria-hidden="true">
-          <i class="bi bi-cross"></i>
-        </div>
+        <img src="assets/images/church-logo.jpg" alt="CSI Wesley Church Palliwada Official Logo" class="wcp-brand-logo">
         <div>
           <span class="wcp-brand-title">CSI WESLEY CHURCH</span>
           <span class="wcp-brand-sub">PALLIWADA &bull; CSI KARIMNAGAR DIOCESE</span>
@@ -529,8 +527,13 @@
     <div class="container">
       <div class="row g-4 mb-4">
         <div class="col-lg-5">
-          <div class="footer-praise mb-2">PRAISE THE LORD</div>
-          <h5 class="footer-heading mb-1">CSI WESLEY CHURCH, PALLIWADA</h5>
+          <div class="d-flex align-items-center gap-3 mb-3">
+            <img src="assets/images/church-logo.jpg" alt="CSI Wesley Church Palliwada Official Logo" class="wcp-footer-logo">
+            <div>
+              <div class="footer-praise mb-0">PRAISE THE LORD</div>
+              <h5 class="footer-heading mb-0">CSI WESLEY CHURCH, PALLIWADA</h5>
+            </div>
+          </div>
           <p class="small text-gold fw-semibold mb-2" style="font-size: 0.82rem;">
             Church of South India (CSI) &bull; Diocese of Karimnagar<br>
             Aler Group Church Council &bull; Mothkur Pastorate
