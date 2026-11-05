@@ -4,8 +4,6 @@
     "title": "Registrations",
     "start_time": "8:30 AM",
     "end_time": "9:00 AM",
-    "speaker_activity": "Reception Team",
-    "description": "Attendee arrival, registration verification, receiving retreat kit, and morning welcome.",
     "display_order": 1
   },
   {
@@ -13,8 +11,6 @@
     "title": "Adoration",
     "start_time": "9:00 AM",
     "end_time": "10:00 AM",
-    "speaker_activity": "Youth Worship Team",
-    "description": "Opening adoration, praise, and worship singing in spirit and in truth.",
     "display_order": 2
   },
   {
@@ -22,8 +18,6 @@
     "title": "Pastoral Greetings and Felicitations",
     "start_time": "10:00 AM",
     "end_time": "10:30 AM",
-    "speaker_activity": "Chief Guest & Church Leadership",
-    "description": "Pastoral greetings, encouraging words, and felicitations for the youth retreat gathering.",
     "display_order": 3
   },
   {
@@ -31,8 +25,6 @@
     "title": "Interaction With Tea & Snacks",
     "start_time": "10:30 AM",
     "end_time": "11:15 AM",
-    "speaker_activity": "Fellowship & Hospitality Team",
-    "description": "Morning tea, snacks, and fellowship interaction among youth attendees.",
     "display_order": 4
   },
   {
@@ -40,8 +32,6 @@
     "title": "Activity",
     "start_time": "11:15 AM",
     "end_time": "11:45 AM",
-    "speaker_activity": "Youth Coordinators",
-    "description": "Engaging group activity, icebreakers, and teamwork exercises.",
     "display_order": 5
   },
   {
@@ -49,8 +39,6 @@
     "title": "God's Plan for You",
     "start_time": "11:45 AM",
     "end_time": "12:45 PM",
-    "speaker_activity": "Dn. Y. Shyam (Guest Speaker)",
-    "description": "Inspiring spiritual message on discovering God's divine calling and plan for youth.",
     "display_order": 6
   },
   {
@@ -58,8 +46,6 @@
     "title": "Photo Session",
     "start_time": "12:45 PM",
     "end_time": "1:00 PM",
-    "speaker_activity": "Media & Photography Team",
-    "description": "Official group photos, capturing memorable retreat moments with guests and youth.",
     "display_order": 7
   },
   {
@@ -67,8 +53,6 @@
     "title": "Lunch Break",
     "start_time": "1:00 PM",
     "end_time": "1:40 PM",
-    "speaker_activity": "Hospitality Committee",
-    "description": "Delicious fellowship lunch served to all attendees on church campus.",
     "display_order": 8
   },
   {
@@ -76,17 +60,13 @@
     "title": "Game",
     "start_time": "1:40 PM",
     "end_time": "2:15 PM",
-    "speaker_activity": "Youth Leaders",
-    "description": "Joyful interactive games, energizers, and friendly fellowship challenges.",
     "display_order": 9
   },
   {
     "id": 10,
-    "title": "God's Plan for You — Session 2",
+    "title": "God's Plan for You – Session 2",
     "start_time": "2:15 PM",
     "end_time": "3:00 PM",
-    "speaker_activity": "Dn. Y. Shyam (Guest Speaker)",
-    "description": "Deepening biblical teaching on abiding in Christ, spiritual maturity, and fruitfulness.",
     "display_order": 10
   },
   {
@@ -94,8 +74,6 @@
     "title": "Skit",
     "start_time": "3:00 PM",
     "end_time": "3:15 PM",
-    "speaker_activity": "Youth Drama Team",
-    "description": "Meaningful and impactful gospel skit performance presented by church youth.",
     "display_order": 11
   },
   {
@@ -103,8 +81,6 @@
     "title": "Intercession Prayer",
     "start_time": "3:15 PM",
     "end_time": "3:30 PM",
-    "speaker_activity": "Pastoral Team",
-    "description": "Heartfelt corporate intercessory prayer for youth, families, churches, and community.",
     "display_order": 12
   },
   {
@@ -112,8 +88,6 @@
     "title": "Activity",
     "start_time": "3:30 PM",
     "end_time": "4:00 PM",
-    "speaker_activity": "Youth Coordinators",
-    "description": "Reflective spiritual activity, group sharing, and personal commitments in Christ.",
     "display_order": 13
   },
   {
@@ -121,8 +95,6 @@
     "title": "Vote of Thanks & Gift Distributions",
     "start_time": "4:00 PM",
     "end_time": "4:15 PM",
-    "speaker_activity": "Palliwada Committee Members",
-    "description": "Heartfelt gratitude expressed to speakers, organizers, and attendees with memento gifts.",
     "display_order": 14
   },
   {
@@ -130,8 +102,6 @@
     "title": "Ending Prayer & Benediction",
     "start_time": "4:15 PM",
     "end_time": "4:30 PM",
-    "speaker_activity": "Rev. Ch. Rajarathnam (Pastorate Chairman)",
-    "description": "Solemn closing prayer of thanksgiving followed by the pastoral benediction.",
     "display_order": 15
   }
 ]

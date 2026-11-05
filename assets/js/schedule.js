@@ -12,8 +12,9 @@
   document.addEventListener('DOMContentLoaded', function () {
     var fullContainer = document.getElementById('full-schedule-container');
     var previewContainer = document.getElementById('preview-schedule-container');
+    var tableBody = document.getElementById('schedule-table-body');
 
-    if (!fullContainer && !previewContainer) return;
+    if (!fullContainer && !previewContainer && !tableBody) return;
 
     fetch(dataPrefix + 'schedule.json')
       .then(function (response) {
@@ -36,7 +37,10 @@
           renderFullTimeline(fullContainer, items);
         }
 
-        // Render preview (first 4 items on homepage)
+        // Render table view if table body container exists
+        renderScheduleTable(items);
+
+        // Render preview (first 4 items if preview container exists)
         if (previewContainer) {
           renderPreviewCards(previewContainer, items.slice(0, 4));
         }
@@ -77,12 +81,14 @@
         ? '<p class="text-secondary mb-0 mt-2" style="white-space: pre-line;">' + escapeHTML(item.description) + '</p>'
         : '';
 
+      var headingClass = item.description ? 'fw-bold text-forest mb-1' : 'fw-bold text-forest mb-0';
+
       card.innerHTML =
         '<div class="d-flex flex-wrap justify-content-between align-items-center mb-1">' +
           '<span class="timeline-time"><i class="bi bi-clock me-1"></i> ' + escapeHTML(timeText) + '</span>' +
           speakerHtml +
         '</div>' +
-        '<h4 class="fw-bold text-forest mb-1">' + escapeHTML(item.title) + '</h4>' +
+        '<h4 class="' + headingClass + '">' + escapeHTML(item.title) + '</h4>' +
         descHtml;
 
       itemEl.appendChild(dot);
@@ -91,6 +97,64 @@
     });
 
     container.appendChild(timelineWrap);
+  }
+
+  function renderScheduleTable(items) {
+    var tableBody = document.getElementById('schedule-table-body');
+    if (!tableBody) return;
+
+    tableBody.innerHTML = '';
+    items.forEach(function (item, idx) {
+      if (!item.title) return;
+      var tr = document.createElement('tr');
+
+      var timeText = item.start_time || '';
+      if (item.end_time) {
+        timeText += ' – ' + item.end_time;
+      }
+
+      tr.innerHTML =
+        '<td class="py-3 ps-4 text-muted fw-bold">' + (item.display_order || (idx + 1)) + '</td>' +
+        '<td class="py-3"><strong class="text-forest">' + escapeHTML(item.title) + '</strong></td>' +
+        '<td class="py-3 pe-4 text-end">' +
+          '<span class="badge bg-light text-dark border px-3 py-2 rounded-pill font-monospace">' +
+            '<i class="bi bi-clock me-1 text-gold"></i> ' + escapeHTML(timeText) +
+          '</span>' +
+        '</td>';
+
+      tableBody.appendChild(tr);
+    });
+
+    setupViewSwitcher();
+  }
+
+  function setupViewSwitcher() {
+    var btnTimeline = document.getElementById('btn-view-timeline');
+    var btnTable = document.getElementById('btn-view-table');
+    var timelineContainer = document.getElementById('full-schedule-container');
+    var tableContainer = document.getElementById('schedule-table-container');
+
+    if (!btnTimeline || !btnTable || !timelineContainer || !tableContainer) return;
+
+    btnTimeline.addEventListener('click', function () {
+      btnTimeline.classList.add('btn-wcp-primary', 'active');
+      btnTimeline.classList.remove('btn-outline-secondary');
+      btnTable.classList.remove('btn-wcp-primary', 'active');
+      btnTable.classList.add('btn-outline-secondary');
+
+      timelineContainer.classList.remove('d-none');
+      tableContainer.classList.add('d-none');
+    });
+
+    btnTable.addEventListener('click', function () {
+      btnTable.classList.add('btn-wcp-primary', 'active');
+      btnTable.classList.remove('btn-outline-secondary');
+      btnTimeline.classList.remove('btn-wcp-primary', 'active');
+      btnTimeline.classList.add('btn-outline-secondary');
+
+      tableContainer.classList.remove('d-none');
+      timelineContainer.classList.add('d-none');
+    });
   }
 
   function renderPreviewCards(container, items) {
@@ -150,4 +214,3 @@
     return words.slice(0, wordCount).join(' ') + '...';
   }
 })();
-
