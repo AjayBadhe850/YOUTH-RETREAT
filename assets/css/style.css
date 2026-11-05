@@ -548,33 +548,8 @@ a:hover {
 }
 
 /* --------------------------------------------------------------------------
-   Anonymous Feedback & Star Rating
+   Anonymous Feedback
    -------------------------------------------------------------------------- */
-.star-rating {
-  display: inline-flex;
-  flex-direction: row-reverse;
-  justify-content: center;
-  gap: 10px;
-}
-
-.star-rating input[type="radio"] {
-  display: none;
-}
-
-.star-rating label {
-  cursor: pointer;
-  font-size: 2.2rem;
-  color: #D2DDD7;
-  transition: all 0.2s ease;
-}
-
-.star-rating label:hover,
-.star-rating label:hover ~ label,
-.star-rating input[type="radio"]:checked ~ label {
-  color: #F39C12;
-  transform: scale(1.15);
-}
-
 .feedback-pill-chk input[type="checkbox"] {
   display: none;
 }

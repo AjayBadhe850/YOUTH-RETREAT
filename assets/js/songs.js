@@ -88,7 +88,8 @@
       var matchesLang = (activeLanguage === 'All') || (song.language === activeLanguage);
       var titleText = (song.title || '').toLowerCase();
       var lyricsText = (song.lyrics || '').toLowerCase();
-      var matchesSearch = !searchQuery || titleText.includes(searchQuery) || lyricsText.includes(searchQuery);
+      var translitText = (song.transliteration || '').toLowerCase();
+      var matchesSearch = !searchQuery || titleText.includes(searchQuery) || lyricsText.includes(searchQuery) || translitText.includes(searchQuery);
       return matchesLang && matchesSearch;
     });
 
