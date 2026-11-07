@@ -236,11 +236,41 @@
 
       <!-- Container dynamically populated with full timeline by assets/js/schedule.js -->
       <div id="full-schedule-container" class="mb-4">
-        <div class="text-center py-4">
-          <div class="spinner-border text-forest" role="status">
-            <span class="visually-hidden">Loading schedule items...</span>
+        <div class="skeleton-timeline-container" aria-label="Loading schedule items...">
+          <div class="skeleton-timeline-item">
+            <div class="skeleton-timeline-dot"></div>
+            <div class="skeleton-card">
+              <div class="d-flex justify-content-between align-items-center mb-2">
+                <div class="skeleton-shimmer skeleton-line badge" style="width: 140px; height: 20px;"></div>
+                <div class="skeleton-shimmer skeleton-line badge" style="width: 110px; height: 20px;"></div>
+              </div>
+              <div class="skeleton-shimmer skeleton-line title" style="width: 55%; height: 24px;"></div>
+              <div class="skeleton-shimmer skeleton-line text-long"></div>
+              <div class="skeleton-shimmer skeleton-line text-medium"></div>
+            </div>
           </div>
-          <p class="text-secondary small mt-2">Loading programme timeline...</p>
+          <div class="skeleton-timeline-item">
+            <div class="skeleton-timeline-dot"></div>
+            <div class="skeleton-card">
+              <div class="d-flex justify-content-between align-items-center mb-2">
+                <div class="skeleton-shimmer skeleton-line badge" style="width: 130px; height: 20px;"></div>
+              </div>
+              <div class="skeleton-shimmer skeleton-line title" style="width: 45%; height: 24px;"></div>
+              <div class="skeleton-shimmer skeleton-line text-long"></div>
+            </div>
+          </div>
+          <div class="skeleton-timeline-item">
+            <div class="skeleton-timeline-dot"></div>
+            <div class="skeleton-card">
+              <div class="d-flex justify-content-between align-items-center mb-2">
+                <div class="skeleton-shimmer skeleton-line badge" style="width: 145px; height: 20px;"></div>
+                <div class="skeleton-shimmer skeleton-line badge" style="width: 100px; height: 20px;"></div>
+              </div>
+              <div class="skeleton-shimmer skeleton-line title" style="width: 65%; height: 24px;"></div>
+              <div class="skeleton-shimmer skeleton-line text-long"></div>
+              <div class="skeleton-shimmer skeleton-line text-short"></div>
+            </div>
+          </div>
         </div>
       </div>
 
@@ -300,12 +330,57 @@
       </div>
 
       <!-- Container dynamically populated with all songs by assets/js/songs.js -->
-      <div id="songs-list-container" class="row g-3 mb-4">
-        <div class="col-12 text-center py-4">
-          <div class="spinner-border text-forest" role="status">
-            <span class="visually-hidden">Loading songs...</span>
+      <div id="songs-list-container" class="row g-4 mb-4">
+        <div class="col-md-6 col-lg-4">
+          <div class="skeleton-card skeleton-song-card">
+            <div>
+              <div class="d-flex justify-content-between mb-3">
+                <div class="skeleton-shimmer skeleton-line badge" style="width: 65px; height: 20px;"></div>
+                <div class="skeleton-shimmer skeleton-line badge" style="width: 60px; height: 20px;"></div>
+              </div>
+              <div class="skeleton-shimmer skeleton-line title" style="width: 75%; height: 24px;"></div>
+              <div class="skeleton-shimmer skeleton-line text-long mb-2"></div>
+              <div class="skeleton-shimmer skeleton-line text-medium mb-2"></div>
+              <div class="skeleton-shimmer skeleton-line text-short mb-2"></div>
+            </div>
+            <div class="text-end mt-3">
+              <div class="skeleton-shimmer skeleton-line badge ms-auto" style="width: 110px; height: 28px;"></div>
+            </div>
           </div>
-          <p class="text-secondary small mt-2">Loading worship songs...</p>
+        </div>
+        <div class="col-md-6 col-lg-4">
+          <div class="skeleton-card skeleton-song-card">
+            <div>
+              <div class="d-flex justify-content-between mb-3">
+                <div class="skeleton-shimmer skeleton-line badge" style="width: 65px; height: 20px;"></div>
+                <div class="skeleton-shimmer skeleton-line badge" style="width: 60px; height: 20px;"></div>
+              </div>
+              <div class="skeleton-shimmer skeleton-line title" style="width: 65%; height: 24px;"></div>
+              <div class="skeleton-shimmer skeleton-line text-long mb-2"></div>
+              <div class="skeleton-shimmer skeleton-line text-medium mb-2"></div>
+              <div class="skeleton-shimmer skeleton-line text-short mb-2"></div>
+            </div>
+            <div class="text-end mt-3">
+              <div class="skeleton-shimmer skeleton-line badge ms-auto" style="width: 110px; height: 28px;"></div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-4">
+          <div class="skeleton-card skeleton-song-card">
+            <div>
+              <div class="d-flex justify-content-between mb-3">
+                <div class="skeleton-shimmer skeleton-line badge" style="width: 65px; height: 20px;"></div>
+                <div class="skeleton-shimmer skeleton-line badge" style="width: 60px; height: 20px;"></div>
+              </div>
+              <div class="skeleton-shimmer skeleton-line title" style="width: 80%; height: 24px;"></div>
+              <div class="skeleton-shimmer skeleton-line text-long mb-2"></div>
+              <div class="skeleton-shimmer skeleton-line text-medium mb-2"></div>
+              <div class="skeleton-shimmer skeleton-line text-short mb-2"></div>
+            </div>
+            <div class="text-end mt-3">
+              <div class="skeleton-shimmer skeleton-line badge ms-auto" style="width: 110px; height: 28px;"></div>
+            </div>
+          </div>
         </div>
       </div>
 

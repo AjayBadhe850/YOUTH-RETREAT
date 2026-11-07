@@ -44,6 +44,10 @@
         if (previewContainer) {
           renderPreviewCards(previewContainer, items.slice(0, 4));
         }
+
+        if (window.wcpTriggerScrollReveal) {
+          setTimeout(window.wcpTriggerScrollReveal, 50);
+        }
       })
       .catch(function (err) {
         console.warn('Could not load schedule.json:', err);

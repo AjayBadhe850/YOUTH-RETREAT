@@ -256,6 +256,41 @@
     }
 
     initCountdown();
+
+    // 6. Scroll Reveal Motion Controller (Intersection Observer)
+    function initScrollReveal() {
+      var prefersReducedMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      var targets = document.querySelectorAll('.reveal-on-scroll, .wcp-card, .timeline-card, .song-card, .section-tag, .hero-verse-box');
+
+      if (prefersReducedMotion || !('IntersectionObserver' in window)) {
+        targets.forEach(function (el) {
+          el.classList.add('revealed');
+        });
+        return;
+      }
+
+      var observer = new IntersectionObserver(function (entries, obs) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('revealed');
+            obs.unobserve(entry.target);
+          }
+        });
+      }, {
+        threshold: 0.08,
+        rootMargin: '0px 0px -30px 0px'
+      });
+
+      targets.forEach(function (el) {
+        if (!el.classList.contains('reveal-on-scroll')) {
+          el.classList.add('reveal-on-scroll');
+        }
+        observer.observe(el);
+      });
+    }
+
+    window.wcpTriggerScrollReveal = initScrollReveal;
+    initScrollReveal();
   });
 })();
 

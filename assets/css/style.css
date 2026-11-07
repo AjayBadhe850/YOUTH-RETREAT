@@ -1031,3 +1031,215 @@ a:hover {
 .wcp-footer .rounded-2 p {
   color: var(--wcp-text-primary) !important;
 }
+
+/* ==========================================================================
+   Motion System, Scroll Reveal & Interactive Micro-Animations
+   ========================================================================== */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Ambient Golden Glow Pulse for Badges */
+@keyframes goldBadgePulse {
+  0%, 100% {
+    box-shadow: 0 0 0 0 rgba(197, 162, 83, 0.4);
+  }
+  50% {
+    box-shadow: 0 0 0 6px rgba(197, 162, 83, 0);
+  }
+}
+
+.hero-pill-badge {
+  animation: goldBadgePulse 3.5s infinite ease-in-out;
+  transition: transform 0.3s ease;
+}
+
+.hero-pill-badge:hover {
+  transform: translateY(-2px);
+}
+
+/* Scroll-Driven Reveal System */
+.reveal-on-scroll {
+  opacity: 0;
+  transform: translateY(22px);
+  transition: opacity 0.65s cubic-bezier(0.16, 1, 0.3, 1), transform 0.65s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity, transform;
+}
+
+.reveal-on-scroll.revealed {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.stagger-1 { transition-delay: 0.08s; }
+.stagger-2 { transition-delay: 0.16s; }
+.stagger-3 { transition-delay: 0.24s; }
+.stagger-4 { transition-delay: 0.32s; }
+
+/* Enhanced Card & Element Motion */
+.wcp-card,
+.song-card,
+.timeline-card {
+  transition: transform 0.32s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.32s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.25s ease;
+}
+
+.wcp-card:hover,
+.song-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 28px rgba(197, 162, 83, 0.2), 0 3px 8px rgba(0, 0, 0, 0.04);
+}
+
+.timeline-card:hover {
+  transform: translateX(4px);
+  box-shadow: 0 8px 22px rgba(197, 162, 83, 0.18);
+}
+
+/* Countdown Box Micro-Interactions */
+.countdown-box {
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s ease;
+}
+
+.countdown-box:hover {
+  transform: translateY(-3px) scale(1.02);
+  box-shadow: 0 8px 18px rgba(27, 67, 50, 0.14);
+}
+
+/* Button Elevation & Shimmer on Hover */
+.btn-wcp-primary,
+.btn-wcp-forest {
+  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.btn-wcp-primary:hover,
+.btn-wcp-forest:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(27, 67, 50, 0.24);
+}
+
+.btn-copy-lyrics {
+  transition: all 0.2s ease;
+}
+
+.btn-copy-lyrics:hover {
+  transform: scale(1.05);
+}
+
+/* ==========================================================================
+   Skeleton Loaders & Shimmer Animation
+   ========================================================================== */
+@keyframes skeletonShimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+.skeleton-shimmer {
+  background: linear-gradient(
+    90deg,
+    #ede8df 0%,
+    #faf7f2 35%,
+    #f3eee6 50%,
+    #faf7f2 65%,
+    #ede8df 100%
+  );
+  background-size: 200% 100%;
+  animation: skeletonShimmer 1.8s infinite ease-in-out;
+  border-radius: 6px;
+  display: block;
+}
+
+.skeleton-timeline-container {
+  padding-left: 28px;
+  position: relative;
+}
+
+.skeleton-timeline-item {
+  position: relative;
+  margin-bottom: 24px;
+}
+
+.skeleton-timeline-dot {
+  position: absolute;
+  left: -28px;
+  top: 18px;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: var(--wcp-muted-gold);
+  opacity: 0.65;
+}
+
+.skeleton-card {
+  background: #ffffff;
+  border: 1px solid rgba(197, 162, 83, 0.22);
+  border-radius: 12px;
+  padding: 22px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03);
+}
+
+.skeleton-song-card {
+  min-height: 230px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.skeleton-line {
+  height: 13px;
+  margin-bottom: 12px;
+}
+
+.skeleton-line.title {
+  height: 22px;
+  width: 60%;
+  margin-bottom: 16px;
+}
+
+.skeleton-line.badge {
+  height: 20px;
+  border-radius: 20px;
+  margin-bottom: 12px;
+}
+
+.skeleton-line.text-long {
+  width: 88%;
+}
+
+.skeleton-line.text-medium {
+  width: 65%;
+}
+
+.skeleton-line.text-short {
+  width: 40%;
+}
+
+/* Accessible Reduced Motion Rules */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto !important;
+  }
+  .reveal-on-scroll {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+  .skeleton-shimmer {
+    animation: none !important;
+    background: #ede8df !important;
+  }
+  .hero-pill-badge {
+    animation: none !important;
+  }
+  .wcp-card:hover,
+  .song-card:hover,
+  .timeline-card:hover,
+  .countdown-box:hover,
+  .btn-wcp-primary:hover,
+  .btn-wcp-forest:hover,
+  .btn-copy-lyrics:hover {
+    transform: none !important;
+  }
+}

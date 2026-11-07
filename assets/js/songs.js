@@ -143,6 +143,10 @@
     });
 
     attachDynamicHandlers(container);
+
+    if (window.wcpTriggerScrollReveal) {
+      setTimeout(window.wcpTriggerScrollReveal, 50);
+    }
   }
 
   function renderPreviewSongs(container, items) {
@@ -175,6 +179,10 @@
     });
 
     container.appendChild(row);
+
+    if (window.wcpTriggerScrollReveal) {
+      setTimeout(window.wcpTriggerScrollReveal, 50);
+    }
   }
 
   function attachDynamicHandlers(container) {
