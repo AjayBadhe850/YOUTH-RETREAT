@@ -166,13 +166,17 @@ a:hover {
 }
 
 /* --------------------------------------------------------------------------
-   Main Heading Typography: "One Day Youth Retreat 2026"
-   Font: CS Aither Stitched (with Cinzel Bold & Trajan Pro fallback)
-   Colour: Premium Golden
+   Dedicated Class: CS Aither Stitched Font
+   Applied exclusively to the 3 target text elements for "One Day Youth Retreat 2026"
    -------------------------------------------------------------------------- */
-.hero-title,
-[data-retreat="title"] {
-  font-family: var(--wcp-font-aither) !important;
+.cs-aither-stitched {
+  font-family: 'CS Aither Stitched', 'CS Aither', 'Cinzel', 'Trajan Pro', Georgia, serif !important;
+}
+
+/* --------------------------------------------------------------------------
+   Hero Title Styling
+   -------------------------------------------------------------------------- */
+.hero-title {
   font-size: clamp(2rem, 4.4vw, 3.2rem);
   font-weight: 800;
   line-height: 1.18;
@@ -183,8 +187,7 @@ a:hover {
 }
 
 @supports (-webkit-background-clip: text) {
-  .hero-title,
-  [data-retreat="title"] {
+  .hero-title {
     background: var(--wcp-gold-gradient);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
