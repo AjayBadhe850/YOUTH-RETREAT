@@ -173,6 +173,50 @@ a:hover {
   font-family: 'CS Aither Stitched', 'CS Aither', 'Cinzel', 'Trajan Pro', Georgia, serif !important;
 }
 
+/* Golden 3D CS Aither Stitched Heading Graphic */
+.hero-heading-img {
+  max-height: 130px;
+  max-width: 100%;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  display: block;
+  filter: drop-shadow(0 4px 14px rgba(197, 162, 83, 0.28));
+  margin: 0 0 10px 0;
+  transition: transform 0.3s ease;
+}
+
+.hero-heading-img:hover {
+  transform: translateY(-2px) scale(1.01);
+}
+
+.subpage-heading-img {
+  max-height: 100px;
+  max-width: 100%;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  display: block;
+  margin: 0 auto 10px auto;
+  filter: drop-shadow(0 3px 10px rgba(197, 162, 83, 0.25));
+}
+
+@media (max-width: 991.98px) {
+  .hero-heading-img {
+    margin: 0 auto 10px auto;
+    max-height: 105px;
+  }
+}
+
+@media (max-width: 575.98px) {
+  .hero-heading-img {
+    max-height: 80px;
+  }
+  .subpage-heading-img {
+    max-height: 75px;
+  }
+}
+
 /* --------------------------------------------------------------------------
    Hero Title Styling
    -------------------------------------------------------------------------- */
