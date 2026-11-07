@@ -1,0 +1,11 @@
+{
+  "name": "youth-retreat-2026",
+  "version": "1.0.0",
+  "description": "CSI Wesley Church Palliwada - One Day Youth Retreat 2026 Website",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "keywords": ["csi", "youth-retreat", "wesley-church"],
+  "author": "CSI Wesley Church Palliwada",
+  "license": "ISC"
+}
