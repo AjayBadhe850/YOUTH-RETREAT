@@ -201,6 +201,23 @@ a:hover {
   filter: drop-shadow(0 3px 10px rgba(197, 162, 83, 0.25));
 }
 
+/* Golden CS Aither Stitched Heading Styling for Programme Schedule */
+.schedule-heading-gold {
+  font-family: 'CS Aither Stitched', 'CS Aither', 'Cinzel', 'Trajan Pro', Georgia, serif !important;
+  color: var(--wcp-primary-gold) !important;
+  font-weight: 800 !important;
+  letter-spacing: 0.8px;
+}
+
+@supports (-webkit-background-clip: text) {
+  .schedule-heading-gold {
+    background: var(--wcp-gold-gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: 0 2px 14px rgba(197, 162, 83, 0.22);
+  }
+}
+
 @media (max-width: 991.98px) {
   .hero-heading-img {
     margin: 0 auto 10px auto;
