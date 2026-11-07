@@ -175,7 +175,7 @@ a:hover {
 
 /* Golden 3D CS Aither Stitched Heading Graphic */
 .hero-heading-img {
-  max-height: 130px;
+  max-height: 120px;
   max-width: 100%;
   width: auto;
   height: auto;
@@ -191,7 +191,7 @@ a:hover {
 }
 
 .subpage-heading-img {
-  max-height: 100px;
+  max-height: 95px;
   max-width: 100%;
   width: auto;
   height: auto;
@@ -220,41 +220,43 @@ a:hover {
 
 /* Golden Graphic Banner for Programme Schedule */
 .programme-schedule-img {
-  max-height: 48px;
+  max-height: 60px;
   max-width: 100%;
   width: auto;
   height: auto;
   object-fit: contain;
   display: block;
-  filter: drop-shadow(0 2px 8px rgba(197, 162, 83, 0.2));
-  margin: 0 0 6px 0;
+  filter: drop-shadow(0 3px 10px rgba(197, 162, 83, 0.25));
+  margin: 0 0 8px 0;
+  transition: transform 0.3s ease;
 }
 
-@media (max-width: 767.98px) {
-  .programme-schedule-img {
-    max-height: 38px;
-  }
-}
-
-@media (max-width: 575.98px) {
-  .programme-schedule-img {
-    max-height: 30px;
-  }
+.programme-schedule-img:hover {
+  transform: translateY(-1px) scale(1.01);
 }
 
 @media (max-width: 991.98px) {
   .hero-heading-img {
     margin: 0 auto 10px auto;
-    max-height: 105px;
+    max-height: 95px;
+  }
+}
+
+@media (max-width: 767.98px) {
+  .programme-schedule-img {
+    max-height: 48px;
   }
 }
 
 @media (max-width: 575.98px) {
   .hero-heading-img {
-    max-height: 80px;
+    max-height: 72px;
   }
   .subpage-heading-img {
-    max-height: 75px;
+    max-height: 65px;
+  }
+  .programme-schedule-img {
+    max-height: 40px;
   }
 }
 
