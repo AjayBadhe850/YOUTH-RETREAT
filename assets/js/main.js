@@ -258,34 +258,7 @@
 
     initCountdown();
 
-    // 6. Subtle Christmas Snowfall Effect
-    function initSnowfall() {
-      if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
-      var snowContainer = document.getElementById('snow-container');
-      if (!snowContainer) {
-        snowContainer = document.createElement('div');
-        snowContainer.id = 'snow-container';
-        snowContainer.className = 'snow-wrap';
-        snowContainer.setAttribute('aria-hidden', 'true');
-        document.body.appendChild(snowContainer);
-      }
-      var flakes = ['❄', '❅', '❆', '✧', '★', '•'];
-      var count = window.innerWidth < 768 ? 16 : 28;
-      for (var i = 0; i < count; i++) {
-        var flake = document.createElement('span');
-        flake.className = 'snowflake';
-        flake.textContent = flakes[Math.floor(Math.random() * flakes.length)];
-        flake.style.left = (Math.random() * 98) + 'vw';
-        flake.style.animationDuration = (Math.random() * 6 + 7) + 's';
-        flake.style.animationDelay = (Math.random() * 6) + 's';
-        flake.style.fontSize = (Math.random() * 8 + 10) + 'px';
-        flake.style.opacity = (Math.random() * 0.45 + 0.35);
-        snowContainer.appendChild(flake);
-      }
-    }
-    initSnowfall();
-
-    // 7. Scroll Reveal Motion Controller (Intersection Observer)
+    // 6. Scroll Reveal Motion Controller (Intersection Observer)
     function initScrollReveal() {
       var prefersReducedMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
       var targets = document.querySelectorAll('.reveal-on-scroll, .wcp-card, .timeline-card, .song-card, .section-tag, .hero-verse-box');
