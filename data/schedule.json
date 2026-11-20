@@ -1,58 +1,66 @@
 [
   {
     "id": 1,
-    "title": "Registrations",
+    "title": "Registrations & Welcome",
     "start_time": "9:30 AM",
     "end_time": "",
-    "display_order": 1
+    "display_order": 1,
+    "description": "Welcome and registration for all youth delegates, students, and attendees."
   },
   {
     "id": 2,
-    "title": "Adoration",
+    "title": "Christmas Adoration & Carol Service",
     "start_time": "",
     "end_time": "",
-    "display_order": 2
+    "display_order": 2,
+    "description": "Opening prayer and joyful congregational Christmas carol worship exalting the Prince of Peace."
   },
   {
     "id": 3,
-    "title": "Pastoral Greetings and Felicitations",
+    "title": "Pastoral Christmas Greetings & Felicitations",
     "start_time": "",
     "end_time": "",
-    "display_order": 3
+    "display_order": 3,
+    "description": "Warm Christmas greetings and felicitations by church leaders and pastors."
   },
   {
     "id": 4,
-    "title": "God's Plan for You",
+    "title": "Christmas Special Message",
     "start_time": "",
     "end_time": "",
-    "display_order": 4
+    "display_order": 4,
+    "description": "Inspiring Christmas gospel message on God's eternal love and peace (Isaiah 9:6)."
   },
   {
     "id": 5,
-    "title": "Vote of Thanks & Gift Distributions",
+    "title": "Youth Christmas Presentations & Skits",
     "start_time": "",
     "end_time": "",
-    "display_order": 5
+    "display_order": 5,
+    "description": "Creative youth choir performances, choreography, and dramatic nativity presentations."
   },
   {
     "id": 6,
-    "title": "Prayer & Benediction",
+    "title": "Vote of Thanks & Christmas Gift Distributions",
     "start_time": "",
     "end_time": "",
-    "display_order": 6
+    "display_order": 6,
+    "description": "Heartfelt gratitude and distribution of special Christmas gifts to all attendees."
   },
   {
     "id": 7,
-    "title": "Photo Session",
+    "title": "Closing Prayer & Benediction",
     "start_time": "",
     "end_time": "",
-    "display_order": 7
+    "display_order": 7,
+    "description": "Solemn closing prayer, pastoral benediction, and commemorative group photo session."
   },
   {
     "id": 8,
-    "title": "Lunch Break",
+    "title": "Grand Christmas Fellowship Feast",
     "start_time": "",
     "end_time": "",
-    "display_order": 8
+    "display_order": 8,
+    "description": "Delicious Christmas fellowship lunch shared in love and celebration with all youth."
   }
 ]

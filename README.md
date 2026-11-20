@@ -1,29 +1,26 @@
-# CSI WESLEY CHURCH PALLIWADA — ALER GROUP - YOUTH CHRISTMAS 2026
+# CSI • DIOCESE OF KARIMNAGAR • ALER GROUP — YOUTH CHRISTMAS CELEBRATION 2026
 
-> **Church Name:** CSI Wesley Church, Palliwada  
 > **Organisation:** Church of South India (CSI)  
 > **Diocese:** Diocese of Karimnagar  
 > **Group:** Aler Group Church Council  
-> **Pastorate:** Mothkur Pastorate  
-> **Tagline / Opening:** PRAISE THE LORD  
-> **Motto:** CALLED. CHOSEN. LOVED. SENT.  
-> **Event:** Aler Group - Youth Christmas 2026  
-> **Date & Timings:** 9 November 2026 (Monday), Starting 9:30 AM (Lunch Follows)  
-> **Venue:** C.S.I. Wesley Church, Palliwada Village, Ramannapeta Mandal, Yadadri Bhuvanagiri District, Telangana (508113)  
-> **Theme:** "WHY SHOULD WE NOT ABIDE IN CHRIST?" (John 15:4)  
+> **Opening Greeting:** MERRY CHRISTMAS &bull; PRAISE THE LORD  
+> **Motto:** CELEBRATING CHRIST • SHARING JOY • WALKING IN LIGHT  
+> **Event:** Aler Group - Youth Christmas Celebration 2026  
+> **Date & Timings:** 5 December 2026 (Saturday), Starting 9:30 AM (Christmas Lunch Follows)  
+> **Venue:** CSI Aler Group Church Council, Diocese of Karimnagar, Telangana  
+> **Theme:** "FOR UNTO US A CHILD IS BORN, UNTO US A SON IS GIVEN" (Isaiah 9:6)  
 > **Chief Guest:** Rev. P. Amrutha Rao (Group Chairman)  
-> **Guest Speaker:** Dn. Y. Shyam  
-> **Invited By:** Rev. Ch. Rajarathnam (Pastorate Chairman), G. Manirathnam (Evangelist)  
-> **Organisers:** Palliwada Committee Members and Congregation  
+> **Guest Speaker:** Dn. Y. Shyam (Christmas Guest Speaker)  
+> **Organisers:** Aler Group Church Council Youth Committee & Congregation  
 > **Architecture:** Pure Static Website (Zero Backend, Zero Database, Free Google Sheets Feedback)
 
 ---
 
 ## 1. Project Overview
 
-A complete, beautiful, modern, mobile-first static website built for **Wesley Church Palliwada** for their upcoming One-Day Youth Retreat.
+A complete, beautiful, modern, mobile-first static website built for **CSI • Diocese of Karimnagar • Aler Group** for their upcoming **Youth Christmas Celebration 2026**.
 
-The website provides visitors and attendees with church information, retreat guidelines, the event schedule timeline, and worship songs with multilingual lyrics (Telugu, English, and Hindi).
+The website provides visitors and attendees with event information, the Christmas celebration schedule timeline, registration details, and interactive anonymous feedback.
 
 All editable content is decoupled into simple, easily maintainable JSON files located in the `data/` folder, allowing church organisers to update schedules, dates, and songs without modifying complex HTML or JavaScript.
 
@@ -64,18 +61,15 @@ All editable content is decoupled into simple, easily maintainable JSON files lo
 
 ## 4. Key Website Features
 
-1. **Two-Second Opening Screen ("PRAISE THE LORD")**:
-   - Displays a full-screen devotional greeting: **PRAISE THE LORD** and **WESLEY CHURCH PALLIWADA**.
+1. **Two-Second Opening Screen ("MERRY CHRISTMAS &bull; PRAISE THE LORD")**:
+   - Displays a festive opening greeting: **MERRY CHRISTMAS &bull; PRAISE THE LORD** and **CSI &bull; DIOCESE OF KARIMNAGAR &bull; ALER GROUP**.
    - Exactly 2.0-second display duration followed by a smooth CSS fade-out.
    - Preserves state using `sessionStorage` so visitors are not interrupted when navigating between pages.
    - Respects `prefers-reduced-motion` media queries for accessibility.
 
 2. **Public Website Pages**:
-   - `index.html` (Home Page): Welcoming hero section, theme scripture (*1 Timothy 4:12*), highlights, schedule preview (`#preview-schedule-container`), featured songs preview (`#preview-songs-container`), church location details, and footer.
-   - `pages/about.html` (About Church): Church identity, history, pastoral welcome, core spiritual pillars, and official location breakdown (Palliwada, Ramannapeta Mandal, Yadadri Bhuvanagiri, Telangana – 508113).
-   - `pages/retreat.html` (Retreat Information): Theme meditation, schedule facts, retreat highlights, and attendee guidelines (Bible, notebook, pen, punctuality, reverence).
-   - `pages/schedule.html` (Programme Schedule): Sequential timeline rendered dynamically from `data/schedule.json`, sorted by `display_order`, with time intervals, session descriptions, and browser print layout.
-   - `pages/songs.html` (Worship Songs & Lyrics): Multilingual songbook (Telugu, English, Hindi) with real-time live search, language filter buttons, expandable lyrics, and 1-click clipboard copying.
+   - `index.html` (Home Page): Festive hero section, theme scripture (*Isaiah 9:6*), Christmas countdown timer (5 Dec 2026), 4 celebration pillars, programme schedule preview, and anonymous greetings/feedback form.
+   - `pages/schedule.html` (Programme Schedule): Sequential Christmas timeline rendered dynamically from `data/schedule.json`, sorted by `display_order`, with timeline and table views.
 
 ---
 
@@ -83,14 +77,12 @@ All editable content is decoupled into simple, easily maintainable JSON files lo
 
 ```text
 YOUTH RETREAT/
-├── index.html                  # Main Landing Page with 2s Splash Screen
+├── index.html                  # Main Christmas Celebration Landing Page
 ├── README.md                   # Complete Project Documentation & Deployment Guide
 ├── .gitignore                  # Git Ignore configuration
 ├── pages/
-│   ├── about.html              # Church Profile & Village Address (PIN 508113)
-│   ├── retreat.html            # Theme, Scripture & Attendee Guidelines
-│   ├── schedule.html           # Full Programme Timeline
-│   └── songs.html              # Worship Songbook with Live Search & Filters
+│   ├── celebration.html        # Christmas Celebration Details & Highlights
+│   └── schedule.html           # Full Celebration Programme Timeline
 ├── data/
 │   ├── church.json             # Church Name, Village, Mandal, District, PIN
 │   ├── retreat.json            # Theme, Scripture Verse, Timings, Guidelines
@@ -150,7 +142,7 @@ Render provides free hosting for static sites with global CDN distribution and S
 1. **Push your code to GitHub:**
    ```bash
    git add .
-   git commit -m "Complete static website for Wesley Church Palliwada Youth Retreat"
+   git commit -m "Youth Christmas Celebration 2026 website for CSI Diocese of Karimnagar Aler Group"
    git push origin main
    ```
 
@@ -160,14 +152,14 @@ Render provides free hosting for static sites with global CDN distribution and S
    - Connect your GitHub repository (`YOUTH RETREAT`).
 
 3. **Configure Settings:**
-   - **Name:** `wesley-church-palliwada` (or any custom name)
+   - **Name:** `aler-group-youth-christmas` (or any custom name)
    - **Branch:** `main`
    - **Build Command:** *(Leave blank)*
    - **Publish Directory:** `.` *(a single dot represents the project root)*
 
 4. **Deploy:**
    - Click **Create Static Site**.
-   - Render deploys in under 30 seconds and assigns an HTTPS URL (e.g., `https://wesley-church-palliwada.onrender.com`).
+   - Render deploys in under 30 seconds and assigns an HTTPS URL (e.g., `https://aler-group-youth-christmas.onrender.com`).
 
 ---
 
@@ -266,12 +258,12 @@ function doPost(e) {
 
 ---
 
-## 11. Contact & Church Details
+## 11. Contact & Organisation Details
 
-- **Church:** Wesley Church Palliwada
-- **Village:** Palliwada
-- **Mandal:** Ramannapeta
-- **District:** Yadadri Bhuvanagiri
+- **Organisation:** Church of South India (CSI)
+- **Diocese:** Diocese of Karimnagar
+- **Group:** Aler Group Church Council
 - **State:** Telangana, India
-- **PIN Code:** 508113
-- **Devotional Motto:** *Praise The Lord*
+- **Event Date:** 5 December 2026 (Saturday)
+- **Event:** Aler Group Youth Christmas Celebration 2026
+- **Greeting:** *Merry Christmas &bull; Praise The Lord*

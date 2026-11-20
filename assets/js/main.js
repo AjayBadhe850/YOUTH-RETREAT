@@ -1,6 +1,7 @@
 /**
- * Wesley Church Palliwada - Main JavaScript
- * Handles Opening Screen (2 seconds), Navigation, and Global UI
+ * CSI • Diocese of Karimnagar • Aler Group
+ * Youth Christmas Celebration 2026 — Main JavaScript
+ * Handles Opening Screen (2 seconds), Navigation, Christmas Snowfall, and Global UI
  */
 
 (function () {
@@ -203,13 +204,13 @@
       });
     }
 
-    // 5. Event Countdown Timer (Target: 9 November 2026, 9:30 AM Asia/Kolkata)
+    // 5. Event Countdown Timer (Target: 5 December 2026, 9:30 AM Asia/Kolkata)
     function initCountdown() {
       var countdownExists = document.getElementById('countdown-days') || document.querySelector('[data-countdown="days"]');
       if (!countdownExists) return;
 
-      // 9 November 2026, 9:30 AM IST (Asia/Kolkata, UTC+05:30)
-      var targetDate = new Date('2026-11-09T09:30:00+05:30').getTime();
+      // 5 December 2026, 9:30 AM IST (Asia/Kolkata, UTC+05:30)
+      var targetDate = new Date('2026-12-05T09:30:00+05:30').getTime();
 
       function updateCountdown() {
         var now = new Date().getTime();
@@ -218,7 +219,7 @@
         if (diff <= 0) {
           setAllCountdown('00', '00', '00', '00');
           var statusEls = document.querySelectorAll('.countdown-status-text');
-          statusEls.forEach(function (el) { el.textContent = 'Retreat is Live Today!'; });
+          statusEls.forEach(function (el) { el.textContent = 'Youth Christmas Celebration is Live Today! Merry Christmas!'; });
           return;
         }
 
@@ -257,7 +258,34 @@
 
     initCountdown();
 
-    // 6. Scroll Reveal Motion Controller (Intersection Observer)
+    // 6. Subtle Christmas Snowfall Effect
+    function initSnowfall() {
+      if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+      var snowContainer = document.getElementById('snow-container');
+      if (!snowContainer) {
+        snowContainer = document.createElement('div');
+        snowContainer.id = 'snow-container';
+        snowContainer.className = 'snow-wrap';
+        snowContainer.setAttribute('aria-hidden', 'true');
+        document.body.appendChild(snowContainer);
+      }
+      var flakes = ['❄', '❅', '❆', '✧', '★', '•'];
+      var count = window.innerWidth < 768 ? 16 : 28;
+      for (var i = 0; i < count; i++) {
+        var flake = document.createElement('span');
+        flake.className = 'snowflake';
+        flake.textContent = flakes[Math.floor(Math.random() * flakes.length)];
+        flake.style.left = (Math.random() * 98) + 'vw';
+        flake.style.animationDuration = (Math.random() * 6 + 7) + 's';
+        flake.style.animationDelay = (Math.random() * 6) + 's';
+        flake.style.fontSize = (Math.random() * 8 + 10) + 'px';
+        flake.style.opacity = (Math.random() * 0.45 + 0.35);
+        snowContainer.appendChild(flake);
+      }
+    }
+    initSnowfall();
+
+    // 7. Scroll Reveal Motion Controller (Intersection Observer)
     function initScrollReveal() {
       var prefersReducedMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
       var targets = document.querySelectorAll('.reveal-on-scroll, .wcp-card, .timeline-card, .song-card, .section-tag, .hero-verse-box');

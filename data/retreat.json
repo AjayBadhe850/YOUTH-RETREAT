@@ -1,66 +1,54 @@
 {
   "title": "ALER GROUP - YOUTH CHRISTMAS 2026",
-  "theme": "\"WHY SHOULD WE NOT ABIDE IN CHRIST?\"",
-  "motto": "CALLED. CHOSEN. LOVED. SENT.",
-  "bible_verse": "John 15:4",
-  "scripture_verse": "\"Abide in Me, and I in you. As the branch cannot bear fruit of itself, unless it abides in the vine, neither can you, unless you abide in Me.\" — John 15:4",
-  "date": "9 November 2026 (Monday)",
-  "timings": "9:30 AM (Lunch Follows)",
-  "lunch": "Lunch Follows",
-  "venue": "C.S.I. Wesley Church, Palliwada",
+  "theme": "\"FOR UNTO US A CHILD IS BORN, UNTO US A SON IS GIVEN\"",
+  "motto": "CELEBRATING CHRIST &bull; SHARING JOY &bull; WALKING IN LIGHT",
+  "bible_verse": "Isaiah 9:6",
+  "scripture_verse": "\"For unto us a child is born, unto us a son is given: and the government shall be upon his shoulder: and his name shall be called Wonderful, Counsellor, The mighty God, The everlasting Father, The Prince of Peace.\" — Isaiah 9:6",
+  "date": "5 December 2026 (Saturday)",
+  "timings": "9:30 AM (Christmas Lunch Follows)",
+  "lunch": "Christmas Lunch Follows",
+  "venue": "CSI Aler Group Church Council, Diocese of Karimnagar",
   "organisation": "Church of South India (CSI)",
   "diocese": "Diocese of Karimnagar",
   "group": "Aler Group Church Council",
-  "pastorate": "Mothkur Pastorate",
-  "church": "CSI Wesley Church, Palliwada",
   "chief_guest": {
     "name": "Rev. P. Amrutha Rao",
     "designation": "Group Chairman"
   },
   "guest_speaker": {
     "name": "Dn. Y. Shyam",
-    "designation": "Guest Speaker"
+    "designation": "Christmas Guest Speaker"
   },
   "invited_by": [
     {
-      "name": "Rev. Ch. Rajarathnam",
-      "designation": "Pastorate Chairman"
-    },
-    {
-      "name": "G. Manirathnam",
-      "designation": "Evangelist"
+      "name": "Aler Group Church Council Pastors & Leaders",
+      "designation": "Aler Group Council"
     }
   ],
-  "organisers": "Palliwada Committee Members and Congregation.",
-  "countdown_target": "2026-11-09T09:30:00+05:30",
-  "introduction": "The Aler Group - Youth Christmas 2026 is a sacred spiritual gathering organised under the Church of South India (CSI), Diocese of Karimnagar, Aler Group Church Council, Mothkur Pastorate at C.S.I. Wesley Church, Palliwada. Grounded in the divine motto 'CALLED. CHOSEN. LOVED. SENT.' and the theme 'WHY SHOULD WE NOT ABIDE IN CHRIST?' (John 15:4), this celebration empowers young believers through vibrant worship, biblical exposition, and fellowship.",
-  "programme_overview": "An uplifting order of service starting with registrations at 9:30 AM, vibrant adoration, pastoral greetings and felicitations, inspiring message on God's Plan for You, vote of thanks & gift distributions, prayer & benediction, photo session, and fellowship lunch.",
+  "organisers": "Aler Group Church Council Youth Committee & Congregation.",
+  "countdown_target": "2026-12-05T09:30:00+05:30",
+  "introduction": "The Aler Group Youth Christmas Celebration 2026 is a joyous spiritual festival organised under the Church of South India (CSI), Diocese of Karimnagar, Aler Group Church Council. Grounded in the glorious promise of Isaiah 9:6, this Christmas celebration brings young people together from across the diocese for inspiring Christmas carols, uplifting messages of hope, youth talent presentations, gift distributions, and festive fellowship.",
+  "programme_overview": "A heart-warming Christmas celebration starting with registrations at 9:30 AM, joyful Christmas adoration & carols, pastoral Christmas greetings, inspiring Christmas message, youth musical choreography, vote of thanks & Christmas gift distributions, closing prayer & benediction, commemorative group photo, and a grand Christmas fellowship lunch.",
   "highlights": [
     {
-      "icon": "bi-soundwave",
-      "title": "Vibrant Praise & Worship",
-      "description": "Telugu and Hindi congregational worship songs exalting our Lord and Saviour Jesus Christ."
+      "icon": "bi-music-note-beamed",
+      "title": "Joyful Carols & Worship",
+      "description": "Inspiring Christmas carols and praise exalting our newborn King and Saviour Jesus Christ."
     },
     {
       "icon": "bi-book-half",
-      "title": "Empowering Biblical Messages",
-      "description": "Practical Bible teaching on abiding in Christ (John 15:4) by our Chief Guest and Guest Speaker."
+      "title": "Christmas Gospel Message",
+      "description": "Powerful Bible teaching on God's greatest gift of love, peace, and hope (Isaiah 9:6)."
     },
     {
-      "icon": "bi-people-fill",
-      "title": "Youth Fellowship & Action Songs",
-      "description": "Interactive group sessions, joy-filled action choruses, and community building in Christ."
+      "icon": "bi-stars",
+      "title": "Youth Skits & Presentations",
+      "description": "Creative youth choreography, skits, and musical performances celebrating the nativity story."
     },
     {
-      "icon": "bi-cup-hot-fill",
-      "title": "Fellowship Lunch",
-      "description": "Complimentary morning tea, refreshments, and fellowship lunch provided on campus."
+      "icon": "bi-gift-fill",
+      "title": "Christmas Gifts & Grand Feast",
+      "description": "Exciting Christmas gift distributions followed by a delicious fellowship lunch for all attendees."
     }
-  ],
-  "guidelines": [
-    "Bring your printed Bible (Telugu or English), a notebook, and a pen.",
-    "Arrive promptly before 9:30 AM to participate in registrations and opening adoration.",
-    "Maintain decorum, modesty, and reverence inside the church sanctuary.",
-    "Come with an open, expectant heart to receive God's blessings and abide in Christ."
   ]
 }

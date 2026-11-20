@@ -1,6 +1,6 @@
 /* ==========================================================================
-   WESLEY CHURCH PALLIWADA — YOUTH RETREAT STATIC WEBSITE
-   Identity: Praise The Lord
+   CSI • DIOCESE OF KARIMNAGAR • ALER GROUP — YOUTH CHRISTMAS CELEBRATION 2026
+   Identity: Merry Christmas & Praise The Lord
    Theme: Master White & Premium Gold Redesign
    
    Colour Palette:
@@ -1239,6 +1239,167 @@ html {
 
 .skeleton-line.text-short {
   width: 40%;
+}
+
+/* ==========================================================================
+   YOUTH CHRISTMAS CELEBRATION 2026 — FESTIVE STYLING & DECORATIONS
+   ========================================================================== */
+
+/* Festive Color Variables */
+:root {
+  --xmas-crimson: #B31B1B;
+  --xmas-dark-crimson: #8B0000;
+  --xmas-emerald: #0F5132;
+  --xmas-pine: #14532D;
+  --xmas-gold: #D4AF37;
+  --xmas-gold-glow: rgba(212, 175, 55, 0.45);
+  --xmas-snow: #FFFFFF;
+}
+
+/* Dual Corner Logos */
+.corner-logo {
+  width: 58px;
+  height: 58px;
+  object-fit: contain;
+  border-radius: 50%;
+  padding: 3px;
+  background: #FFFFFF;
+  border: 2px solid var(--wcp-primary-gold);
+  box-shadow: 0 4px 14px rgba(197, 162, 83, 0.35);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  flex-shrink: 0;
+}
+
+.corner-logo:hover {
+  transform: scale(1.08) rotate(3deg);
+  box-shadow: 0 6px 20px rgba(197, 162, 83, 0.5);
+}
+
+.hero-corner-logos {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  margin-bottom: 1.25rem;
+}
+
+/* Christmas Fairy Lights Strand */
+.xmas-lights-strand {
+  display: flex;
+  justify-content: space-around;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1040;
+  pointer-events: none;
+  overflow: hidden;
+  height: 12px;
+}
+
+.xmas-bulb {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  position: relative;
+  top: 1px;
+  animation: bulbGlow 2s infinite ease-in-out alternate;
+}
+
+.xmas-bulb:nth-child(4n+1) { background: #E63946; box-shadow: 0 0 7px #E63946; animation-delay: 0s; }
+.xmas-bulb:nth-child(4n+2) { background: #FFD166; box-shadow: 0 0 7px #FFD166; animation-delay: 0.5s; }
+.xmas-bulb:nth-child(4n+3) { background: #06D6A0; box-shadow: 0 0 7px #06D6A0; animation-delay: 1s; }
+.xmas-bulb:nth-child(4n+4) { background: #118AB2; box-shadow: 0 0 7px #118AB2; animation-delay: 1.5s; }
+
+@keyframes bulbGlow {
+  0% { opacity: 0.45; transform: scale(0.85); }
+  100% { opacity: 1; transform: scale(1.15); }
+}
+
+/* Subtle Snowfall Overlay */
+.snow-wrap {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none;
+  z-index: 9990;
+  overflow: hidden;
+}
+
+.snowflake {
+  position: absolute;
+  top: -25px;
+  color: rgba(255, 255, 255, 0.85);
+  font-family: inherit;
+  user-select: none;
+  animation: snowDrift linear infinite;
+  text-shadow: 0 0 6px rgba(212, 175, 55, 0.45), 0 0 10px rgba(255, 255, 255, 0.7);
+}
+
+@keyframes snowDrift {
+  0% {
+    transform: translateY(-25px) rotate(0deg);
+    opacity: 0;
+  }
+  12% {
+    opacity: 0.85;
+  }
+  88% {
+    opacity: 0.85;
+  }
+  100% {
+    transform: translateY(105vh) rotate(360deg);
+    opacity: 0;
+  }
+}
+
+/* Christmas Badges & Accents */
+.xmas-badge {
+  background: linear-gradient(135deg, rgba(179, 27, 27, 0.12) 0%, rgba(212, 175, 55, 0.15) 100%);
+  color: var(--xmas-dark-crimson) !important;
+  border: 1px solid rgba(179, 27, 27, 0.25) !important;
+  padding: 6px 16px;
+  border-radius: 50px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  font-size: 0.82rem;
+  display: inline-flex;
+  align-items: center;
+}
+
+.xmas-badge i {
+  color: var(--xmas-crimson);
+}
+
+.text-xmas-red {
+  color: var(--xmas-crimson) !important;
+}
+
+.bg-xmas-red {
+  background-color: var(--xmas-crimson) !important;
+  color: #FFFFFF !important;
+}
+
+.border-xmas-gold {
+  border-color: var(--wcp-primary-gold) !important;
+}
+
+.xmas-card-accent {
+  border-top: 4px solid var(--xmas-crimson) !important;
+}
+
+.xmas-tree-icon {
+  color: var(--xmas-emerald);
+}
+
+.xmas-star-icon {
+  color: var(--xmas-gold);
 }
 
 /* Accessible Reduced Motion Rules */

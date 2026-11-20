@@ -1,5 +1,5 @@
 /**
- * Wesley Church Palliwada - Songs and Lyrics Module
+ * CSI • Diocese of Karimnagar • Aler Group - Songs and Lyrics Module (Archived)
  * Features:
  * - Reads songs from data/songs.json
  * - Filters only published songs (is_published: true)

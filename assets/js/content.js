@@ -1,5 +1,6 @@
 /**
- * Wesley Church Palliwada - Content Loader
+ * CSI • Diocese of Karimnagar • Aler Group
+ * Youth Christmas Celebration 2026 — Content Loader
  * Dynamically loads and binds data from data/church.json and data/retreat.json
  */
 

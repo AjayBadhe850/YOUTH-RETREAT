@@ -1,5 +1,6 @@
 /**
- * Wesley Church Palliwada - Schedule Loader
+ * CSI • Diocese of Karimnagar • Aler Group
+ * Youth Christmas Celebration 2026 — Schedule Loader
  * Loads, sorts by display_order, and renders timeline items from data/schedule.json
  */
 

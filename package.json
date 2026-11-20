@@ -1,12 +1,11 @@
 {
-  "name": "youth-retreat-2026",
-  "version": "1.0.0",
-  "description": "CSI Wesley Church Palliwada - Aler Group - Youth Christmas 2026 Website",
+  "name": "youth-christmas-2026",
+  "version": "2.0.0",
+  "description": "CSI • Diocese of Karimnagar • Aler Group — Youth Christmas Celebration 2026 Website",
   "scripts": {
     "start": "node server.js"
   },
-  "keywords": ["csi", "youth-retreat", "wesley-church"],
-  "author": "CSI Wesley Church Palliwada",
+  "keywords": ["csi", "karimnagar-diocese", "aler-group", "youth-christmas-celebration"],
+  "author": "CSI Diocese of Karimnagar - Aler Group Church Council",
   "license": "ISC"
 }
-
