@@ -72,11 +72,6 @@ img, svg, picture, video {
     text-align: center;
   }
 
-  .xmas-sticker-lights {
-    max-width: min(360px, 92%);
-    margin-bottom: 4px;
-  }
-
   .hero-pill-badge.xmas-badge {
     font-size: 0.72rem;
     padding: 5px 12px;
@@ -149,11 +144,6 @@ img, svg, picture, video {
   .wcp-countdown-lbl {
     font-size: 0.58rem;
     letter-spacing: 0.5px;
-  }
-
-  .xmas-sticker-tree {
-    max-width: 68px;
-    margin-bottom: 6px;
   }
 
   /* Schedule Timeline Alignment */
@@ -329,11 +319,7 @@ img, svg, picture, video {
   #opening-screen,
   .wcp-navbar,
   .btn,
-  .no-print,
-  .xmas-sticker-lights,
-  .xmas-sticker-tree,
-  .xmas-sticker-bells,
-  .xmas-sticker-gift {
+  .no-print {
     display: none !important;
   }
 

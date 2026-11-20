@@ -1256,40 +1256,6 @@ html {
   --xmas-snow: #FFFFFF;
 }
 
-/* Static Christmas Stickers & Accents */
-.xmas-sticker-lights {
-  display: block;
-  max-width: min(440px, 94%);
-  height: auto;
-  pointer-events: none;
-  filter: drop-shadow(0 2px 8px rgba(212, 175, 55, 0.25));
-  margin: 0 auto;
-}
-
-.xmas-sticker-tree {
-  display: block;
-  max-width: 78px;
-  height: auto;
-  pointer-events: none;
-  filter: drop-shadow(0 4px 10px rgba(0, 0, 0, 0.12));
-}
-
-.xmas-sticker-bells {
-  display: inline-block;
-  max-width: 65px;
-  height: auto;
-  pointer-events: none;
-  filter: drop-shadow(0 3px 8px rgba(212, 175, 55, 0.3));
-}
-
-.xmas-sticker-gift {
-  display: inline-block;
-  max-width: 32px;
-  height: auto;
-  vertical-align: middle;
-  pointer-events: none;
-}
-
 /* Christmas Badges & Accents */
 .xmas-badge {
   background: linear-gradient(135deg, rgba(179, 27, 27, 0.12) 0%, rgba(212, 175, 55, 0.15) 100%);
