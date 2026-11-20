@@ -26,14 +26,14 @@ img, svg, picture, video {
   }
 
   .wcp-brand {
-    gap: 10px;
+    gap: 8px;
     max-width: calc(100% - 56px);
     margin-right: 0;
   }
 
   .wcp-brand-logo {
-    width: 40px;
-    height: 40px;
+    width: 36px;
+    height: 36px;
     flex-shrink: 0;
   }
 
@@ -239,8 +239,8 @@ img, svg, picture, video {
    -------------------------------------------------------------------------- */
 @media (max-width: 420px) {
   .wcp-brand-logo {
-    width: 35px;
-    height: 35px;
+    width: 30px;
+    height: 30px;
   }
 
   .wcp-brand-title {
