@@ -20,35 +20,48 @@ img, svg, picture, video {
     padding-right: 14px;
   }
 
-  /* Single Primary Logo Top Navigation */
+  /* Symmetrical Dual Emblem Top Navigation Header */
   .wcp-navbar {
     padding: 8px 0;
   }
 
   .wcp-brand {
-    gap: 8px;
-    max-width: calc(100% - 56px);
-    margin-right: 0;
+    gap: 10px;
+    width: 100%;
+    max-width: 100%;
+    justify-content: center;
+    margin: 0 auto;
+    text-align: center;
   }
 
   .wcp-brand-logo {
-    width: 36px;
-    height: 36px;
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    object-fit: contain;
     flex-shrink: 0;
+    align-self: center;
+  }
+
+  .wcp-brand-text {
+    text-align: center;
+    flex: 0 1 auto;
   }
 
   .wcp-brand-title {
-    font-size: 0.92rem;
+    font-size: 0.90rem;
     line-height: 1.22;
     white-space: normal;
     word-break: break-word;
+    letter-spacing: 0.3px;
   }
 
   .wcp-brand-sub {
-    font-size: 0.62rem;
+    font-size: 0.60rem;
     letter-spacing: 0.6px;
     line-height: 1.2;
     margin-top: 1px;
+    white-space: normal;
   }
 
   .navbar-collapse {
@@ -102,6 +115,25 @@ img, svg, picture, video {
     margin-bottom: 16px;
     border-radius: var(--wcp-radius-md);
     text-align: center;
+  }
+
+  .hero-meta-badges {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px !important;
+    margin-bottom: 16px;
+    width: 100%;
+  }
+
+  .hero-meta-badge {
+    margin: 0 !important;
+    width: 100%;
+    max-width: 380px;
+    justify-content: center;
+    text-align: center;
+    font-size: 0.78rem;
+    padding: 6px 12px;
   }
 
   .hero-section .d-flex.flex-wrap.gap-2 {
