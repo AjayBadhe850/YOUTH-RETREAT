@@ -1,4 +1,4 @@
-# CSI WESLEY CHURCH PALLIWADA — ONE DAY YOUTH RETREAT 2026
+# CSI WESLEY CHURCH PALLIWADA — ALER GROUP - YOUTH CHRISTMAS 2026
 
 > **Church Name:** CSI Wesley Church, Palliwada  
 > **Organisation:** Church of South India (CSI)  
@@ -7,7 +7,7 @@
 > **Pastorate:** Mothkur Pastorate  
 > **Tagline / Opening:** PRAISE THE LORD  
 > **Motto:** CALLED. CHOSEN. LOVED. SENT.  
-> **Event:** One Day Youth Retreat 2026  
+> **Event:** Aler Group - Youth Christmas 2026  
 > **Date & Timings:** 9 November 2026 (Monday), Starting 9:30 AM (Lunch Follows)  
 > **Venue:** C.S.I. Wesley Church, Palliwada Village, Ramannapeta Mandal, Yadadri Bhuvanagiri District, Telangana (508113)  
 > **Theme:** "WHY SHOULD WE NOT ABIDE IN CHRIST?" (John 15:4)  

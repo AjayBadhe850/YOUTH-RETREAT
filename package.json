@@ -1,7 +1,7 @@
 {
   "name": "youth-retreat-2026",
   "version": "1.0.0",
-  "description": "CSI Wesley Church Palliwada - One Day Youth Retreat 2026 Website",
+  "description": "CSI Wesley Church Palliwada - Aler Group - Youth Christmas 2026 Website",
   "scripts": {
     "start": "node server.js"
   },

@@ -167,7 +167,7 @@ a:hover {
 
 /* --------------------------------------------------------------------------
    Dedicated Class: CS Aither Stitched Font
-   Applied exclusively to the 3 target text elements for "One Day Youth Retreat 2026"
+   Applied exclusively to the target text elements for "ALER GROUP - YOUTH CHRISTMAS 2026"
    -------------------------------------------------------------------------- */
 .cs-aither-stitched {
   font-family: 'CS Aither Stitched', 'CS Aither', 'Cinzel', 'Trajan Pro', Georgia, serif !important;
@@ -204,6 +204,31 @@ a:hover {
 
 .subpage-heading-img:hover {
   transform: translateY(-2px) scale(1.01);
+}
+
+/* Golden CS Aither Event Title */
+.event-title-gold {
+  font-family: 'CS Aither Stitched', 'CS Aither', 'Cinzel', 'Trajan Pro', Georgia, serif !important;
+  color: var(--wcp-primary-gold) !important;
+  font-weight: 800 !important;
+  letter-spacing: 1.5px;
+  background: var(--wcp-gold-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 0 4px 18px rgba(197, 162, 83, 0.35);
+  display: inline-block;
+  text-transform: uppercase;
+}
+
+.hero-title.event-title-gold {
+  font-size: clamp(1.8rem, 4.2vw, 3.1rem);
+  line-height: 1.22;
+  margin-bottom: 8px;
+}
+
+.subpage-title.event-title-gold {
+  font-size: clamp(1.6rem, 3.8vw, 2.7rem);
+  line-height: 1.25;
 }
 
 /* Golden CS Aither Stitched Heading Styling for Programme Schedule */
