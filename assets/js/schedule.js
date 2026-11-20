@@ -77,6 +77,10 @@
         timeText += ' – ' + item.end_time;
       }
 
+      var timeHtml = timeText
+        ? '<span class="timeline-time"><i class="bi bi-clock me-1"></i> ' + escapeHTML(timeText) + '</span>'
+        : '<span class="timeline-time text-muted"><i class="bi bi-check2-circle me-1 text-gold"></i> Programme ' + (item.display_order || '') + '</span>';
+
       var speakerHtml = item.speaker_activity
         ? '<span class="badge bg-light text-forest border"><i class="bi bi-person-badge me-1"></i> ' + escapeHTML(item.speaker_activity) + '</span>'
         : '';
@@ -89,7 +93,7 @@
 
       card.innerHTML =
         '<div class="d-flex flex-wrap justify-content-between align-items-center mb-1">' +
-          '<span class="timeline-time"><i class="bi bi-clock me-1"></i> ' + escapeHTML(timeText) + '</span>' +
+          timeHtml +
           speakerHtml +
         '</div>' +
         '<h4 class="' + headingClass + '">' + escapeHTML(item.title) + '</h4>' +
@@ -117,13 +121,15 @@
         timeText += ' – ' + item.end_time;
       }
 
+      var timeBadge = timeText
+        ? '<span class="badge bg-light text-dark border px-3 py-2 rounded-pill font-monospace"><i class="bi bi-clock me-1 text-gold"></i> ' + escapeHTML(timeText) + '</span>'
+        : '<span class="badge bg-light text-muted border px-3 py-2 rounded-pill font-monospace"><i class="bi bi-check2 text-gold me-1"></i> Programme ' + (item.display_order || (idx + 1)) + '</span>';
+
       tr.innerHTML =
         '<td class="py-3 ps-4 text-muted fw-bold">' + (item.display_order || (idx + 1)) + '</td>' +
         '<td class="py-3"><strong class="text-forest">' + escapeHTML(item.title) + '</strong></td>' +
         '<td class="py-3 pe-4 text-end">' +
-          '<span class="badge bg-light text-dark border px-3 py-2 rounded-pill font-monospace">' +
-            '<i class="bi bi-clock me-1 text-gold"></i> ' + escapeHTML(timeText) +
-          '</span>' +
+          timeBadge +
         '</td>';
 
       tableBody.appendChild(tr);
@@ -177,9 +183,13 @@
         ? '<div class="text-muted small mb-2"><i class="bi bi-person-fill text-gold"></i> ' + escapeHTML(item.speaker_activity) + '</div>'
         : '';
 
+      var timeHtml = timeText
+        ? '<span class="timeline-time mb-2"><i class="bi bi-clock me-1"></i> ' + escapeHTML(timeText) + '</span>'
+        : '<span class="timeline-time mb-2 text-muted"><i class="bi bi-check2-circle me-1 text-gold"></i> Programme ' + (item.display_order || '') + '</span>';
+
       col.innerHTML =
         '<div class="wcp-card h-100 text-center">' +
-          '<span class="timeline-time mb-2"><i class="bi bi-clock me-1"></i> ' + escapeHTML(timeText) + '</span>' +
+          timeHtml +
           '<h5 class="fw-bold mb-2">' + escapeHTML(item.title) + '</h5>' +
           speakerHtml +
           '<p class="small text-secondary mb-0">' + escapeHTML(truncate(item.description || '', 15)) + '</p>' +

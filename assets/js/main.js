@@ -203,13 +203,13 @@
       });
     }
 
-    // 5. Event Countdown Timer (Target: 9 November 2026, 8:30 AM Asia/Kolkata)
+    // 5. Event Countdown Timer (Target: 9 November 2026, 9:30 AM Asia/Kolkata)
     function initCountdown() {
       var countdownExists = document.getElementById('countdown-days') || document.querySelector('[data-countdown="days"]');
       if (!countdownExists) return;
 
-      // 9 November 2026, 8:30 AM IST (Asia/Kolkata, UTC+05:30)
-      var targetDate = new Date('2026-11-09T08:30:00+05:30').getTime();
+      // 9 November 2026, 9:30 AM IST (Asia/Kolkata, UTC+05:30)
+      var targetDate = new Date('2026-11-09T09:30:00+05:30').getTime();
 
       function updateCountdown() {
         var now = new Date().getTime();

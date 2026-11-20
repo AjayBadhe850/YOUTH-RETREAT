@@ -8,7 +8,7 @@
 > **Tagline / Opening:** PRAISE THE LORD  
 > **Motto:** CALLED. CHOSEN. LOVED. SENT.  
 > **Event:** One Day Youth Retreat 2026  
-> **Date & Timings:** 9 November 2026 (Monday), 8:30 AM – 4:30 PM (Lunch Follows)  
+> **Date & Timings:** 9 November 2026 (Monday), Starting 9:30 AM (Lunch Follows)  
 > **Venue:** C.S.I. Wesley Church, Palliwada Village, Ramannapeta Mandal, Yadadri Bhuvanagiri District, Telangana (508113)  
 > **Theme:** "WHY SHOULD WE NOT ABIDE IN CHRIST?" (John 15:4)  
 > **Chief Guest:** Rev. P. Amrutha Rao (Group Chairman)  
