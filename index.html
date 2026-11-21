@@ -82,6 +82,9 @@
             <a class="nav-link wcp-nav-link" href="#schedule"><i class="bi bi-calendar-check me-1"></i> Schedule</a>
           </li>
           <li class="nav-item">
+            <a class="nav-link wcp-nav-link" href="pages/songs.html"><i class="bi bi-music-note-beamed me-1"></i> Carols</a>
+          </li>
+          <li class="nav-item">
             <a class="nav-link wcp-nav-link" href="#feedback"><i class="bi bi-chat-heart me-1"></i> Feedback</a>
           </li>
         </ul>
@@ -242,6 +245,37 @@
   </section>
 
   <!-- ======================================================================
+       3. CHRISTMAS CAROLS & WORSHIP (HIGHLIGHT PREVIEW)
+       ====================================================================== -->
+  <section id="carols" class="py-5 bg-white border-top border-light">
+    <div class="container py-lg-3">
+      <div class="d-flex flex-wrap justify-content-between align-items-end mb-4 gap-3">
+        <div>
+          <span class="section-tag xmas-badge mb-1"><i class="bi bi-music-note-beamed me-1"></i> Festive Hymns &amp; Carols</span>
+          <h2 class="h3 fw-bold text-forest mb-1">Christmas Carols &amp; Worship Songs</h2>
+          <p class="text-secondary small mb-0">Rejoice in the Savior's birth with 17 joyful Telugu and Hindi Christmas carols.</p>
+        </div>
+        <div>
+          <a href="pages/songs.html" class="btn btn-wcp-outline btn-sm rounded-pill px-3">
+            <i class="bi bi-music-note-list me-1"></i> View All 17 Carols
+          </a>
+        </div>
+      </div>
+
+      <!-- Live Songs Preview Container populated by songs.js -->
+      <div id="preview-songs-container" class="mb-4">
+        <!-- Rendered by songs.js -->
+      </div>
+
+      <div class="text-center mt-3">
+        <a href="pages/songs.html" class="btn btn-wcp-primary btn-sm rounded-pill px-4">
+          <i class="bi bi-music-note-beamed me-1"></i> Explore Complete 17 Christmas Carols &amp; Lyrics
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================================================================
        3. FEEDBACK & CHRISTMAS GREETINGS (ANONYMOUS)
        ====================================================================== -->
   <section id="feedback" class="py-5 bg-white">
@@ -381,6 +415,7 @@
           <ul class="list-unstyled small mb-0 d-flex flex-column gap-2">
             <li><a href="#top" class="text-light opacity-75 hover-gold"><i class="bi bi-chevron-right me-1"></i> Home</a></li>
             <li><a href="#schedule" class="text-light opacity-75 hover-gold"><i class="bi bi-chevron-right me-1"></i> Programme Schedule</a></li>
+            <li><a href="pages/songs.html" class="text-light opacity-75 hover-gold"><i class="bi bi-chevron-right me-1"></i> Christmas Carols (17)</a></li>
             <li><a href="#feedback" class="text-light opacity-75 hover-gold"><i class="bi bi-chevron-right me-1"></i> Greetings &amp; Feedback</a></li>
             <li><a href="https://forms.gle/79noMHha5RFQeh2i8" target="_blank" rel="noopener noreferrer" class="text-light opacity-75 hover-gold"><i class="bi bi-chevron-right me-1"></i> Free Registration</a></li>
           </ul>
@@ -413,5 +448,6 @@
   <script src="assets/js/main.js?v=2.2.0"></script>
   <script src="assets/js/content.js"></script>
   <script src="assets/js/schedule.js"></script>
+  <script src="assets/js/songs.js"></script>
 </body>
 </html>

@@ -1,11 +1,11 @@
 /**
- * CSI • Diocese of Karimnagar • Aler Group - Songs and Lyrics Module (Archived)
+ * CSI • Diocese of Karimnagar • Aler Group - Christmas Carols & Lyrics Module
  * Features:
- * - Reads songs from data/songs.json
- * - Filters only published songs (is_published: true)
- * - Live search by title and lyrics
- * - Filter by language (All, Telugu, English, Hindi, Other)
- * - Expand / Collapse long lyrics
+ * - Reads carols from data/songs.json
+ * - Filters only published carols (is_published: true)
+ * - Live search by title, alternateTitle (transliteration), and lyrics
+ * - Filter by language / category (All, Telugu, Hindi)
+ * - Expand / Collapse long lyrics with smooth transition
  * - Copy lyrics to clipboard with visual feedback
  */
 
@@ -70,7 +70,10 @@
       filterButtons.forEach(function (btn) {
         btn.addEventListener('click', function (e) {
           e.preventDefault();
-          filterButtons.forEach(function (b) { b.classList.remove('active', 'btn-wcp-primary'); b.classList.add('btn-outline-secondary'); });
+          filterButtons.forEach(function (b) {
+            b.classList.remove('active', 'btn-wcp-primary');
+            b.classList.add('btn-outline-secondary');
+          });
           this.classList.add('active', 'btn-wcp-primary');
           this.classList.remove('btn-outline-secondary');
 
@@ -88,10 +91,20 @@
       var matchesLang = (activeLanguage === 'All') || (song.language === activeLanguage);
       var titleText = (song.title || '').toLowerCase();
       var lyricsText = (song.lyrics || '').toLowerCase();
-      var translitText = (song.transliteration || '').toLowerCase();
-      var matchesSearch = !searchQuery || titleText.includes(searchQuery) || lyricsText.includes(searchQuery) || translitText.includes(searchQuery);
+      var translitText = ((song.alternateTitle || song.transliteration) || '').toLowerCase();
+      var numText = (song.number || '').toLowerCase();
+      var matchesSearch = !searchQuery ||
+        titleText.includes(searchQuery) ||
+        lyricsText.includes(searchQuery) ||
+        translitText.includes(searchQuery) ||
+        numText.includes(searchQuery);
       return matchesLang && matchesSearch;
     });
+
+    var countBadge = document.getElementById('song-count-badge');
+    if (countBadge) {
+      countBadge.textContent = 'Showing ' + filtered.length + ' of ' + allSongs.length + ' Carols';
+    }
 
     container.innerHTML = '';
 
@@ -100,8 +113,8 @@
         '<div class="col-12 text-center py-5">' +
           '<div class="wcp-card p-5 max-w-500 mx-auto">' +
             '<i class="bi bi-music-note-slash fs-1 text-muted d-block mb-3"></i>' +
-            '<h4 class="fw-bold text-forest">No Songs Found</h4>' +
-            '<p class="text-secondary mb-0">Try searching with different keywords or switch language filters.</p>' +
+            '<h4 class="fw-bold text-forest">No Carols Found</h4>' +
+            '<p class="text-secondary mb-0">Try searching with different keywords or select "All Carols" filter.</p>' +
           '</div>' +
         '</div>';
       return;
@@ -114,27 +127,33 @@
       var card = document.createElement('div');
       card.className = 'song-card';
 
-      var langBadge = '<span class="badge bg-secondary-subtle text-dark">' + escapeHTML(song.language || 'Song') + '</span>';
+      var numberBadge = '<span class="badge bg-warning-subtle text-dark border border-warning me-1">#' + escapeHTML(song.number || song.id) + '</span>';
+      var langBadge = '<span class="badge bg-secondary-subtle text-dark me-1">' + escapeHTML(song.language || 'Carol') + '</span>';
       var catBadge = song.category
         ? '<span class="badge bg-success-subtle text-success">' + escapeHTML(song.category) + '</span>'
         : '';
 
       var lyricsId = 'lyrics-' + song.id;
 
+      var alternateTitleHtml = song.alternateTitle
+        ? '<div class="small text-secondary fst-italic mb-2" style="font-size: 0.82rem;"><i class="bi bi-music-note me-1 text-gold"></i>' + escapeHTML(song.alternateTitle) + '</div>'
+        : '';
+
       card.innerHTML =
         '<div class="d-flex justify-content-between align-items-center mb-2">' +
-          '<div>' + langBadge + ' ' + catBadge + '</div>' +
-          '<button class="btn btn-sm btn-copy-lyrics" data-copy-id="' + lyricsId + '" title="Copy to clipboard">' +
+          '<div>' + numberBadge + langBadge + catBadge + '</div>' +
+          '<button class="btn btn-sm btn-outline-secondary rounded-pill btn-copy-lyrics" data-copy-id="' + lyricsId + '" title="Copy lyrics to clipboard">' +
             '<i class="bi bi-clipboard me-1"></i> Copy' +
           '</button>' +
         '</div>' +
-        '<h4 class="fw-bold text-forest mb-2">' + escapeHTML(song.title) + '</h4>' +
+        '<h4 class="fw-bold text-forest mb-1" style="font-size: 1.15rem; line-height: 1.35;">' + escapeHTML(song.title) + '</h4>' +
+        alternateTitleHtml +
         '<div class="song-lyrics-container collapsed" id="' + lyricsId + '">' +
           escapeHTML(song.lyrics || '') +
         '</div>' +
         '<div class="mt-3 text-end">' +
-          '<button class="btn btn-sm btn-outline-success btn-toggle-lyrics" data-target-id="' + lyricsId + '">' +
-            '<i class="bi bi-chevron-down me-1"></i> Read Full Song' +
+          '<button class="btn btn-sm btn-wcp-outline rounded-pill btn-toggle-lyrics" data-target-id="' + lyricsId + '">' +
+            '<i class="bi bi-chevron-down me-1"></i> Read Full Carol' +
           '</button>' +
         '</div>';
 
@@ -158,19 +177,23 @@
       var col = document.createElement('div');
       col.className = 'col-md-6 col-lg-3';
 
+      var numberBadge = '<span class="badge bg-warning-subtle text-dark border border-warning me-1">#' + escapeHTML(song.number || song.id) + '</span>';
+      var langBadge = '<span class="badge bg-secondary-subtle text-dark">' + escapeHTML(song.language || 'Carol') + '</span>';
+
       col.innerHTML =
-        '<div class="song-card">' +
+        '<div class="song-card h-100 d-flex flex-column">' +
           '<div class="d-flex justify-content-between align-items-center mb-2">' +
-            '<span class="badge bg-secondary-subtle text-dark">' + escapeHTML(song.language || 'Song') + '</span>' +
-            '<span class="badge bg-warning-subtle text-dark">' + escapeHTML(song.category || 'Worship') + '</span>' +
+            '<div>' + numberBadge + langBadge + '</div>' +
+            '<span class="badge bg-success-subtle text-success small">' + escapeHTML(song.category || 'Christmas') + '</span>' +
           '</div>' +
-          '<h5 class="fw-bold mb-2 text-forest">' + escapeHTML(song.title) + '</h5>' +
-          '<div class="small text-muted flex-grow-1" style="max-height: 110px; overflow: hidden; white-space: pre-line;">' +
+          '<h5 class="fw-bold mb-1 text-forest" style="font-size: 1.05rem;">' + escapeHTML(song.title) + '</h5>' +
+          (song.alternateTitle ? '<div class="small text-secondary fst-italic mb-2" style="font-size: 0.78rem;">' + escapeHTML(song.alternateTitle) + '</div>' : '') +
+          '<div class="small text-muted flex-grow-1" style="max-height: 110px; overflow: hidden; white-space: pre-line; line-height: 1.6;">' +
             escapeHTML(truncateLines(song.lyrics || '', 4)) +
           '</div>' +
           '<div class="mt-3">' +
-            '<a href="pages/songs.html" class="btn btn-sm btn-wcp-forest w-100">' +
-              '<i class="bi bi-music-note-beamed me-1"></i> Read Song' +
+            '<a href="pages/songs.html#' + song.id + '" class="btn btn-sm btn-wcp-forest w-100 rounded-pill">' +
+              '<i class="bi bi-music-note-beamed me-1"></i> Read Full Carol' +
             '</a>' +
           '</div>' +
         '</div>';
@@ -200,7 +223,7 @@
         } else {
           lyricsEl.classList.remove('expanded');
           lyricsEl.classList.add('collapsed');
-          this.innerHTML = '<i class="bi bi-chevron-down me-1"></i> Read Full Song';
+          this.innerHTML = '<i class="bi bi-chevron-down me-1"></i> Read Full Carol';
         }
       });
     });
@@ -264,4 +287,3 @@
     return lines.slice(0, count).join('\n') + '...';
   }
 })();
-
