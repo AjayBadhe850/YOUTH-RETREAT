@@ -136,6 +136,24 @@ img, svg, picture, video {
     padding: 6px 12px;
   }
 
+  /* Single Hero Action Button (Prominent & Balanced) */
+  .hero-action-wrap {
+    width: 100%;
+    display: flex;
+    justify-content: center !important;
+    margin: 14px 0 20px 0 !important;
+  }
+
+  .hero-action-wrap .btn {
+    width: 100%;
+    max-width: 320px;
+    font-size: 1rem;
+    font-weight: 700;
+    padding: 12px 24px;
+    letter-spacing: 0.8px;
+    box-shadow: 0 4px 15px rgba(184, 134, 11, 0.35);
+  }
+
   .hero-section .d-flex.flex-wrap.gap-2 {
     justify-content: center !important;
     gap: 8px !important;
@@ -148,6 +166,23 @@ img, svg, picture, video {
     font-size: 0.84rem;
     padding: 8px 12px;
     text-align: center;
+  }
+
+  /* Song Cards Spacing & Hierarchy */
+  .song-card {
+    padding: 18px 16px;
+    border-radius: var(--wcp-radius-md);
+  }
+
+  .song-card h4 {
+    font-size: 1.10rem;
+    line-height: 1.35;
+  }
+
+  .song-lyrics-container {
+    font-size: 0.95rem;
+    padding: 14px 14px;
+    line-height: 1.75;
   }
 
   /* Christmas Countdown Card */

@@ -1,8 +1,8 @@
 /**
- * CSI • Diocese of Karimnagar • Aler Group - Christmas Carols & Lyrics Module
+ * CSI • Diocese of Karimnagar • Aler Group - Christmas Songs & Lyrics Module
  * Features:
- * - Reads carols from data/songs.json
- * - Filters only published carols (is_published: true)
+ * - Reads songs from data/songs.json
+ * - Filters only published songs (is_published: true)
  * - Live search by title, alternateTitle (transliteration), and lyrics
  * - Filter by language / category (All, Telugu, Hindi)
  * - Expand / Collapse long lyrics with smooth transition
@@ -103,7 +103,7 @@
 
     var countBadge = document.getElementById('song-count-badge');
     if (countBadge) {
-      countBadge.textContent = 'Showing ' + filtered.length + ' of ' + allSongs.length + ' Carols';
+      countBadge.textContent = 'Showing ' + filtered.length + ' of ' + allSongs.length + ' Songs';
     }
 
     container.innerHTML = '';
@@ -113,8 +113,8 @@
         '<div class="col-12 text-center py-5">' +
           '<div class="wcp-card p-5 max-w-500 mx-auto">' +
             '<i class="bi bi-music-note-slash fs-1 text-muted d-block mb-3"></i>' +
-            '<h4 class="fw-bold text-forest">No Carols Found</h4>' +
-            '<p class="text-secondary mb-0">Try searching with different keywords or select "All Carols" filter.</p>' +
+            '<h4 class="fw-bold text-forest">No Songs Found</h4>' +
+            '<p class="text-secondary mb-0">Try searching with different keywords or select "All Songs" filter.</p>' +
           '</div>' +
         '</div>';
       return;
@@ -125,10 +125,10 @@
       col.className = 'col-md-6 col-lg-4 mb-4';
 
       var card = document.createElement('div');
-      card.className = 'song-card';
+      card.className = 'song-card shadow-sm border border-light';
 
       var numberBadge = '<span class="badge bg-warning-subtle text-dark border border-warning me-1">#' + escapeHTML(song.number || song.id) + '</span>';
-      var langBadge = '<span class="badge bg-secondary-subtle text-dark me-1">' + escapeHTML(song.language || 'Carol') + '</span>';
+      var langBadge = '<span class="badge bg-secondary-subtle text-dark me-1">' + escapeHTML(song.language || 'Song') + '</span>';
       var catBadge = song.category
         ? '<span class="badge bg-success-subtle text-success">' + escapeHTML(song.category) + '</span>'
         : '';
@@ -153,7 +153,7 @@
         '</div>' +
         '<div class="mt-3 text-end">' +
           '<button class="btn btn-sm btn-wcp-outline rounded-pill btn-toggle-lyrics" data-target-id="' + lyricsId + '">' +
-            '<i class="bi bi-chevron-down me-1"></i> Read Full Carol' +
+            '<i class="bi bi-chevron-down me-1"></i> Read Full Song' +
           '</button>' +
         '</div>';
 
@@ -178,13 +178,13 @@
       col.className = 'col-md-6 col-lg-3';
 
       var numberBadge = '<span class="badge bg-warning-subtle text-dark border border-warning me-1">#' + escapeHTML(song.number || song.id) + '</span>';
-      var langBadge = '<span class="badge bg-secondary-subtle text-dark">' + escapeHTML(song.language || 'Carol') + '</span>';
+      var langBadge = '<span class="badge bg-secondary-subtle text-dark">' + escapeHTML(song.language || 'Song') + '</span>';
 
       col.innerHTML =
-        '<div class="song-card h-100 d-flex flex-column">' +
+        '<div class="song-card h-100 d-flex flex-column shadow-sm border border-light">' +
           '<div class="d-flex justify-content-between align-items-center mb-2">' +
             '<div>' + numberBadge + langBadge + '</div>' +
-            '<span class="badge bg-success-subtle text-success small">' + escapeHTML(song.category || 'Christmas') + '</span>' +
+            '<span class="badge bg-success-subtle text-success small">' + escapeHTML(song.category || 'Christmas Song') + '</span>' +
           '</div>' +
           '<h5 class="fw-bold mb-1 text-forest" style="font-size: 1.05rem;">' + escapeHTML(song.title) + '</h5>' +
           (song.alternateTitle ? '<div class="small text-secondary fst-italic mb-2" style="font-size: 0.78rem;">' + escapeHTML(song.alternateTitle) + '</div>' : '') +
@@ -193,7 +193,7 @@
           '</div>' +
           '<div class="mt-3">' +
             '<a href="pages/songs.html#' + song.id + '" class="btn btn-sm btn-wcp-forest w-100 rounded-pill">' +
-              '<i class="bi bi-music-note-beamed me-1"></i> Read Full Carol' +
+              '<i class="bi bi-music-note-beamed me-1"></i> Read Song' +
             '</a>' +
           '</div>' +
         '</div>';
@@ -223,7 +223,7 @@
         } else {
           lyricsEl.classList.remove('expanded');
           lyricsEl.classList.add('collapsed');
-          this.innerHTML = '<i class="bi bi-chevron-down me-1"></i> Read Full Carol';
+          this.innerHTML = '<i class="bi bi-chevron-down me-1"></i> Read Full Song';
         }
       });
     });
