@@ -62,6 +62,20 @@
       });
     }
 
+    // Sticky Navbar Seamless Transition on Scroll
+    var navbarEl = document.querySelector('.wcp-navbar');
+    if (navbarEl) {
+      var updateNavScroll = function () {
+        if (window.scrollY > 40) {
+          navbarEl.classList.add('is-scrolled');
+        } else {
+          navbarEl.classList.remove('is-scrolled');
+        }
+      };
+      updateNavScroll();
+      window.addEventListener('scroll', updateNavScroll, { passive: true });
+    }
+
     // 3. Highlight Active Navigation Link
     var currentPath = window.location.pathname.split('/').pop() || 'index.html';
     var activeLinks = document.querySelectorAll('.wcp-navbar .nav-link');

@@ -1424,11 +1424,9 @@ html {
    1. Enhanced Christmas Greeting Welcome Screen (3.8 Seconds Auto-Transition)
    -------------------------------------------------------------------------- */
 #opening-screen.xmas-greeting-screen {
-  background-color: #FFFDF8;
+  background-color: #4A060B;
   background-image:
-    radial-gradient(circle at 18% 18%, rgba(179, 27, 27, 0.10) 0%, transparent 42%),
-    radial-gradient(circle at 82% 22%, rgba(20, 83, 45, 0.10) 0%, transparent 42%),
-    radial-gradient(circle at 50% 55%, rgba(212, 175, 55, 0.18) 0%, #FFFDF8 72%);
+    radial-gradient(circle at 50% 42%, rgba(168, 22, 32, 0.85) 0%, rgba(74, 6, 11, 0.94) 55%, #2B0306 100%);
   cursor: pointer;
   overflow: hidden;
   transition: opacity 0.5s ease-out, visibility 0.5s ease-out;
@@ -1443,21 +1441,21 @@ html {
 
 .xmas-star-twinkle {
   position: absolute;
-  color: var(--xmas-gold);
-  opacity: 0.55;
+  color: #FFE48F;
+  opacity: 0.65;
   animation: xmasTwinkle 2.8s ease-in-out infinite;
 }
 
-.xmas-star-twinkle.star-1 { top: 8%; left: 10%; font-size: 1.5rem; color: var(--xmas-gold); animation-delay: 0s; }
-.xmas-star-twinkle.star-2 { top: 14%; right: 12%; font-size: 2rem; color: var(--xmas-crimson); opacity: 0.35; animation-delay: 0.5s; }
-.xmas-star-twinkle.star-3 { bottom: 16%; left: 12%; font-size: 1.4rem; color: var(--xmas-emerald); opacity: 0.4; animation-delay: 1.0s; }
-.xmas-star-twinkle.star-4 { bottom: 12%; right: 10%; font-size: 1.9rem; color: var(--xmas-gold); animation-delay: 1.4s; }
-.xmas-star-twinkle.star-5 { top: 44%; left: 6%; font-size: 1.3rem; color: var(--xmas-crimson); opacity: 0.35; animation-delay: 0.8s; }
-.xmas-star-twinkle.star-6 { top: 48%; right: 7%; font-size: 1.6rem; color: var(--xmas-emerald); opacity: 0.35; animation-delay: 1.8s; }
+.xmas-star-twinkle.star-1 { top: 8%; left: 10%; font-size: 1.5rem; color: #FFE48F; animation-delay: 0s; }
+.xmas-star-twinkle.star-2 { top: 14%; right: 12%; font-size: 2rem; color: #FFFFFF; opacity: 0.45; animation-delay: 0.5s; }
+.xmas-star-twinkle.star-3 { bottom: 16%; left: 12%; font-size: 1.4rem; color: #DFCA97; opacity: 0.55; animation-delay: 1.0s; }
+.xmas-star-twinkle.star-4 { bottom: 12%; right: 10%; font-size: 1.9rem; color: #FFE48F; animation-delay: 1.4s; }
+.xmas-star-twinkle.star-5 { top: 44%; left: 6%; font-size: 1.3rem; color: #FFD1D4; opacity: 0.45; animation-delay: 0.8s; }
+.xmas-star-twinkle.star-6 { top: 48%; right: 7%; font-size: 1.6rem; color: #FFE48F; opacity: 0.5; animation-delay: 1.8s; }
 
 @keyframes xmasTwinkle {
-  0%, 100% { transform: scale(0.92); opacity: 0.32; }
-  50% { transform: scale(1.12); opacity: 0.78; }
+  0%, 100% { transform: scale(0.92); opacity: 0.35; }
+  50% { transform: scale(1.14); opacity: 0.85; }
 }
 
 .xmas-greeting-card {
@@ -1465,13 +1463,13 @@ html {
   z-index: 2;
   max-width: 680px;
   width: 100%;
-  background: rgba(255, 255, 255, 0.94);
-  border: 1.5px solid rgba(197, 162, 83, 0.55);
-  border-top: 5px solid var(--xmas-crimson);
-  border-bottom: 4px solid var(--xmas-emerald);
+  background: linear-gradient(180deg, rgba(255, 252, 245, 0.97) 0%, rgba(255, 248, 232, 0.96) 100%);
+  border: 2px solid #DFCA97;
+  border-top: 5px solid #C5A253;
+  border-bottom: 5px solid #14532D;
   border-radius: 22px;
   padding: 36px 28px 28px 28px;
-  box-shadow: 0 20px 55px rgba(139, 101, 8, 0.16), 0 4px 16px rgba(179, 27, 27, 0.08);
+  box-shadow: 0 24px 65px rgba(0, 0, 0, 0.45), 0 0 35px rgba(212, 175, 55, 0.25);
   animation: xmasGreetingEnter 0.65s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
@@ -1485,9 +1483,9 @@ html {
   align-items: center;
   justify-content: center;
   gap: 6px;
-  background: linear-gradient(135deg, rgba(179, 27, 27, 0.10) 0%, rgba(212, 175, 55, 0.16) 100%);
+  background: linear-gradient(135deg, rgba(179, 27, 27, 0.10) 0%, rgba(212, 175, 55, 0.18) 100%);
   color: var(--xmas-dark-crimson);
-  border: 1px solid rgba(197, 162, 83, 0.55);
+  border: 1px solid rgba(197, 162, 83, 0.6);
   border-radius: 50px;
   padding: 5px 16px;
   font-family: var(--wcp-font-trajan);
@@ -1502,7 +1500,7 @@ html {
   height: 44px;
   border-radius: 50%;
   background: rgba(20, 83, 45, 0.08);
-  border: 1px solid rgba(20, 83, 45, 0.22);
+  border: 1px solid rgba(20, 83, 45, 0.25);
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -1561,85 +1559,463 @@ html {
 }
 
 /* --------------------------------------------------------------------------
-   2. Global Christmas Lights, Garland & Seasonal Theme Across All Pages
+   2. Seamless Christmas Header & Hero Composition (Matches Reference Design)
    -------------------------------------------------------------------------- */
-.wcp-navbar {
-  background-color: #FFFFFF !important;
-  background-image: linear-gradient(90deg, #B31B1B 0%, #C5A253 25%, #14532D 50%, #C5A253 75%, #B31B1B 100%);
-  background-size: 100% 4px;
-  background-position: top left;
-  background-repeat: no-repeat;
-  padding-top: 16px;
-}
-
-.wcp-navbar::after {
-  content: "";
-  position: absolute;
-  top: 100%;
+.wcp-navbar.xmas-seamless-nav {
+  position: fixed;
+  top: 0;
   left: 0;
   right: 0;
-  height: 14px;
-  pointer-events: none;
-  z-index: 999;
-  background-repeat: repeat-x;
-  background-position: top left;
-  background-size: 140px 14px;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='14' viewBox='0 0 140 14'%3E%3Cpath d='M0,1 Q35,8 70,1 T140,1' fill='none' stroke='%23A88332' stroke-width='1.1' opacity='0.65'/%3E%3Ccircle cx='18' cy='5' r='3.1' fill='%23B31B1B' opacity='0.88'/%3E%3Ccircle cx='52' cy='5' r='3.1' fill='%2314532D' opacity='0.88'/%3E%3Ccircle cx='88' cy='5' r='3.1' fill='%23D4AF37' opacity='0.95'/%3E%3Ccircle cx='122' cy='5' r='3.1' fill='%23B31B1B' opacity='0.88'/%3E%3C/svg%3E");
-  animation: xmasLightsPulse 3.4s ease-in-out infinite alternate;
+  z-index: 1040;
+  background: transparent !important;
+  border-bottom: none !important;
+  box-shadow: none !important;
+  padding: 12px 0 8px 0;
+  transition: background-color 0.32s ease, padding 0.28s ease, box-shadow 0.32s ease, border-color 0.32s ease;
 }
 
-@keyframes xmasLightsPulse {
-  0% { opacity: 0.72; }
-  100% { opacity: 1; }
+.wcp-navbar.xmas-seamless-nav.is-scrolled {
+  background: linear-gradient(90deg, rgba(64, 5, 10, 0.96) 0%, rgba(108, 10, 17, 0.96) 50%, rgba(64, 5, 10, 0.96) 100%) !important;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-bottom: 1.5px solid rgba(223, 202, 151, 0.55) !important;
+  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.32) !important;
+  padding: 8px 0;
 }
 
-/* Festive Hero & Subpage Header Backgrounds with Subtle Corner Snowflakes & Ornaments */
-.hero-section,
-.wcp-page-header {
-  background-color: #FFFDF9 !important;
-  background-image:
-    radial-gradient(circle at 12% 18%, rgba(179, 27, 27, 0.06) 0%, transparent 40%),
-    radial-gradient(circle at 88% 20%, rgba(20, 83, 45, 0.06) 0%, transparent 40%),
-    radial-gradient(circle at 50% 40%, rgba(212, 175, 55, 0.11) 0%, transparent 65%) !important;
+.wcp-navbar.xmas-seamless-nav > .container {
+  flex-wrap: wrap !important;
+}
+
+.wcp-navbar.xmas-seamless-nav .wcp-brand {
+  gap: 14px;
+}
+
+.wcp-navbar.xmas-seamless-nav .wcp-brand-logo {
+  width: 50px;
+  height: 50px;
+  background-color: #FFFFFF;
+  padding: 2px;
+  border: 2px solid #E6C875;
+  box-shadow: 0 0 14px rgba(255, 224, 130, 0.45);
+}
+
+.wcp-navbar.xmas-seamless-nav .wcp-brand-title {
+  color: #FFFFFF !important;
+  font-size: clamp(0.95rem, 2.2vw, 1.48rem);
+  letter-spacing: 1.4px;
+  text-shadow: 0 2px 10px rgba(45, 0, 5, 0.85);
+}
+
+.wcp-navbar.xmas-seamless-nav .wcp-brand-sub {
+  color: #FFE7A8 !important;
+  font-size: clamp(0.62rem, 1.15vw, 0.84rem);
+  letter-spacing: 1.8px;
+  text-shadow: 0 1px 6px rgba(45, 0, 5, 0.85);
+  display: inline-flex !important;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.xmas-sub-line {
+  display: inline-block;
+  width: 28px;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, #FFE48F, transparent);
+}
+
+.xmas-brand-ornament {
+  display: block;
+  color: #FFE48F;
+  font-size: 0.65rem;
+  letter-spacing: 4px;
+  margin-top: 2px;
+  text-shadow: 0 0 8px rgba(255, 224, 130, 0.6);
+}
+
+.wcp-navbar.xmas-seamless-nav.is-scrolled .wcp-brand-ornament {
+  display: none;
+}
+
+.wcp-navbar.xmas-seamless-nav.is-scrolled .wcp-brand-logo {
+  width: 40px;
+  height: 40px;
+}
+
+.xmas-header-spacer {
+  width: 44px;
+}
+
+.xmas-header-actions {
+  min-width: 44px;
+}
+
+/* Circular Metallic Gold Hamburger Menu Toggle */
+.xmas-circle-toggler {
+  width: 42px;
+  height: 42px;
+  border-radius: 50% !important;
+  border: 1.8px solid #E6C875 !important;
+  background: rgba(66, 5, 10, 0.55) !important;
+  color: #FFE48F !important;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 !important;
+  font-size: 1.45rem;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.35), inset 0 0 8px rgba(255, 224, 130, 0.2);
+  transition: all 0.25s ease;
+}
+
+.xmas-circle-toggler:hover,
+.xmas-circle-toggler:focus {
+  background: rgba(145, 14, 24, 0.85) !important;
+  border-color: #FFF2B2 !important;
+  box-shadow: 0 0 16px rgba(255, 224, 130, 0.5);
+}
+
+/* Sleek Transparent Festive Navigation Pills */
+.xmas-nav-pills {
+  background: rgba(58, 4, 8, 0.42);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  border: 1px solid rgba(230, 200, 117, 0.34);
+  border-radius: 50px;
+  padding: 4px 12px;
+}
+
+.wcp-navbar.xmas-seamless-nav.is-scrolled .xmas-nav-pills {
+  background: rgba(255, 255, 255, 0.06);
+  border-color: rgba(230, 200, 117, 0.22);
+}
+
+.wcp-navbar.xmas-seamless-nav .nav-link.wcp-nav-link {
+  color: #FFF8EC !important;
+  font-size: 0.84rem;
+  letter-spacing: 0.6px;
+  padding: 5px 12px !important;
+  border-radius: 50px;
+}
+
+.wcp-navbar.xmas-seamless-nav .nav-link.wcp-nav-link:hover,
+.wcp-navbar.xmas-seamless-nav .nav-link.wcp-nav-link.active {
+  color: #3D0408 !important;
+  background: linear-gradient(135deg, #FFF0B8 0%, #D4AF37 100%);
+  box-shadow: 0 2px 8px rgba(212, 175, 55, 0.4);
+}
+
+.xmas-nav-reg-pill {
+  background: linear-gradient(180deg, #B51722 0%, #7C0810 100%) !important;
+  color: #FFFFFF !important;
+  border: 1.5px solid #E6C875 !important;
+  border-radius: 50px;
+  font-family: var(--wcp-font-cinzel);
+  font-weight: 700;
+  font-size: 0.80rem;
+  letter-spacing: 0.7px;
+  padding: 5px 14px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.28);
+  transition: all 0.25s ease;
+}
+
+.xmas-nav-reg-pill:hover {
+  background: linear-gradient(180deg, #CC1C28 0%, #910B14 100%) !important;
+  border-color: #FFF5C8 !important;
+  color: #FFFFFF !important;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 14px rgba(212, 175, 55, 0.45);
+}
+
+/* Seamless Unified Hero Canvas (Mobile-First 9:16 + Desktop 16:9 Stage) */
+.hero-section.xmas-seamless-hero,
+.wcp-page-header.xmas-seamless-hero {
+  background: #FCF9F2 !important;
+  border-bottom: none !important;
+  padding: 0 !important;
+  margin-top: 0 !important;
+  overflow: visible;
+}
+
+.xmas-hero-canvas-stage {
+  position: relative;
   overflow: hidden;
+  background-color: #5C060C;
+  background-image:
+    radial-gradient(ellipse at 50% 60%, rgba(74, 6, 11, 0.56) 0%, rgba(74, 6, 11, 0.14) 58%, transparent 100%),
+    linear-gradient(180deg, rgba(45, 3, 7, 0.25) 0%, rgba(74, 6, 11, 0.05) 38%, rgba(252, 249, 242, 0.0) 80%, rgba(252, 249, 242, 0.90) 94%, #FCF9F2 100%),
+    url('../images/xmas-hero-backdrop-mobile.jpg?v=2.3.1');
+  background-position: center top;
+  background-size: cover;
+  background-repeat: no-repeat;
+  min-height: 118vw;
+  padding: 132px 0 24px 0;
 }
 
-.hero-section > .container,
-.wcp-page-header > .container {
+.xmas-hero-canvas-stage.xmas-subpage-stage {
+  min-height: 295px;
+  padding: 126px 0 26px 0;
+  background-position: center 48%;
+}
+
+/* Remove old pseudo corner overlays inside seamless hero since painted artwork already frames it cleanly */
+.hero-section.xmas-seamless-hero::before,
+.hero-section.xmas-seamless-hero::after,
+.wcp-page-header.xmas-seamless-hero::before,
+.wcp-page-header.xmas-seamless-hero::after {
+  display: none !important;
+  content: none !important;
+}
+
+/* Gentle Atmospheric Snowfall Strictly Inside Seamless Hero Sky */
+.xmas-hero-snow {
+  position: absolute;
+  inset: 0 0 28% 0;
+  pointer-events: none;
+  z-index: 1;
+  background-image:
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220' viewBox='0 0 220 220'%3E%3Ccircle cx='30' cy='24' r='2' fill='%23FFFFFF' opacity='0.55'/%3E%3Ccircle cx='120' cy='50' r='1.4' fill='%23FFE48F' opacity='0.6'/%3E%3Ccircle cx='185' cy='18' r='2.2' fill='%23FFFFFF' opacity='0.45'/%3E%3Ccircle cx='72' cy='110' r='1.6' fill='%23FFFFFF' opacity='0.5'/%3E%3Ccircle cx='158' cy='135' r='2.4' fill='%23FFE48F' opacity='0.45'/%3E%3Ccircle cx='28' cy='175' r='1.5' fill='%23FFFFFF' opacity='0.4'/%3E%3Ccircle cx='205' cy='195' r='1.8' fill='%23FFFFFF' opacity='0.5'/%3E%3C/svg%3E");
+  background-size: 220px 220px;
+  animation: xmasGentleSnow 26s linear infinite;
+}
+
+@keyframes xmasGentleSnow {
+  from { background-position: 0 0; }
+  to { background-position: 45px 220px; }
+}
+
+.xmas-hero-showcase {
+  position: relative;
+  z-index: 3;
+  padding: 12px 0 10px 0;
+  margin-bottom: 6px;
+}
+
+/* Crisp 3D Metallic Gold Typography */
+.xmas-hero-3d-title {
+  margin: 0;
+  font-family: var(--wcp-font-cinzel) !important;
+  font-weight: 800;
+  text-transform: uppercase;
+  line-height: 1.1;
+}
+
+.xmas-gold-stack {
+  position: relative;
+  display: inline-block;
+}
+
+.xmas-gold-extrude {
+  position: absolute;
+  inset: 0;
+  color: #3A0307;
+  text-shadow:
+    0 2px 0 #5C080E,
+    0 4px 1px #2E0205,
+    0 6px 14px rgba(18, 0, 2, 0.72),
+    0 0 24px rgba(255, 215, 110, 0.35);
+  z-index: 1;
+  user-select: none;
+}
+
+.xmas-gold-face {
   position: relative;
   z-index: 2;
+  background: linear-gradient(180deg, #FFFDF2 0%, #FFE693 30%, #DF9F1F 56%, #FFF1AF 76%, #996507 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  filter: drop-shadow(0 1px 1px rgba(45, 5, 5, 0.55));
 }
 
-.hero-section::before,
-.wcp-page-header::before {
-  content: "";
-  position: absolute;
-  top: 4px;
-  left: 6px;
-  width: 150px;
-  height: 150px;
-  pointer-events: none;
-  z-index: 1;
-  opacity: 0.34;
-  background-repeat: no-repeat;
-  background-size: contain;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 120 120'%3E%3Cpath d='M0,0 Q48,26 96,8' fill='none' stroke='%2314532D' stroke-width='2.5'/%3E%3Cline x1='34' y1='14' x2='34' y2='42' stroke='%23C5A253' stroke-width='1.4'/%3E%3Ccircle cx='34' cy='50' r='9' fill='%23B31B1B'/%3E%3Ccircle cx='31' cy='47' r='2.5' fill='%23FFFFFF' opacity='0.55'/%3E%3Cline x1='70' y1='12' x2='70' y2='32' stroke='%23C5A253' stroke-width='1.3'/%3E%3Ccircle cx='70' cy='39' r='7' fill='%23D4AF37'/%3E%3Cpath d='M18,78 L20,84 L26,86 L20,88 L18,94 L16,88 L10,86 L16,84 Z' fill='%23C5A253'/%3E%3Cpath d='M92,58 L93.5,63 L98,64.5 L93.5,66 L92,71 L90.5,66 L86,64.5 L90.5,63 Z' fill='%2314532D' opacity='0.75'/%3E%3C/svg%3E");
+.xmas-hero-3d-title .xmas-gold-extrude,
+.xmas-hero-3d-title .xmas-gold-face {
+  font-size: clamp(1.45rem, 3.8vw, 3.05rem);
+  letter-spacing: 1.6px;
 }
 
-.hero-section::after,
-.wcp-page-header::after {
-  content: "";
-  position: absolute;
-  top: 4px;
-  right: 6px;
-  width: 150px;
-  height: 150px;
-  pointer-events: none;
-  z-index: 1;
-  opacity: 0.34;
-  background-repeat: no-repeat;
-  background-size: contain;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 120 120'%3E%3Cpath d='M120,0 Q72,26 24,8' fill='none' stroke='%2314532D' stroke-width='2.5'/%3E%3Cline x1='86' y1='14' x2='86' y2='44' stroke='%23C5A253' stroke-width='1.4'/%3E%3Ccircle cx='86' cy='52' r='9' fill='%2314532D'/%3E%3Ccircle cx='83' cy='49' r='2.5' fill='%23FFFFFF' opacity='0.5'/%3E%3Cline x1='50' y1='12' x2='50' y2='32' stroke='%23C5A253' stroke-width='1.3'/%3E%3Ccircle cx='50' cy='39' r='7' fill='%23D4AF37'/%3E%3Cpath d='M100,82 L102,88 L108,90 L102,92 L100,98 L98,92 L92,90 L98,88 Z' fill='%23B31B1B' opacity='0.8'/%3E%3Cpath d='M28,60 L29.5,65 L34,66.5 L29.5,68 L28,73 L26.5,68 L22,66.5 L26.5,65 Z' fill='%23C5A253'/%3E%3C/svg%3E");
+.xmas-year-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+}
+
+.xmas-year-num .xmas-gold-extrude,
+.xmas-year-num .xmas-gold-face {
+  font-size: clamp(2.35rem, 5.6vw, 4.35rem);
+  letter-spacing: 4px;
+  line-height: 1;
+}
+
+.xmas-holly-accent {
+  width: clamp(58px, 9vw, 112px);
+  height: auto;
+  filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.45));
+}
+
+/* Twin Golden Bells & Glowing Fairy-Light Centerpiece Divider */
+.xmas-bells-flourish {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  max-width: 680px;
+  margin: 8px auto 18px auto;
+}
+
+.xmas-light-strand-line {
+  flex: 1 1 auto;
+  height: 16px;
+  background-repeat: repeat-x;
+  background-position: center;
+  background-size: 110px 16px;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='110' height='16' viewBox='0 0 110 16'%3E%3Cpath d='M0,8 Q27.5,12 55,8 T110,8' fill='none' stroke='%23FFE48F' stroke-width='1.1' opacity='0.75'/%3E%3Ccircle cx='18' cy='9' r='2.8' fill='%23FFF5C0'/%3E%3Ccircle cx='55' cy='8' r='3' fill='%23FFD55A'/%3E%3Ccircle cx='92' cy='9' r='2.8' fill='%23FFF5C0'/%3E%3C/svg%3E");
+}
+
+.xmas-bells-svg {
+  width: 56px;
+  height: auto;
+  flex-shrink: 0;
+  filter: drop-shadow(0 3px 10px rgba(0, 0, 0, 0.45));
+}
+
+/* Signature Action Duo: Warm Cream "5 DEC 2026" Pill + Red & Gold "REGISTRATION" Pill */
+.xmas-hero-action-duo {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 18px;
+}
+
+.xmas-date-pill {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  background: linear-gradient(180deg, #FFFDF7 0%, #FBF0DA 100%);
+  color: #6B080F;
+  border: 2.5px solid #D9B45A;
+  outline: 2px solid rgba(255, 245, 205, 0.72);
+  outline-offset: -6px;
+  border-radius: 50px;
+  padding: 11px 30px;
+  font-family: var(--wcp-font-cinzel);
+  font-size: 1.05rem;
+  font-weight: 800;
+  letter-spacing: 1.4px;
+  box-shadow: 0 8px 22px rgba(25, 0, 2, 0.35), 0 0 16px rgba(255, 224, 130, 0.35);
+}
+
+.xmas-reg-pill-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  background: linear-gradient(180deg, #B5121B 0%, #86070F 55%, #5C0308 100%);
+  color: #FFFFFF !important;
+  border: 2.5px solid #E6C875;
+  outline: 1.5px solid rgba(255, 242, 178, 0.5);
+  outline-offset: -5px;
+  border-radius: 50px;
+  padding: 11px 36px;
+  font-family: var(--wcp-font-cinzel);
+  font-size: 1.05rem;
+  font-weight: 800;
+  letter-spacing: 1.6px;
+  text-transform: uppercase;
+  box-shadow: 0 8px 24px rgba(25, 0, 2, 0.42), 0 0 20px rgba(212, 175, 55, 0.4);
+  transition: all 0.28s ease;
+}
+
+.xmas-reg-pill-btn:hover {
+  background: linear-gradient(180deg, #CE1823 0%, #9A0912 60%, #6D040A 100%);
+  color: #FFF9E6 !important;
+  border-color: #FFF2B2;
+  transform: translateY(-2px) scale(1.02);
+  box-shadow: 0 12px 28px rgba(25, 0, 2, 0.5), 0 0 26px rgba(255, 224, 130, 0.65);
+}
+
+/* Mobile-First Quick Action Row Styling */
+.xmas-mobile-action-row {
+  gap: 8px;
+}
+
+.xmas-date-pill-sm {
+  padding: 7px 14px;
+  font-size: 0.78rem;
+  letter-spacing: 0.6px;
+  outline-offset: -4px;
+  box-shadow: 0 4px 12px rgba(20, 0, 2, 0.35);
+  white-space: nowrap;
+}
+
+.xmas-reg-pill-btn-sm {
+  padding: 7px 18px;
+  font-size: 0.78rem;
+  letter-spacing: 0.8px;
+  outline-offset: -4px;
+  box-shadow: 0 4px 14px rgba(20, 0, 2, 0.42), 0 0 12px rgba(212, 175, 55, 0.35);
+  white-space: nowrap;
+}
+
+.xmas-menu-bars {
+  border: none !important;
+  background: transparent !important;
+  color: #FFE693 !important;
+  padding: 4px 6px !important;
+  font-size: 1.95rem;
+  line-height: 1;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  filter: drop-shadow(0 2px 6px rgba(30, 0, 3, 0.75));
+}
+
+.xmas-menu-bars:focus {
+  box-shadow: 0 0 0 2px rgba(255, 228, 143, 0.5) !important;
+}
+
+/* Preserved Details Band Sitting Softly On Snowy Transition */
+.xmas-hero-details-band {
+  position: relative;
+  z-index: 3;
+  margin-top: -12px;
+}
+
+.xmas-glass-parchment {
+  background: rgba(255, 253, 248, 0.95) !important;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1.5px solid rgba(212, 175, 55, 0.65) !important;
+  box-shadow: 0 10px 30px rgba(58, 4, 8, 0.14) !important;
+}
+
+.xmas-hero-details-band .hero-theme-pill {
+  display: inline-block;
+  background: rgba(255, 252, 245, 0.94);
+  padding: 8px 18px;
+  border-radius: 50px;
+  border: 1px solid rgba(197, 162, 83, 0.55);
+  box-shadow: 0 4px 16px rgba(58, 4, 8, 0.14);
+}
+
+/* Subpage 3D Gold Header Styling */
+.xmas-subpage-3d-title .xmas-gold-extrude,
+.xmas-subpage-3d-title .xmas-gold-face {
+  font-size: clamp(1.75rem, 4.2vw, 2.95rem);
+  letter-spacing: 2px;
+}
+
+.wcp-page-header.xmas-seamless-hero .lead {
+  color: #FFE7A8 !important;
+  text-shadow: 0 2px 8px rgba(35, 2, 4, 0.85);
+}
+
+.wcp-page-header.xmas-seamless-hero .xmas-theme-sub {
+  color: #FFFFFF !important;
+  text-shadow: 0 2px 8px rgba(35, 2, 4, 0.9);
 }
 
 /* Festive Snowflake Watermark & Warm Cream Surfaces Across Schedule & Main Pages */
@@ -1689,18 +2065,42 @@ main {
   color: var(--xmas-pine);
 }
 
-/* Festive Footer Top Ribbon & Subtle Warmth */
+/* Rich Crimson & Gold Christmas Footer Matching Header */
 .wcp-footer {
-  background-color: #FFFFFF;
-  background-image: linear-gradient(90deg, #14532D 0%, #C5A253 33%, #B31B1B 66%, #C5A253 100%);
-  background-size: 100% 4px;
-  background-position: top left;
-  background-repeat: no-repeat;
-  border-top: none;
+  background: linear-gradient(180deg, #5A060C 0%, #3D0408 65%, #290205 100%) !important;
+  color: #FBF4E4 !important;
+  border-top: 3px solid #D4AF37 !important;
 }
 
 .wcp-footer .footer-praise {
-  color: var(--xmas-crimson);
+  color: #FFE48F !important;
+}
+
+.wcp-footer .footer-heading {
+  color: #FFFFFF !important;
+}
+
+.wcp-footer .text-light,
+.wcp-footer .text-secondary {
+  color: rgba(255, 248, 236, 0.85) !important;
+}
+
+.wcp-footer a {
+  color: rgba(255, 248, 236, 0.85) !important;
+}
+
+.wcp-footer a:hover {
+  color: #FFE48F !important;
+}
+
+.wcp-footer .rounded-2 {
+  background: rgba(255, 255, 255, 0.08) !important;
+  border: 1px solid rgba(230, 200, 117, 0.35) !important;
+  border-left: 3px solid #E6C875 !important;
+}
+
+.wcp-footer .rounded-2 p {
+  color: #FFFDF8 !important;
 }
 
 /* Accessible Reduced Motion Rules */
@@ -1719,7 +2119,7 @@ main {
   }
   .hero-pill-badge,
   .xmas-star-twinkle,
-  .wcp-navbar::after,
+  .xmas-hero-snow,
   .xmas-greeting-card,
   .xmas-greeting-progress-bar {
     animation: none !important;
@@ -1733,7 +2133,8 @@ main {
   .countdown-box:hover,
   .btn-wcp-primary:hover,
   .btn-wcp-forest:hover,
-  .btn-copy-lyrics:hover {
+  .btn-copy-lyrics:hover,
+  .xmas-reg-pill-btn:hover {
     transform: none !important;
   }
 }

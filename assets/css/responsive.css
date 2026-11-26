@@ -20,28 +20,28 @@ img, svg, picture, video {
     padding-right: 14px;
   }
 
-  /* Symmetrical Dual Emblem Top Navigation Header */
-  .wcp-navbar {
-    padding: 12px 0 8px 0;
+  /* Symmetrical Dual Emblem Top Navigation Header (Compact Mobile-First 9:16 Reference) */
+  .wcp-navbar.xmas-seamless-nav {
+    padding: 12px 0 6px 0;
   }
 
-  .wcp-navbar::after {
-    height: 11px;
-    background-size: 115px 11px;
+  .wcp-navbar.xmas-seamless-nav.is-scrolled {
+    padding: 8px 0 8px 0;
   }
 
-  .wcp-brand {
+  .wcp-navbar.xmas-seamless-nav .wcp-brand {
+    flex: 1 1 100%;
     gap: 10px;
     width: 100%;
     max-width: 100%;
     justify-content: center;
-    margin: 0 auto;
+    margin: 0 auto !important;
     text-align: center;
   }
 
-  .wcp-brand-logo {
-    width: 38px;
-    height: 38px;
+  .wcp-navbar.xmas-seamless-nav .wcp-brand-logo {
+    width: 40px;
+    height: 40px;
     border-radius: 50%;
     object-fit: contain;
     flex-shrink: 0;
@@ -51,43 +51,69 @@ img, svg, picture, video {
   .wcp-brand-text {
     text-align: center;
     flex: 0 1 auto;
+    min-width: 0;
   }
 
-  .wcp-brand-title {
-    font-size: 0.90rem;
-    line-height: 1.22;
+  .wcp-navbar.xmas-seamless-nav .wcp-brand-title {
+    font-size: 0.92rem;
+    line-height: 1.18;
     white-space: normal;
     word-break: break-word;
-    letter-spacing: 0.3px;
+    letter-spacing: 0.5px;
   }
 
-  .wcp-brand-sub {
-    font-size: 0.60rem;
-    letter-spacing: 0.6px;
-    line-height: 1.2;
-    margin-top: 1px;
+  .wcp-navbar.xmas-seamless-nav .wcp-brand-sub {
+    font-size: 0.62rem;
+    letter-spacing: 0.7px;
+    line-height: 1.25;
+    margin-top: 2px;
     white-space: normal;
+    gap: 5px;
   }
 
-  .navbar-collapse {
-    background: #FFFFFF;
-    margin-top: 10px;
-    padding: 14px 16px;
-    border-radius: var(--wcp-radius-md);
-    border: 1px solid var(--wcp-border);
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+  .xmas-sub-line {
+    width: 16px;
   }
 
-  .navbar-collapse .wcp-nav-link {
-    padding: 8px 10px;
-    border-radius: var(--wcp-radius-sm);
-    font-size: 0.92rem;
+  /* Compact Mobile Hero Canvas Proportions */
+  .xmas-hero-canvas-stage {
+    min-height: 116vw;
+    padding: 132px 0 22px 0;
   }
 
-  /* Hero Section Alignment */
-  .hero-section {
-    padding: 20px 0 28px 0;
-    text-align: center;
+  .xmas-hero-canvas-stage.xmas-subpage-stage {
+    min-height: 265px;
+    padding: 128px 0 22px 0;
+  }
+
+  .xmas-hero-showcase {
+    padding: 10px 0 6px 0;
+    margin-bottom: 0;
+  }
+
+  .xmas-hero-3d-title .xmas-gold-extrude,
+  .xmas-hero-3d-title .xmas-gold-face {
+    font-size: clamp(1.30rem, 5.2vw, 1.85rem);
+    letter-spacing: 0.8px;
+    line-height: 1.14;
+  }
+
+  .xmas-year-num .xmas-gold-extrude,
+  .xmas-year-num .xmas-gold-face {
+    font-size: clamp(2.10rem, 8.8vw, 2.85rem);
+    letter-spacing: 2.5px;
+  }
+
+  .xmas-holly-accent {
+    width: 48px;
+  }
+
+  .xmas-bells-flourish {
+    margin: 4px auto 2px auto;
+  }
+
+  .xmas-bells-svg {
+    width: 42px;
   }
 
   .hero-pill-badge.xmas-badge {
@@ -352,19 +378,80 @@ img, svg, picture, video {
 /* --------------------------------------------------------------------------
    Small Mobile Screens (under 420px)
    -------------------------------------------------------------------------- */
-@media (max-width: 420px) {
-  .wcp-brand-logo {
-    width: 30px;
-    height: 30px;
+/* --------------------------------------------------------------------------
+   Small Mobile Screens (under 400px: 360px, 375px Android & iPhone)
+   -------------------------------------------------------------------------- */
+@media (max-width: 400px) {
+  .wcp-navbar.xmas-seamless-nav {
+    padding: 10px 0 5px 0;
   }
 
-  .wcp-brand-title {
+  .wcp-navbar.xmas-seamless-nav .wcp-brand {
+    gap: 6px;
+  }
+
+  .wcp-navbar.xmas-seamless-nav .wcp-brand-logo {
+    width: 36px;
+    height: 36px;
+  }
+
+  .wcp-navbar.xmas-seamless-nav .wcp-brand-title {
     font-size: 0.80rem;
+    letter-spacing: 0.3px;
   }
 
-  .wcp-brand-sub {
-    font-size: 0.55rem;
+  .wcp-navbar.xmas-seamless-nav .wcp-brand-sub {
+    font-size: 0.54rem;
     letter-spacing: 0.4px;
+  }
+
+  .xmas-sub-line {
+    width: 10px;
+  }
+
+  .xmas-mobile-action-row {
+    gap: 5px;
+  }
+
+  .xmas-date-pill-sm {
+    padding: 6px 11px;
+    font-size: 0.70rem;
+    letter-spacing: 0.3px;
+  }
+
+  .xmas-reg-pill-btn-sm {
+    padding: 6px 13px;
+    font-size: 0.70rem;
+    letter-spacing: 0.5px;
+  }
+
+  .xmas-menu-bars {
+    font-size: 1.7rem;
+    padding: 2px 4px !important;
+  }
+
+  .xmas-hero-canvas-stage {
+    min-height: 118vw;
+    padding: 120px 0 20px 0;
+  }
+
+  .xmas-hero-canvas-stage.xmas-subpage-stage {
+    min-height: 250px;
+    padding: 118px 0 18px 0;
+  }
+
+  .xmas-hero-3d-title .xmas-gold-extrude,
+  .xmas-hero-3d-title .xmas-gold-face {
+    font-size: 1.20rem;
+  }
+
+  .xmas-year-num .xmas-gold-extrude,
+  .xmas-year-num .xmas-gold-face {
+    font-size: 1.98rem;
+  }
+
+  .xmas-holly-accent {
+    width: 40px;
   }
 
   .hero-heading-img {
@@ -407,11 +494,63 @@ img, svg, picture, video {
 }
 
 /* --------------------------------------------------------------------------
+   Mobile & Tablet Collapsible Nav Drawer (under 992px)
+   -------------------------------------------------------------------------- */
+@media (max-width: 991.98px) {
+  .wcp-navbar.xmas-seamless-nav .navbar-collapse {
+    background: linear-gradient(180deg, rgba(64, 5, 10, 0.97) 0%, rgba(45, 3, 7, 0.98) 100%) !important;
+    border: 1px solid rgba(230, 200, 117, 0.48) !important;
+    border-radius: 16px;
+    padding: 14px 16px;
+    margin-top: 10px;
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.45);
+  }
+
+  .wcp-navbar.xmas-seamless-nav .xmas-nav-pills {
+    background: transparent;
+    border: none;
+    backdrop-filter: none;
+    padding: 0;
+    gap: 6px !important;
+    width: 100%;
+  }
+
+  .wcp-navbar.xmas-seamless-nav .nav-item {
+    width: 100%;
+    text-align: center;
+  }
+
+  .wcp-navbar.xmas-seamless-nav .nav-link.wcp-nav-link {
+    width: 100%;
+    padding: 9px 14px !important;
+  }
+
+  .xmas-nav-reg-pill {
+    display: inline-flex;
+    width: 100%;
+    justify-content: center;
+    margin-top: 6px;
+    padding: 9px 18px;
+  }
+}
+
+/* --------------------------------------------------------------------------
    Tablets (768px to 991.98px)
    -------------------------------------------------------------------------- */
 @media (min-width: 768px) and (max-width: 991.98px) {
-  .hero-section {
-    padding: 32px 0 38px 0;
+  .xmas-hero-canvas-stage {
+    background-image:
+      radial-gradient(ellipse at 50% 56%, rgba(74, 6, 11, 0.42) 0%, rgba(74, 6, 11, 0.08) 55%, transparent 100%),
+      linear-gradient(180deg, rgba(45, 3, 7, 0.30) 0%, rgba(74, 6, 11, 0.06) 42%, rgba(252, 249, 242, 0.0) 76%, rgba(252, 249, 242, 0.92) 93%, #FCF9F2 100%),
+      url('../images/xmas-hero-backdrop.jpg');
+    min-height: 430px;
+    padding: 138px 0 26px 0;
+    background-position: center top;
+  }
+
+  .xmas-hero-canvas-stage.xmas-subpage-stage {
+    min-height: 295px;
+    padding: 134px 0 24px 0;
   }
 
   .hero-heading-img {
@@ -430,23 +569,26 @@ img, svg, picture, video {
     flex: 0 0 calc(50% - 8px);
     min-width: calc(50% - 8px);
   }
-
-  .hero-section::before,
-  .hero-section::after,
-  .wcp-page-header::before,
-  .wcp-page-header::after {
-    width: 110px;
-    height: 110px;
-    opacity: 0.28;
-  }
 }
 
 /* --------------------------------------------------------------------------
-   Desktops & Laptops (992px and up)
+   Desktops & Laptops (992px and up — Widescreen 16:9 Showcase)
    -------------------------------------------------------------------------- */
 @media (min-width: 992px) {
-  .hero-section {
-    padding: 40px 0 46px 0;
+  .xmas-hero-canvas-stage {
+    background-image:
+      radial-gradient(ellipse at 50% 56%, rgba(74, 6, 11, 0.42) 0%, rgba(74, 6, 11, 0.08) 55%, transparent 100%),
+      linear-gradient(180deg, rgba(45, 3, 7, 0.30) 0%, rgba(74, 6, 11, 0.06) 42%, rgba(252, 249, 242, 0.0) 76%, rgba(252, 249, 242, 0.92) 93%, #FCF9F2 100%),
+      url('../images/xmas-hero-backdrop.jpg');
+    background-position: center top;
+    background-size: cover;
+    min-height: 455px;
+    padding: 134px 0 30px 0;
+  }
+
+  .xmas-hero-canvas-stage.xmas-subpage-stage {
+    min-height: 310px;
+    padding: 126px 0 26px 0;
   }
 
   .timeline-card {

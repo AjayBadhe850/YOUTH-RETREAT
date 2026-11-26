@@ -22,8 +22,8 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 
   <!-- Custom Stylesheets -->
-  <link rel="stylesheet" href="../assets/css/style.css?v=2.3.0">
-  <link rel="stylesheet" href="../assets/css/responsive.css?v=2.3.0">
+  <link rel="stylesheet" href="../assets/css/style.css?v=2.3.1">
+  <link rel="stylesheet" href="../assets/css/responsive.css?v=2.3.1">
 
   <!-- Favicon -->
   <link rel="icon" type="image/png" href="../assets/images/csi-logo.png">
@@ -36,84 +36,97 @@
 <body>
 
   <!-- ======================================================================
-       NAVIGATION BAR (DUAL EMBLEMS FLANKING HEADER)
+       SEAMLESS UNIFIED TOP NAVIGATION (MERGES INTO CHRISTMAS HERO CANVAS)
        ====================================================================== -->
-  <nav class="navbar navbar-expand-lg wcp-navbar sticky-top" aria-label="Main Navigation">
-    <div class="container d-flex flex-wrap align-items-center justify-content-between">
-      <a class="navbar-brand wcp-brand mx-auto mx-lg-0" href="../index.html">
-        <img src="../assets/images/csi-logo.png" alt="CSI Official Emblem" class="wcp-brand-logo" width="40" height="40">
-        <div class="wcp-brand-text text-center text-lg-start">
-          <span class="wcp-brand-title d-block">CSI &bull; DIOCESE OF KARIMNAGAR</span>
-          <span class="wcp-brand-sub text-gold fw-bold">ALER GROUP &bull; YOUTH CHRISTMAS 2026</span>
-        </div>
-        <img src="../assets/images/csi-karimnagar-logo.png" alt="Diocese of Karimnagar Official Emblem" class="wcp-brand-logo" width="40" height="40">
-      </a>
-
-      <!-- Quick Action Bar on Mobile View (Symmetrical & Balanced) -->
-      <div class="d-flex d-lg-none align-items-center justify-content-between w-100 mt-2 pt-2 border-top border-light border-opacity-10">
-        <span class="xmas-badge py-1 px-2" style="font-size: 0.72rem;">
-          <i class="bi bi-clock-history text-gold me-1"></i> Order of Service
-        </span>
-        <div class="d-flex align-items-center gap-2">
-          <a href="https://forms.gle/79noMHha5RFQeh2i8" target="_blank" rel="noopener noreferrer" class="btn btn-nav-action btn-sm px-3 py-1" style="font-size: 0.8rem;">
-            <i class="bi bi-pencil-square me-1"></i> Registration
-          </a>
-          <button class="navbar-toggler border-0 text-white p-1" type="button" data-bs-toggle="collapse" data-bs-target="#wcpNav" aria-controls="wcpNav" aria-expanded="false" aria-label="Toggle navigation">
-            <i class="bi bi-list fs-2 text-gold"></i>
-          </button>
-        </div>
+  <nav class="navbar navbar-expand-lg wcp-navbar xmas-seamless-nav fixed-top" aria-label="Main Navigation">
+    <div class="container flex-lg-column">
+      <div class="xmas-header-row d-flex align-items-center justify-content-center w-100">
+        <a class="navbar-brand wcp-brand mx-auto" href="../index.html">
+          <img src="../assets/images/csi-logo.png" alt="CSI Official Emblem" class="wcp-brand-logo" width="50" height="50">
+          <div class="wcp-brand-text text-center">
+            <span class="wcp-brand-title d-block">CSI &bull; DIOCESE OF KARIMNAGAR</span>
+            <span class="wcp-brand-sub d-block">
+              <span class="xmas-sub-line" aria-hidden="true"></span>ALER GROUP &bull; YOUTH CHRISTMAS 2026<span class="xmas-sub-line" aria-hidden="true"></span>
+            </span>
+            <span class="xmas-brand-ornament" aria-hidden="true"><i class="bi bi-star-fill"></i></span>
+          </div>
+          <img src="../assets/images/csi-karimnagar-logo.png" alt="Diocese of Karimnagar Official Emblem" class="wcp-brand-logo" width="50" height="50">
+        </a>
       </div>
 
-      <div class="collapse navbar-collapse" id="wcpNav">
-        <ul class="navbar-nav ms-auto mb-2 mb-lg-0 align-items-lg-center gap-lg-1">
+      <div class="xmas-mobile-action-row d-flex d-lg-none align-items-center justify-content-between w-100 mt-2">
+        <span class="xmas-date-pill xmas-date-pill-sm">
+          <i class="bi bi-calendar3 text-xmas-red"></i> 5 DEC 2026
+        </span>
+        <a href="https://forms.gle/79noMHha5RFQeh2i8" target="_blank" rel="noopener noreferrer" class="btn xmas-reg-pill-btn xmas-reg-pill-btn-sm">
+          <i class="bi bi-pencil-square"></i> REGISTRATION
+        </a>
+        <button class="navbar-toggler xmas-menu-bars" type="button" data-bs-toggle="collapse"
+          data-bs-target="#wcpNav" aria-controls="wcpNav" aria-expanded="false" aria-label="Toggle navigation">
+          <i class="bi bi-list"></i>
+        </button>
+      </div>
+
+      <div class="collapse navbar-collapse justify-content-center mt-lg-2 w-100" id="wcpNav">
+        <ul class="navbar-nav align-items-center gap-1 gap-lg-2 xmas-nav-pills">
           <li class="nav-item">
             <a class="nav-link wcp-nav-link" href="../index.html"><i class="bi bi-house-door me-1"></i> Home</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link wcp-nav-link active" href="schedule.html"><i class="bi bi-calendar-check me-1"></i>
-              Schedule</a>
+            <a class="nav-link wcp-nav-link active" href="schedule.html"><i class="bi bi-calendar-check me-1"></i> Schedule</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link wcp-nav-link" href="songs.html"><i class="bi bi-music-note-beamed me-1"></i>
-              Songs</a>
+            <a class="nav-link wcp-nav-link" href="songs.html"><i class="bi bi-music-note-beamed me-1"></i> Songs</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link wcp-nav-link" href="../index.html#feedback"><i class="bi bi-chat-heart me-1"></i>
-              Feedback</a>
+            <a class="nav-link wcp-nav-link" href="../index.html#feedback"><i class="bi bi-chat-heart me-1"></i> Feedback</a>
+          </li>
+          <li class="nav-item ms-lg-1">
+            <a href="https://forms.gle/79noMHha5RFQeh2i8" target="_blank" rel="noopener noreferrer" class="btn btn-sm xmas-nav-reg-pill">
+              <i class="bi bi-pencil-square me-1"></i> Registration
+            </a>
           </li>
         </ul>
-        <div class="d-none d-lg-flex align-items-center gap-2 ms-lg-3">
-          <a href="https://forms.gle/79noMHha5RFQeh2i8" target="_blank" rel="noopener noreferrer"
-            class="btn btn-nav-action btn-sm">
-            <i class="bi bi-pencil-square me-1"></i> Registration
-          </a>
-        </div>
       </div>
     </div>
   </nav>
 
   <!-- ======================================================================
-       PAGE HEADER / BANNER
+       SEAMLESS PAGE HEADER / BANNER
        ====================================================================== -->
-  <header class="py-5 text-center text-dark wcp-page-header position-relative">
-    <div class="container py-3">
-      <!-- Order of Service Badge -->
-      <div class="text-center mb-3">
-        <span class="xmas-badge">
-          <i class="bi bi-clock-history text-gold me-1"></i> Order of Service &bull; 5 Dec 2026
-        </span>
-      </div>
+  <header class="text-center wcp-page-header xmas-seamless-hero position-relative p-0">
+    <div class="xmas-hero-canvas-stage xmas-subpage-stage position-relative d-flex flex-column justify-content-center">
+      <div class="xmas-hero-snow" aria-hidden="true"></div>
+      <div class="container position-relative" style="z-index: 2;">
+        <div class="xmas-hero-showcase py-3 mb-0">
+          <h1 class="xmas-hero-3d-title xmas-subpage-3d-title mb-2">
+            <span class="xmas-gold-stack d-block">
+              <span class="xmas-gold-extrude" aria-hidden="true">PROGRAMME SCHEDULE</span>
+              <span class="xmas-gold-face">PROGRAMME SCHEDULE</span>
+            </span>
+          </h1>
+          <p class="lead max-w-600 mx-auto mb-1 fw-semibold">
+            Aler Group Youth Christmas 2026 &bull; Starting 9:30 AM &bull; Christmas Lunch Follows
+          </p>
+          <div class="small fw-semibold text-uppercase mt-2 xmas-theme-sub" style="letter-spacing: 1px;">
+            Theme: "FOR UNTO US A CHILD IS BORN, UNTO US A SON IS GIVEN" (Isaiah 9:6)
+          </div>
 
-      <div class="mb-2">
-        <img src="../assets/images/programme-schedule-transparent.png" alt="Programme Schedule"
-          class="programme-schedule-img mx-auto" width="1011" height="198">
-        <h1 class="visually-hidden">Christmas Celebration Programme Schedule</h1>
-      </div>
-      <p class="lead max-w-600 mx-auto mb-1 text-gold fw-semibold">
-        Aler Group Youth Christmas 2026 &bull; Starting 9:30 AM &bull; Christmas Lunch Follows
-      </p>
-      <div class="small fw-semibold text-uppercase mt-2 text-xmas-red" style="letter-spacing: 1px;">
-        Theme: "FOR UNTO US A CHILD IS BORN, UNTO US A SON IS GIVEN" (Isaiah 9:6)
+          <div class="xmas-bells-flourish mt-3" aria-hidden="true">
+            <span class="xmas-light-strand-line"></span>
+            <i class="bi bi-star-fill text-warning fs-5"></i>
+            <span class="xmas-light-strand-line"></span>
+          </div>
+
+          <div class="xmas-hero-action-duo d-none d-lg-flex">
+            <span class="xmas-date-pill">
+              <i class="bi bi-calendar3 text-xmas-red"></i> 5 DEC 2026
+            </span>
+            <a href="https://forms.gle/79noMHha5RFQeh2i8" target="_blank" rel="noopener noreferrer" class="btn xmas-reg-pill-btn">
+              <i class="bi bi-pencil-square"></i> REGISTRATION
+            </a>
+          </div>
+        </div>
       </div>
     </div>
   </header>
@@ -199,8 +212,8 @@
         </p>
         <div class="text-center mt-3">
           <a href="https://forms.gle/79noMHha5RFQeh2i8" target="_blank" rel="noopener noreferrer"
-            class="btn btn-wcp-primary btn-lg rounded-pill px-5 shadow-sm">
-            <i class="bi bi-pencil-square me-2"></i> Registration
+            class="btn xmas-reg-pill-btn">
+            <i class="bi bi-pencil-square me-1"></i> REGISTRATION
           </a>
         </div>
       </div>
