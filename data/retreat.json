@@ -21,11 +21,40 @@
   },
   "invited_by": [
     {
-      "name": "Aler Group Church Council Pastors & Leaders",
-      "designation": "Aler Group Council"
+      "name": "Rev. P. Amrutha Rao",
+      "designation": "AGCC Group Chairman"
+    },
+    {
+      "name": "Rev. A. Uday Kumar",
+      "designation": "Diocese Youth Convenor"
+    },
+    {
+      "name": "Dr. B. Kalakumar",
+      "designation": "Guest Speaker – Hyderabad"
+    },
+    {
+      "name": "Ch. Dayakar",
+      "designation": "AGCC Group Secretary"
+    },
+    {
+      "name": "J. Gnanananda Keerthy",
+      "designation": "AGCC Group Youth Secretary"
+    },
+    {
+      "name": "Rev. Ch. Raja Rathnam",
+      "designation": "Mothkur Pastorate Chairman"
     }
   ],
-  "organisers": "Aler Group Church Council Youth Committee & Congregation.",
+  "organising_church": {
+    "church_name": "CSI Wesley Church, PalliWada",
+    "location": "CSI Wesley Church, PalliWada",
+    "organised_by": [
+      "Committee Members",
+      "Youth",
+      "Congregation"
+    ]
+  },
+  "organisers": "Committee Members, Youth, Congregation — CSI Wesley Church, PalliWada",
   "countdown_target": "2026-12-05T09:30:00+05:30",
   "introduction": "The Aler Group Youth Christmas Celebration 2026 is a joyous spiritual festival organised under the Church of South India (CSI), Diocese of Karimnagar, Aler Group Church Council. Grounded in the glorious promise of Isaiah 9:6, this Christmas celebration brings young people together from across the diocese for inspiring Christmas songs, uplifting messages of hope, youth talent presentations, gift distributions, and festive fellowship.",
   "programme_overview": "A heart-warming Christmas celebration starting with registration at 9:30 AM, joyful Christmas adoration & praise songs, pastoral Christmas greetings, inspiring Christmas message, youth musical choreography, vote of thanks & Christmas gift distributions, closing prayer & benediction, commemorative group photo, and a grand Christmas fellowship lunch.",
