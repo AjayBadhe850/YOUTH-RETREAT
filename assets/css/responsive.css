@@ -22,7 +22,12 @@ img, svg, picture, video {
 
   /* Symmetrical Dual Emblem Top Navigation Header */
   .wcp-navbar {
-    padding: 8px 0;
+    padding: 12px 0 8px 0;
+  }
+
+  .wcp-navbar::after {
+    height: 11px;
+    background-size: 115px 11px;
   }
 
   .wcp-brand {
@@ -324,6 +329,24 @@ img, svg, picture, video {
     font-size: 0.78rem;
     text-align: center;
   }
+
+  /* Christmas Decorations Mobile Polish */
+  .hero-section::before,
+  .hero-section::after,
+  .wcp-page-header::before,
+  .wcp-page-header::after {
+    width: 96px;
+    height: 96px;
+    opacity: 0.25;
+  }
+
+  .xmas-greeting-card {
+    padding: 28px 20px 22px 20px;
+  }
+
+  .xmas-star-twinkle {
+    font-size: 1.15rem !important;
+  }
 }
 
 /* --------------------------------------------------------------------------
@@ -368,6 +391,19 @@ img, svg, picture, video {
   .programme-schedule-img {
     max-height: 50px;
   }
+
+  .xmas-greeting-card {
+    padding: 24px 16px 20px 16px;
+  }
+
+  .hero-section::before,
+  .hero-section::after,
+  .wcp-page-header::before,
+  .wcp-page-header::after {
+    width: 78px;
+    height: 78px;
+    opacity: 0.20;
+  }
 }
 
 /* --------------------------------------------------------------------------
@@ -393,6 +429,15 @@ img, svg, picture, video {
   .song-swipe-slide {
     flex: 0 0 calc(50% - 8px);
     min-width: calc(50% - 8px);
+  }
+
+  .hero-section::before,
+  .hero-section::after,
+  .wcp-page-header::before,
+  .wcp-page-header::after {
+    width: 110px;
+    height: 110px;
+    opacity: 0.28;
   }
 }
 

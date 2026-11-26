@@ -1394,6 +1394,10 @@ html {
   color: var(--xmas-crimson) !important;
 }
 
+.text-xmas-green {
+  color: var(--xmas-emerald) !important;
+}
+
 .bg-xmas-red {
   background-color: var(--xmas-crimson) !important;
   color: #FFFFFF !important;
@@ -1405,6 +1409,7 @@ html {
 
 .xmas-card-accent {
   border-top: 4px solid var(--xmas-crimson) !important;
+  background-image: linear-gradient(90deg, rgba(179, 27, 27, 0.03) 0%, rgba(255, 255, 255, 0) 50%, rgba(20, 83, 45, 0.03) 100%);
 }
 
 .xmas-tree-icon {
@@ -1413,6 +1418,289 @@ html {
 
 .xmas-star-icon {
   color: var(--xmas-gold);
+}
+
+/* --------------------------------------------------------------------------
+   1. Enhanced Christmas Greeting Welcome Screen (3.8 Seconds Auto-Transition)
+   -------------------------------------------------------------------------- */
+#opening-screen.xmas-greeting-screen {
+  background-color: #FFFDF8;
+  background-image:
+    radial-gradient(circle at 18% 18%, rgba(179, 27, 27, 0.10) 0%, transparent 42%),
+    radial-gradient(circle at 82% 22%, rgba(20, 83, 45, 0.10) 0%, transparent 42%),
+    radial-gradient(circle at 50% 55%, rgba(212, 175, 55, 0.18) 0%, #FFFDF8 72%);
+  cursor: pointer;
+  overflow: hidden;
+  transition: opacity 0.5s ease-out, visibility 0.5s ease-out;
+}
+
+.xmas-greeting-ornaments {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.xmas-star-twinkle {
+  position: absolute;
+  color: var(--xmas-gold);
+  opacity: 0.55;
+  animation: xmasTwinkle 2.8s ease-in-out infinite;
+}
+
+.xmas-star-twinkle.star-1 { top: 8%; left: 10%; font-size: 1.5rem; color: var(--xmas-gold); animation-delay: 0s; }
+.xmas-star-twinkle.star-2 { top: 14%; right: 12%; font-size: 2rem; color: var(--xmas-crimson); opacity: 0.35; animation-delay: 0.5s; }
+.xmas-star-twinkle.star-3 { bottom: 16%; left: 12%; font-size: 1.4rem; color: var(--xmas-emerald); opacity: 0.4; animation-delay: 1.0s; }
+.xmas-star-twinkle.star-4 { bottom: 12%; right: 10%; font-size: 1.9rem; color: var(--xmas-gold); animation-delay: 1.4s; }
+.xmas-star-twinkle.star-5 { top: 44%; left: 6%; font-size: 1.3rem; color: var(--xmas-crimson); opacity: 0.35; animation-delay: 0.8s; }
+.xmas-star-twinkle.star-6 { top: 48%; right: 7%; font-size: 1.6rem; color: var(--xmas-emerald); opacity: 0.35; animation-delay: 1.8s; }
+
+@keyframes xmasTwinkle {
+  0%, 100% { transform: scale(0.92); opacity: 0.32; }
+  50% { transform: scale(1.12); opacity: 0.78; }
+}
+
+.xmas-greeting-card {
+  position: relative;
+  z-index: 2;
+  max-width: 680px;
+  width: 100%;
+  background: rgba(255, 255, 255, 0.94);
+  border: 1.5px solid rgba(197, 162, 83, 0.55);
+  border-top: 5px solid var(--xmas-crimson);
+  border-bottom: 4px solid var(--xmas-emerald);
+  border-radius: 22px;
+  padding: 36px 28px 28px 28px;
+  box-shadow: 0 20px 55px rgba(139, 101, 8, 0.16), 0 4px 16px rgba(179, 27, 27, 0.08);
+  animation: xmasGreetingEnter 0.65s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@keyframes xmasGreetingEnter {
+  from { opacity: 0; transform: translateY(16px) scale(0.97); }
+  to { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+.xmas-greeting-pill {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  background: linear-gradient(135deg, rgba(179, 27, 27, 0.10) 0%, rgba(212, 175, 55, 0.16) 100%);
+  color: var(--xmas-dark-crimson);
+  border: 1px solid rgba(197, 162, 83, 0.55);
+  border-radius: 50px;
+  padding: 5px 16px;
+  font-family: var(--wcp-font-trajan);
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 1.1px;
+  text-transform: uppercase;
+}
+
+.xmas-greeting-center-star {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: rgba(20, 83, 45, 0.08);
+  border: 1px solid rgba(20, 83, 45, 0.22);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#opening-screen.xmas-greeting-screen .opening-logo-img {
+  width: 78px;
+  height: 78px;
+  margin-bottom: 0;
+  border: 2px solid var(--wcp-primary-gold);
+  box-shadow: 0 0 0 4px rgba(179, 27, 27, 0.08), 0 6px 20px rgba(197, 162, 83, 0.35);
+}
+
+#opening-screen.xmas-greeting-screen .opening-praise-text {
+  font-size: clamp(1.5rem, 4.4vw, 2.55rem);
+  letter-spacing: 2.5px;
+  margin: 4px 0 10px 0;
+  background: linear-gradient(135deg, #8B0000 0%, #B31B1B 35%, #C5A253 72%, #8B6508 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+#opening-screen.xmas-greeting-screen .opening-church-text {
+  font-size: clamp(0.86rem, 2.1vw, 1.12rem);
+  letter-spacing: 2px;
+  padding-top: 10px;
+  color: var(--wcp-dark-gold);
+}
+
+.xmas-greeting-progress-wrap {
+  width: 220px;
+  max-width: 80%;
+  height: 5px;
+  background: rgba(197, 162, 83, 0.20);
+  border-radius: 50px;
+  overflow: hidden;
+}
+
+.xmas-greeting-progress-bar {
+  width: 0%;
+  height: 100%;
+  background: linear-gradient(90deg, #B31B1B 0%, #C5A253 55%, #14532D 100%);
+  border-radius: 50px;
+  animation: xmasGreetingProgress 3.8s linear forwards;
+}
+
+@keyframes xmasGreetingProgress {
+  from { width: 0%; }
+  to { width: 100%; }
+}
+
+.xmas-greeting-hint {
+  font-family: var(--wcp-font-body);
+  font-size: 0.78rem;
+  color: var(--wcp-text-secondary);
+}
+
+/* --------------------------------------------------------------------------
+   2. Global Christmas Lights, Garland & Seasonal Theme Across All Pages
+   -------------------------------------------------------------------------- */
+.wcp-navbar {
+  background-color: #FFFFFF !important;
+  background-image: linear-gradient(90deg, #B31B1B 0%, #C5A253 25%, #14532D 50%, #C5A253 75%, #B31B1B 100%);
+  background-size: 100% 4px;
+  background-position: top left;
+  background-repeat: no-repeat;
+  padding-top: 16px;
+}
+
+.wcp-navbar::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  height: 14px;
+  pointer-events: none;
+  z-index: 999;
+  background-repeat: repeat-x;
+  background-position: top left;
+  background-size: 140px 14px;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='14' viewBox='0 0 140 14'%3E%3Cpath d='M0,1 Q35,8 70,1 T140,1' fill='none' stroke='%23A88332' stroke-width='1.1' opacity='0.65'/%3E%3Ccircle cx='18' cy='5' r='3.1' fill='%23B31B1B' opacity='0.88'/%3E%3Ccircle cx='52' cy='5' r='3.1' fill='%2314532D' opacity='0.88'/%3E%3Ccircle cx='88' cy='5' r='3.1' fill='%23D4AF37' opacity='0.95'/%3E%3Ccircle cx='122' cy='5' r='3.1' fill='%23B31B1B' opacity='0.88'/%3E%3C/svg%3E");
+  animation: xmasLightsPulse 3.4s ease-in-out infinite alternate;
+}
+
+@keyframes xmasLightsPulse {
+  0% { opacity: 0.72; }
+  100% { opacity: 1; }
+}
+
+/* Festive Hero & Subpage Header Backgrounds with Subtle Corner Snowflakes & Ornaments */
+.hero-section,
+.wcp-page-header {
+  background-color: #FFFDF9 !important;
+  background-image:
+    radial-gradient(circle at 12% 18%, rgba(179, 27, 27, 0.06) 0%, transparent 40%),
+    radial-gradient(circle at 88% 20%, rgba(20, 83, 45, 0.06) 0%, transparent 40%),
+    radial-gradient(circle at 50% 40%, rgba(212, 175, 55, 0.11) 0%, transparent 65%) !important;
+  overflow: hidden;
+}
+
+.hero-section > .container,
+.wcp-page-header > .container {
+  position: relative;
+  z-index: 2;
+}
+
+.hero-section::before,
+.wcp-page-header::before {
+  content: "";
+  position: absolute;
+  top: 4px;
+  left: 6px;
+  width: 150px;
+  height: 150px;
+  pointer-events: none;
+  z-index: 1;
+  opacity: 0.34;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 120 120'%3E%3Cpath d='M0,0 Q48,26 96,8' fill='none' stroke='%2314532D' stroke-width='2.5'/%3E%3Cline x1='34' y1='14' x2='34' y2='42' stroke='%23C5A253' stroke-width='1.4'/%3E%3Ccircle cx='34' cy='50' r='9' fill='%23B31B1B'/%3E%3Ccircle cx='31' cy='47' r='2.5' fill='%23FFFFFF' opacity='0.55'/%3E%3Cline x1='70' y1='12' x2='70' y2='32' stroke='%23C5A253' stroke-width='1.3'/%3E%3Ccircle cx='70' cy='39' r='7' fill='%23D4AF37'/%3E%3Cpath d='M18,78 L20,84 L26,86 L20,88 L18,94 L16,88 L10,86 L16,84 Z' fill='%23C5A253'/%3E%3Cpath d='M92,58 L93.5,63 L98,64.5 L93.5,66 L92,71 L90.5,66 L86,64.5 L90.5,63 Z' fill='%2314532D' opacity='0.75'/%3E%3C/svg%3E");
+}
+
+.hero-section::after,
+.wcp-page-header::after {
+  content: "";
+  position: absolute;
+  top: 4px;
+  right: 6px;
+  width: 150px;
+  height: 150px;
+  pointer-events: none;
+  z-index: 1;
+  opacity: 0.34;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 120 120'%3E%3Cpath d='M120,0 Q72,26 24,8' fill='none' stroke='%2314532D' stroke-width='2.5'/%3E%3Cline x1='86' y1='14' x2='86' y2='44' stroke='%23C5A253' stroke-width='1.4'/%3E%3Ccircle cx='86' cy='52' r='9' fill='%2314532D'/%3E%3Ccircle cx='83' cy='49' r='2.5' fill='%23FFFFFF' opacity='0.5'/%3E%3Cline x1='50' y1='12' x2='50' y2='32' stroke='%23C5A253' stroke-width='1.3'/%3E%3Ccircle cx='50' cy='39' r='7' fill='%23D4AF37'/%3E%3Cpath d='M100,82 L102,88 L108,90 L102,92 L100,98 L98,92 L92,90 L98,88 Z' fill='%23B31B1B' opacity='0.8'/%3E%3Cpath d='M28,60 L29.5,65 L34,66.5 L29.5,68 L28,73 L26.5,68 L22,66.5 L26.5,65 Z' fill='%23C5A253'/%3E%3C/svg%3E");
+}
+
+/* Festive Snowflake Watermark & Warm Cream Surfaces Across Schedule & Main Pages */
+#schedule,
+main {
+  background-color: #FCF9F2 !important;
+  background-image:
+    radial-gradient(circle at 92% 15%, rgba(212, 175, 55, 0.08) 0%, transparent 35%),
+    radial-gradient(circle at 8% 85%, rgba(20, 83, 45, 0.05) 0%, transparent 35%),
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120' viewBox='0 0 120 120'%3E%3Cg stroke='%23C5A253' stroke-width='1' opacity='0.10' fill='none'%3E%3Cline x1='60' y1='42' x2='60' y2='78'/%3E%3Cline x1='42' y1='60' x2='78' y2='60'/%3E%3Cline x1='47' y1='47' x2='73' y2='73'/%3E%3Cline x1='73' y1='47' x2='47' y2='73'/%3E%3C/g%3E%3C/svg%3E") !important;
+}
+
+#songs {
+  background-color: #FFFFFF !important;
+  background-image:
+    radial-gradient(circle at 8% 12%, rgba(20, 83, 45, 0.04) 0%, transparent 35%),
+    radial-gradient(circle at 92% 88%, rgba(179, 27, 27, 0.04) 0%, transparent 35%) !important;
+}
+
+#feedback {
+  background-color: #F7FAF8 !important;
+  background-image: linear-gradient(180deg, #F6FAF7 0%, #FFFFFF 100%) !important;
+}
+
+/* Christmas Timeline Alternating Crimson & Pine Dots */
+.timeline-item:nth-child(odd) .timeline-dot {
+  background-color: var(--xmas-crimson);
+  box-shadow: 0 0 0 2px var(--wcp-primary-gold);
+}
+
+.timeline-item:nth-child(even) .timeline-dot {
+  background-color: var(--xmas-pine);
+  box-shadow: 0 0 0 2px var(--wcp-primary-gold);
+}
+
+/* Festive Countdown Contrast */
+.wcp-countdown-box {
+  border-color: rgba(197, 162, 83, 0.75);
+  background: linear-gradient(180deg, #FFFFFF 0%, #FFFBF2 100%);
+}
+
+.wcp-countdown-val {
+  color: var(--xmas-dark-crimson);
+}
+
+.wcp-countdown-lbl {
+  color: var(--xmas-pine);
+}
+
+/* Festive Footer Top Ribbon & Subtle Warmth */
+.wcp-footer {
+  background-color: #FFFFFF;
+  background-image: linear-gradient(90deg, #14532D 0%, #C5A253 33%, #B31B1B 66%, #C5A253 100%);
+  background-size: 100% 4px;
+  background-position: top left;
+  background-repeat: no-repeat;
+  border-top: none;
+}
+
+.wcp-footer .footer-praise {
+  color: var(--xmas-crimson);
 }
 
 /* Accessible Reduced Motion Rules */
@@ -1429,8 +1717,15 @@ html {
     animation: none !important;
     background: #ede8df !important;
   }
-  .hero-pill-badge {
+  .hero-pill-badge,
+  .xmas-star-twinkle,
+  .wcp-navbar::after,
+  .xmas-greeting-card,
+  .xmas-greeting-progress-bar {
     animation: none !important;
+  }
+  .xmas-greeting-progress-bar {
+    width: 100% !important;
   }
   .wcp-card:hover,
   .song-card:hover,

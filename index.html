@@ -18,8 +18,8 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 
   <!-- Custom Stylesheets -->
-  <link rel="stylesheet" href="assets/css/style.css">
-  <link rel="stylesheet" href="assets/css/responsive.css">
+  <link rel="stylesheet" href="assets/css/style.css?v=2.3.0">
+  <link rel="stylesheet" href="assets/css/responsive.css?v=2.3.0">
 
   <!-- Favicon (Using Official CSI Logo) -->
   <link rel="icon" type="image/png" href="assets/images/csi-logo.png">
@@ -31,17 +31,50 @@
 <body id="top">
 
   <!-- ======================================================================
-       OPENING SCREEN (SPLASH SCREEN) — Exactly 2 Seconds
-       Displays on initial visit, auto-fades out and respects session storage
+       CHRISTMAS GREETING WELCOME SCREEN (3.8 Seconds Auto-Transition)
+       Displays on initial visit, auto-fades smoothly and respects session storage
        ====================================================================== -->
-  <div id="opening-screen" role="dialog" aria-label="Welcome Screen">
-    <div class="d-flex align-items-center justify-content-center gap-3 mb-3">
-      <img src="assets/images/csi-logo.png" alt="CSI Emblem" class="opening-logo-img" width="70" height="70">
-      <img src="assets/images/csi-karimnagar-logo.png" alt="Diocese of Karimnagar Emblem" class="opening-logo-img" width="70" height="70">
+  <div id="opening-screen" class="xmas-greeting-screen" role="dialog" aria-label="Christmas Welcome Screen">
+    <div class="xmas-greeting-ornaments" aria-hidden="true">
+      <span class="xmas-star-twinkle star-1"><i class="bi bi-star-fill"></i></span>
+      <span class="xmas-star-twinkle star-2"><i class="bi bi-snow2"></i></span>
+      <span class="xmas-star-twinkle star-3"><i class="bi bi-star-fill"></i></span>
+      <span class="xmas-star-twinkle star-4"><i class="bi bi-snow2"></i></span>
+      <span class="xmas-star-twinkle star-5"><i class="bi bi-stars"></i></span>
+      <span class="xmas-star-twinkle star-6"><i class="bi bi-tree-fill"></i></span>
     </div>
-    <h1 class="opening-praise-text text-gold">MERRY CHRISTMAS &bull; PRAISE THE LORD</h1>
-    <p class="opening-church-text mb-1">CSI &bull; DIOCESE OF KARIMNAGAR &bull; ALER GROUP</p>
-    <div class="small text-gold fw-bold text-uppercase" style="letter-spacing: 2px;">Youth Christmas Celebration 2026</div>
+
+    <div class="xmas-greeting-card">
+      <div class="xmas-greeting-pill mb-3">
+        <i class="bi bi-star-fill text-gold me-1"></i>
+        <span>Season of Joy, Peace &amp; Hope &bull; 5 Dec 2026</span>
+        <i class="bi bi-star-fill text-gold ms-1"></i>
+      </div>
+
+      <div class="d-flex align-items-center justify-content-center gap-3 mb-3">
+        <img src="assets/images/csi-logo.png" alt="CSI Emblem" class="opening-logo-img" width="76" height="76">
+        <div class="xmas-greeting-center-star text-xmas-red" aria-hidden="true">
+          <i class="bi bi-tree-fill fs-3 text-xmas-green"></i>
+        </div>
+        <img src="assets/images/csi-karimnagar-logo.png" alt="Diocese of Karimnagar Emblem" class="opening-logo-img" width="76" height="76">
+      </div>
+
+      <h1 class="opening-praise-text">MERRY CHRISTMAS &bull; PRAISE THE LORD</h1>
+      <p class="opening-church-text mb-1">CSI &bull; DIOCESE OF KARIMNAGAR &bull; ALER GROUP</p>
+      <div class="small fw-bold text-uppercase mb-2" style="color: var(--xmas-emerald); letter-spacing: 2px;">
+        Youth Christmas Celebration 2026
+      </div>
+      <div class="small fst-italic text-secondary mb-3" style="font-size: 0.85rem;">
+        &ldquo;For unto us a child is born, unto us a son is given&rdquo; &mdash; Isaiah 9:6
+      </div>
+
+      <div class="xmas-greeting-progress-wrap mx-auto" aria-hidden="true">
+        <div class="xmas-greeting-progress-bar"></div>
+      </div>
+      <div class="xmas-greeting-hint mt-2">
+        <i class="bi bi-stars text-gold me-1"></i> Entering Celebration&hellip; <span class="opacity-75">(Tap anywhere to continue)</span>
+      </div>
+    </div>
   </div>
 
   <!-- ======================================================================
@@ -390,7 +423,7 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 
   <!-- Application Static JavaScript Modules -->
-  <script src="assets/js/main.js?v=2.2.0"></script>
+  <script src="assets/js/main.js?v=2.3.0"></script>
   <script src="assets/js/content.js"></script>
   <script src="assets/js/schedule.js"></script>
   <script src="assets/js/songs.js"></script>

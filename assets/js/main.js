@@ -1,16 +1,16 @@
 /**
  * CSI • Diocese of Karimnagar • Aler Group
  * Youth Christmas Celebration 2026 — Main JavaScript
- * Handles Opening Screen (2 seconds), Navigation, Christmas Snowfall, and Global UI
+ * Handles Christmas Welcome Screen (3.8 seconds), Navigation, Form Submission, Countdown & Scroll Reveal
  */
 
 (function () {
   'use strict';
 
-  // 1. Opening Screen (Splash Screen) Controller — Exactly 2 Seconds
+  // 1. Christmas Greeting Welcome Screen Controller — 3.8 Seconds Auto-Transition
   var splash = document.getElementById('opening-screen');
   if (splash) {
-    var SPLASH_SESSION_KEY = 'wcp_retreat_splash_seen';
+    var SPLASH_SESSION_KEY = 'wcp_xmas_greeting_2026_v2';
     var hasSeenSplash = sessionStorage.getItem(SPLASH_SESSION_KEY);
 
     if (hasSeenSplash) {
@@ -18,11 +18,14 @@
       splash.remove();
     } else {
       var prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-      var displayDuration = prefersReducedMotion ? 400 : 2000; // Exactly 2 seconds
+      var displayDuration = prefersReducedMotion ? 500 : 3800; // 3.8 seconds festive greeting
+      var isDismissed = false;
 
       document.body.style.overflow = 'hidden';
 
-      setTimeout(function () {
+      var dismissSplash = function () {
+        if (isDismissed) return;
+        isDismissed = true;
         splash.classList.add('fade-out');
         document.body.style.overflow = '';
         sessionStorage.setItem(SPLASH_SESSION_KEY, 'true');
@@ -31,8 +34,15 @@
           if (splash && splash.parentNode) {
             splash.parentNode.removeChild(splash);
           }
-        }, 450);
-      }, displayDuration);
+        }, 500);
+      };
+
+      var autoTimer = setTimeout(dismissSplash, displayDuration);
+
+      splash.addEventListener('click', function () {
+        clearTimeout(autoTimer);
+        dismissSplash();
+      });
     }
   }
 
