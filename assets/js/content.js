@@ -70,6 +70,9 @@
         applyContent('[data-retreat="organisers"]', retreat.organisers);
         applyContent('[data-retreat="introduction"]', retreat.introduction);
         applyContent('[data-retreat="overview"]', retreat.programme_overview);
+        if (retreat.guest_speaker && retreat.guest_speaker.name) {
+          applyContent('[data-retreat="guest_speaker"]', retreat.guest_speaker.name);
+        }
       }
     });
   });

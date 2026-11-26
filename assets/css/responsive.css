@@ -168,6 +168,31 @@ img, svg, picture, video {
     text-align: center;
   }
 
+  /* Song Numbers Bar & Swipeable Carousel on Mobile */
+  .song-numbers-bar {
+    justify-content: center;
+    gap: 6px;
+    padding: 10px 8px;
+  }
+
+  .song-num-btn {
+    min-width: 42px;
+    height: 34px;
+    font-size: 0.78rem;
+    padding: 0 8px;
+  }
+
+  .song-swipe-controls {
+    width: 100%;
+    justify-content: flex-end;
+  }
+
+  .song-swipe-slide {
+    flex: 0 0 88%;
+    min-width: 88%;
+    scroll-snap-align: center;
+  }
+
   /* Song Cards Spacing & Hierarchy */
   .song-card {
     padding: 18px 16px;
@@ -363,6 +388,11 @@ img, svg, picture, video {
 
   .timeline-card {
     padding: 18px 22px;
+  }
+
+  .song-swipe-slide {
+    flex: 0 0 calc(50% - 8px);
+    min-width: calc(50% - 8px);
   }
 }
 

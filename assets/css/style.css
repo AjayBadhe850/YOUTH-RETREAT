@@ -900,6 +900,121 @@ a:hover {
   border-color: var(--wcp-primary-gold);
 }
 
+/* Song Numbers Quick-Swipe Bar & Horizontal Carousel */
+.song-numbers-bar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 14px;
+  background-color: var(--wcp-bg-secondary);
+  border: 1px solid var(--wcp-border);
+  border-radius: var(--wcp-radius-md);
+}
+
+.song-num-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 48px;
+  height: 36px;
+  padding: 0 10px;
+  font-family: var(--wcp-font-trajan);
+  font-size: 0.84rem;
+  font-weight: 700;
+  color: var(--wcp-text-primary);
+  background-color: #FFFFFF;
+  border: 1.5px solid var(--wcp-primary-gold);
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.song-num-btn:hover {
+  background-color: rgba(197, 162, 83, 0.16);
+  border-color: var(--wcp-dark-gold);
+  transform: translateY(-1px);
+}
+
+.song-num-btn.active {
+  background-color: var(--xmas-crimson, #B31B1B);
+  color: #FFFFFF;
+  border-color: var(--xmas-crimson, #B31B1B);
+  box-shadow: 0 3px 10px rgba(179, 27, 27, 0.28);
+}
+
+.song-swipe-arrow {
+  width: 34px;
+  height: 34px;
+  padding: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.song-swipe-track {
+  display: flex;
+  flex-wrap: nowrap;
+  gap: 16px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+  padding: 6px 2px 14px 2px;
+  cursor: grab;
+  scrollbar-width: thin;
+  scrollbar-color: var(--wcp-primary-gold) var(--wcp-bg-secondary);
+}
+
+.song-swipe-track:active {
+  cursor: grabbing;
+}
+
+.song-swipe-track::-webkit-scrollbar {
+  height: 6px;
+}
+
+.song-swipe-track::-webkit-scrollbar-track {
+  background: var(--wcp-bg-secondary);
+  border-radius: 10px;
+}
+
+.song-swipe-track::-webkit-scrollbar-thumb {
+  background: var(--wcp-primary-gold);
+  border-radius: 10px;
+}
+
+.song-swipe-slide {
+  flex: 0 0 calc(25% - 12px);
+  min-width: 260px;
+  scroll-snap-align: start;
+}
+
+.song-swipe-track .song-lyrics-container.expanded {
+  max-height: 360px;
+  overflow-y: auto;
+}
+
+@keyframes songCardSpotlight {
+  0% {
+    box-shadow: 0 0 0 0 rgba(179, 27, 27, 0.45), 0 8px 24px rgba(197, 162, 83, 0.35);
+    border-color: var(--xmas-crimson, #B31B1B);
+  }
+  70% {
+    box-shadow: 0 0 0 8px rgba(179, 27, 27, 0), 0 8px 24px rgba(197, 162, 83, 0.28);
+    border-color: var(--wcp-primary-gold);
+  }
+  100% {
+    box-shadow: var(--wcp-shadow-sm);
+    border-color: var(--wcp-primary-gold);
+  }
+}
+
+.song-card.song-card-highlight {
+  animation: songCardSpotlight 1.4s ease-out;
+  border-color: var(--xmas-crimson, #B31B1B) !important;
+}
+
 /* --------------------------------------------------------------------------
    Countdown Timer Component
    -------------------------------------------------------------------------- */

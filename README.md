@@ -10,7 +10,7 @@
 > **Venue:** CSI Aler Group Church Council, Diocese of Karimnagar, Telangana  
 > **Theme:** "FOR UNTO US A CHILD IS BORN, UNTO US A SON IS GIVEN" (Isaiah 9:6)  
 > **Chief Guest:** Rev. P. Amrutha Rao (Group Chairman)  
-> **Guest Speaker:** Dn. Y. Shyam (Christmas Guest Speaker)  
+> **Guest Speaker:** B.Kala Kumar (Christmas Guest Speaker)  
 > **Organisers:** Aler Group Church Council Youth Committee & Congregation  
 > **Architecture:** Pure Static Website (Zero Backend, Zero Database, Free Google Sheets Feedback)
 
