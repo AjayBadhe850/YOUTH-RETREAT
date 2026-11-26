@@ -91,6 +91,10 @@ img, svg, picture, video {
     margin-bottom: 0;
   }
 
+  .xmas-hero-title-art {
+    max-width: 96vw;
+  }
+
   .xmas-hero-3d-title .xmas-gold-extrude,
   .xmas-hero-3d-title .xmas-gold-face {
     font-size: clamp(1.30rem, 5.2vw, 1.85rem);

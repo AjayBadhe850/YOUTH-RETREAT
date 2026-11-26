@@ -1742,7 +1742,7 @@ html {
   overflow: hidden;
   background-color: #5C060C;
   background-image:
-    radial-gradient(ellipse at 50% 60%, rgba(74, 6, 11, 0.56) 0%, rgba(74, 6, 11, 0.14) 58%, transparent 100%),
+    radial-gradient(ellipse at 50% 56%, rgba(74, 6, 11, 0.66) 0%, rgba(74, 6, 11, 0.22) 55%, transparent 100%),
     linear-gradient(180deg, rgba(45, 3, 7, 0.25) 0%, rgba(74, 6, 11, 0.05) 38%, rgba(252, 249, 242, 0.0) 80%, rgba(252, 249, 242, 0.90) 94%, #FCF9F2 100%),
     url('../images/xmas-hero-backdrop-mobile.jpg?v=2.3.1');
   background-position: center top;
@@ -1789,6 +1789,18 @@ html {
   z-index: 3;
   padding: 12px 0 10px 0;
   margin-bottom: 6px;
+}
+
+.xmas-hero-artwork-heading {
+  margin: 0 auto 12px auto;
+  text-align: center;
+}
+
+.xmas-hero-title-art {
+  width: 100%;
+  max-width: 680px;
+  height: auto;
+  filter: drop-shadow(0 6px 18px rgba(20, 0, 2, 0.72)) drop-shadow(0 0 22px rgba(255, 210, 100, 0.26));
 }
 
 /* Crisp 3D Metallic Gold Typography */
