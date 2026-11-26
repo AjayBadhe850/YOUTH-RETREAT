@@ -36,40 +36,28 @@
   }
 
   function renderInvitedBy(invitedList) {
-    var listEl = document.getElementById('invited-by-list');
-    if (!listEl || !Array.isArray(invitedList) || invitedList.length === 0) return;
-    listEl.textContent = '';
-    invitedList.forEach(function (entry) {
-      var row = document.createElement('div');
-      row.className = 'd-flex flex-column flex-sm-row justify-content-between align-items-sm-center p-2 px-3 rounded-2 border';
-      row.style.backgroundColor = 'var(--wcp-light-sage)';
+    if (!Array.isArray(invitedList) || invitedList.length === 0) return;
 
-      var nameSpan = document.createElement('span');
-      nameSpan.className = 'fw-bold text-forest';
-      nameSpan.textContent = entry.name || '';
-
-      var desigSpan = document.createElement('span');
-      desigSpan.className = 'small text-secondary fw-medium';
-      desigSpan.textContent = entry.designation || '';
-
-      row.appendChild(nameSpan);
-      row.appendChild(desigSpan);
-      listEl.appendChild(row);
-    });
+    var cardListEl = document.getElementById('countdown-invited-by-list');
+    if (cardListEl) {
+      cardListEl.textContent = '';
+      invitedList.forEach(function (entry) {
+        var row = document.createElement('div');
+        var nameStrong = document.createElement('strong');
+        nameStrong.textContent = entry.name || '';
+        var desigSpan = document.createElement('span');
+        desigSpan.className = 'text-muted';
+        desigSpan.textContent = ' \u2013 ' + (entry.designation || '');
+        row.appendChild(nameStrong);
+        row.appendChild(desigSpan);
+        cardListEl.appendChild(row);
+      });
+    }
   }
 
   function renderOrganisedBy(items) {
-    var listEl = document.getElementById('organised-by-list');
-    if (!listEl || !Array.isArray(items) || items.length === 0) return;
-    listEl.textContent = '';
-    items.forEach(function (label) {
-      var li = document.createElement('li');
-      var icon = document.createElement('i');
-      icon.className = 'bi bi-check2-circle text-gold me-2';
-      li.appendChild(icon);
-      li.appendChild(document.createTextNode(label));
-      listEl.appendChild(li);
-    });
+    if (!Array.isArray(items) || items.length === 0) return;
+    applyContent('[data-retreat="organisers_short"]', items.join(', '));
   }
 
   document.addEventListener('DOMContentLoaded', function () {
